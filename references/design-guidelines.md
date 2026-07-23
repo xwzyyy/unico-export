@@ -2,13 +2,15 @@
 
 ## Prompt Revision
 
-`case-derived-layout-v3`
+`controlled-variation-v4`
 
 Change this revision label whenever an experiment materially changes the design direction. Include the active revision in the IR `message` so generated outputs can be compared later.
 
 ## Design Objective
 
 Create a deliberate, production-oriented mobile page rather than a generic component demo. Translate the user's brief into a clear visual concept, content hierarchy, section rhythm, and conversion path before writing the IR.
+
+Run the mandatory UI/UX design-intelligence and controlled-variation workflow in `design-optimization.md` before selecting a composition. Record the chosen direction in IR `designProfile`.
 
 ## Current Tuning Profile
 
@@ -19,8 +21,9 @@ Create a deliberate, production-oriented mobile page rather than a generic compo
 - Card usage: only when grouping genuinely benefits comprehension
 - Imagery: use real focal images and supporting images when the content calls for them; vary frames according to source aspect ratio
 - Typography: expressive display hierarchy with highly readable body copy
-- Copy: concise, specific, and appropriate to the user's requested language
+- Copy: concise, specific, and English-only
 - CTA strategy: one clear primary action, with secondary actions only when useful
+- Variation: choose a page-specific fingerprint across layout, palette, typography, image rhythm, and rectangle treatment
 
 These values are the main experiment controls. Edit them first when comparing outputs.
 
@@ -29,6 +32,8 @@ These values are the main experiment controls. Edit them first when comparing ou
 - Make the first screen communicate the brand, offer, event, or purpose immediately.
 - Establish one dominant focal point per section.
 - Vary section composition and background treatment to create rhythm; avoid stacking visually identical white cards.
+- Generate three internal visual directions and select one controlled variation before writing IR.
+- Vary at least three design axes from the previous known result for repeated or similar briefs.
 - Use spacing intentionally. Prefer a few confident groups over many small disconnected elements.
 - Keep primary content inside the 386px canvas and respect safe side margins.
 - Use rectangles, color fields, dividers, typography, and imagery to create depth without relying on unsupported effects.
@@ -48,7 +53,7 @@ These values are the main experiment controls. Edit them first when comparing ou
 
 ## Content and Conversion Rules
 
-- Preserve the language requested by the user; otherwise follow the language of the brief.
+- Write all generated page copy in English.
 - Write concrete headings and CTA labels rather than generic filler such as “Welcome” or “Learn More” when a more specific action is possible.
 - Keep body copy short enough for a mobile composition.
 - Ensure the section order tells a coherent story and leads naturally toward the primary action.
@@ -57,4 +62,4 @@ These values are the main experiment controls. Edit them first when comparing ou
 
 Use this section for temporary prompt experiments. Remove obsolete instructions instead of accumulating contradictory rules.
 
-- Active revision incorporates patterns measured from the five finished Unico cases. See `case-derived-layout-rules.md` for evidence and explicit exceptions.
+- Active revision combines patterns measured from the five finished Unico cases with mandatory UI/UX Pro Max guidance and controlled visual variation. See `case-derived-layout-rules.md` and `design-optimization.md`.

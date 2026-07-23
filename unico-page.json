@@ -1,0 +1,156 @@
+{
+  "designJson": [
+    {
+      "id": "effects",
+      "label": "Section 1",
+      "type": "free-box",
+      "field": {
+        "structure": {
+          "label": "Freeform Container",
+          "child": {
+            "sectionName": {
+              "label": "Section Name",
+              "type": "text",
+              "value": "Section 1"
+            },
+            "component_list": {
+              "label": "Widgets List",
+              "type": "component_list",
+              "value": [
+                {
+                  "id": "panel",
+                  "label": "rectangle",
+                  "type": "rectangle",
+                  "field": {
+                    "structure": {
+                      "label": "Content",
+                      "child": {
+                        "link": {
+                          "label": "Link Settings",
+                          "type": "link",
+                          "value": {
+                            "page": "",
+                            "url": "",
+                            "type": "external",
+                            "serviceId": "",
+                            "productId": ""
+                          }
+                        }
+                      }
+                    },
+                    "styles": {
+                      "label": "Style",
+                      "child": {
+                        "width": {
+                          "label": "Width",
+                          "type": "width",
+                          "value": 346
+                        },
+                        "height": {
+                          "label": "Height",
+                          "type": "height",
+                          "value": 80
+                        },
+                        "zIndex": {
+                          "label": "Levels",
+                          "type": "zIndex",
+                          "value": 1
+                        },
+                        "top": {
+                          "label": "Top Distance",
+                          "type": "top",
+                          "value": 20
+                        },
+                        "left": {
+                          "label": "Left Distance",
+                          "type": "left",
+                          "value": 20
+                        },
+                        "bgColor": {
+                          "label": "Background Color",
+                          "type": "bgColor",
+                          "value": "#fff"
+                        },
+                        "radius": {
+                          "label": "Border Radius",
+                          "type": "radius",
+                          "value": 0
+                        },
+                        "borderColor": {
+                          "label": "Border Color",
+                          "type": "color",
+                          "value": "transparent"
+                        },
+                        "borderWidth": {
+                          "label": "Border Width",
+                          "type": "borderWidth",
+                          "value": 0
+                        },
+                        "customCSS": {
+                          "label": "Custom CSS",
+                          "type": "customCSS",
+                          "value": "box-shadow: 0 4px 12px rgba(0,0,0,.2);"
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "styles": {
+          "label": "Container Style",
+          "child": {
+            "width": {
+              "label": "Container Width",
+              "type": "width",
+              "value": 386
+            },
+            "height": {
+              "label": "Container Height",
+              "type": "height",
+              "value": 160
+            },
+            "justify": {
+              "label": "Layout",
+              "type": "justify",
+              "value": "left"
+            },
+            "bgColor": {
+              "label": "Background Color",
+              "type": "bgColor",
+              "value": "transparent"
+            }
+          }
+        },
+        "config": {
+          "label": "Alignment & Grid Settings",
+          "child": {
+            "editMode": {
+              "label": "Edit Mode",
+              "type": "editMode",
+              "value": "free-form"
+            },
+            "showGuides": {
+              "label": "Show Alignment Guides",
+              "type": "showGuides",
+              "value": true
+            },
+            "enableHorizontalScroll": {
+              "label": "Enable Horizontal Scroll",
+              "type": "enableHorizontalScroll",
+              "value": false
+            },
+            "gridSize": {
+              "label": "Grid Size (px)",
+              "type": "gridSize",
+              "value": 10
+            }
+          }
+        }
+      }
+    }
+  ],
+  "message": "Generated Unico DND JSON from Unico design IR."
+}

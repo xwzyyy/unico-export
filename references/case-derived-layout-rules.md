@@ -4,7 +4,7 @@ This reference captures reusable patterns without copying editor residue from th
 
 ## Sample Overview
 
-The five cases contain 37 free-form sections. Median section height is 517px, the interquartile range is approximately 317-844px, and median child count is 9. The table covers 352 children inside free-form sections. The cases also contain two top-level navbars and two legacy top-level ordinary components; preserve those legacy structures for compatibility, but do not use them as new IR patterns.
+The five cases contain 37 free-form sections. Median section height is 517px, the interquartile range is approximately 317-844px, and median child count is 9. The table covers 352 children inside free-form sections. The cases also contain two top-level navbars and two legacy top-level ordinary components. Preserve complete legacy objects during extension, but do not reproduce that placement in new IR.
 
 | Component | Count | Reusable conclusion |
 | --- | ---: | --- |
@@ -17,6 +17,8 @@ The five cases contain 37 free-form sections. Median section height is 517px, th
 
 Text, image, rectangle, and button components represent more than 96% of free-form children. Start with these primitives before considering specialized components.
 
+Apply the current component policy in `component-contract.md`: use these four primitives frequently, use rich text moderately, limit each conditional business component to one instance, reject `img-text` and `circle`, and require an `explicitComponents` audit declaration for all explicit-only types.
+
 ## Cross-case Pattern Comparison
 
 | Case | Free-form sections | Main composition | Patterns to learn | Case-specific details not to generalize |
@@ -24,7 +26,7 @@ Text, image, rectangle, and button components represent more than 96% of free-fo
 | MKE Mahjong community | 6 | 67 text, 18 rectangles, 11 images, 5 buttons | Dual hero CTAs, event cards, numbered FAQ, two-column people cards, partner grid, final CTA | High density should not become the default for every homepage |
 | OC Filipino Mahjong community | 8 | 41 text, 14 rectangles, 11 images, 8 buttons | Cultural hero texture, compact tag strip, brand story, event preview, three-step flow, social CTA | Ignore off-canvas rectangle residue |
 | Bay Area makeup and photography studio | 7 | 22 text, 15 rectangles, 14 images, 11 rich-text, 1 button | Image-led layout, portrait work, two-column gallery, text overlays, minimal CTA use | Rich text reflects legacy content organization, not a recommended default |
-| Universal service booking | 5 plus 2 legacy top-level components | 17 text, 7 images, 1 button | Process explanation, FAQ image rows, compact conversion section, replaceable structure | Preserve legacy top-level `rich-text` and `social-share`; do not recreate them in new IR |
+| Universal service booking | 5 plus 2 legacy top-level components | 17 text, 7 images, 1 button | Process explanation, FAQ image rows, compact conversion section, replaceable structure | Preserve complete legacy objects, but do not recreate their placement in new IR |
 | Snowboard coach | 11 | 65 text, 12 rectangles, 9 images, 2 buttons, 1 video | Full-screen portrait hero, information-card grid, statistics strip, skills, gallery, video, quote, timeline, contact section | Remove editor residue and placeholder content such as emoji, `Button`, and `Text Content` |
 
 Section count and density depend on the business. Community pages emphasize events, FAQ, and people. Portfolios emphasize image ratios and galleries. Booking pages emphasize process and replaceable structure. Personal-service pages may use a longer narrative sequence. Never copy one case mechanically into another domain.

@@ -54,6 +54,43 @@ const TOP_LEVEL_BLOCK_TYPES = new Set([
   'inquiry-box',
 ]);
 
+const FREQUENT_COMPONENT_TYPES = new Set([
+  'text',
+  'img',
+  'button',
+  'rectangle',
+]);
+
+const MODERATE_COMPONENT_TYPES = new Set([
+  'rich-text',
+]);
+
+const CONDITIONAL_SINGLE_USE_TYPES = new Set([
+  'banner',
+  'blog-list',
+  'service-list',
+  'event-list',
+  'event-calendar',
+  'store-information',
+  'inquiry-box',
+  'goods-list',
+  'map',
+]);
+
+const DEPRECATED_COMPONENT_TYPES = new Set([
+  'img-text',
+  'circle',
+]);
+
+const EXPLICIT_ONLY_COMPONENT_TYPES = new Set(
+  [...SUPPORTED_CHILD_TYPES].filter((type) => (
+    !FREQUENT_COMPONENT_TYPES.has(type)
+    && !MODERATE_COMPONENT_TYPES.has(type)
+    && !CONDITIONAL_SINGLE_USE_TYPES.has(type)
+    && !DEPRECATED_COMPONENT_TYPES.has(type)
+  )),
+);
+
 const DEFAULT_DIMENSIONS = {
   text: [320, 40],
   img: [120, 80],
@@ -71,6 +108,219 @@ const DEFAULT_DIMENSIONS = {
   'social-share': [320, 100],
   'person-profile': [320, 400],
   'inquiry-box': [320, 420],
+};
+
+const BASE_POSITIONED_STYLE_FIELDS = ['width', 'height', 'zIndex', 'top', 'left'];
+const TEXT_STYLE_FIELDS = [
+  'width', 'paddingInline', 'paddingBlock', 'fontSize', 'fontFamily', 'color',
+  'fontWeight', 'letterSpacing', 'lineHeight', 'fontStyle', 'textDecoration',
+  'justify', 'zIndex', 'top', 'left',
+];
+const TYPOGRAPHIC_STYLE_FIELDS = [
+  'fontSize', 'color', 'fontWeight', 'fontFamily', 'lineHeight', 'justify',
+];
+const BORDER_STYLE_FIELDS = ['bgColor', 'radius', 'borderColor', 'borderWidth'];
+const FIELD_COMPONENT_CONTRACTS = {
+  text: {
+    structure: ['text', 'link'],
+    styles: TEXT_STYLE_FIELDS,
+  },
+  img: {
+    structure: ['upload', 'link'],
+    styles: [...BASE_POSITIONED_STYLE_FIELDS, 'radius', 'customCSS'],
+  },
+  button: {
+    structure: ['text', 'link'],
+    styles: [
+      ...BASE_POSITIONED_STYLE_FIELDS,
+      ...TYPOGRAPHIC_STYLE_FIELDS,
+      ...BORDER_STYLE_FIELDS,
+      'paddingInline',
+      'paddingBlock',
+    ],
+  },
+  rectangle: {
+    structure: ['link'],
+    styles: [...BASE_POSITIONED_STYLE_FIELDS, ...BORDER_STYLE_FIELDS],
+  },
+  circle: {
+    structure: ['link'],
+    styles: [...BASE_POSITIONED_STYLE_FIELDS, ...BORDER_STYLE_FIELDS],
+  },
+  'rich-text': {
+    structure: ['content'],
+    styles: [
+      ...BASE_POSITIONED_STYLE_FIELDS,
+      ...TYPOGRAPHIC_STYLE_FIELDS,
+      'radius',
+      'paddingInline',
+      'paddingBlock',
+    ],
+  },
+  'img-text': {
+    structure: ['img_text_list'],
+    styles: [
+      ...BASE_POSITIONED_STYLE_FIELDS,
+      'paddingInline',
+      'paddingBlock',
+      'radius',
+      'fontSize',
+      'fontFamily',
+      'color',
+      'backgroundColor',
+      'fontWeight',
+    ],
+  },
+  'video-player': {
+    structure: ['videoUrl'],
+    styles: [...BASE_POSITIONED_STYLE_FIELDS, 'bgColor'],
+  },
+  countdown: {
+    structure: ['title', 'targetDate'],
+    styles: [...BASE_POSITIONED_STYLE_FIELDS, 'bgColor', 'color'],
+  },
+  tabs: {
+    structure: [
+      'tabCount',
+      'tab1Title', 'tab1Content',
+      'tab2Title', 'tab2Content',
+      'tab3Title', 'tab3Content',
+      'tab4Title', 'tab4Content',
+      'tab5Title', 'tab5Content',
+    ],
+    styles: [...BASE_POSITIONED_STYLE_FIELDS, 'bgColor', 'color'],
+  },
+  accordion: {
+    structure: ['items'],
+    styles: [...BASE_POSITIONED_STYLE_FIELDS, 'bgColor', 'borderColor', 'activeColor'],
+  },
+  map: {
+    structure: ['address', 'embedUrl', 'linkUrl'],
+    styles: [...BASE_POSITIONED_STYLE_FIELDS, 'bgColor'],
+  },
+  rating: {
+    structure: ['rating', 'reviewCount'],
+    styles: [...BASE_POSITIONED_STYLE_FIELDS, 'color'],
+  },
+  'social-share': {
+    structure: [
+      'title',
+      'showFacebook', 'facebookUrl',
+      'showTwitter', 'twitterUrl',
+      'showLinkedin', 'linkedinUrl',
+      'showWhatsapp', 'whatsappUrl',
+      'showEmail', 'emailUrl',
+    ],
+    styles: [...BASE_POSITIONED_STYLE_FIELDS, 'bgColor', 'buttonStyle'],
+  },
+  'person-profile': {
+    structure: ['avatar', 'name', 'title', 'bio', 'email', 'phone', 'linkedin', 'twitter', 'website'],
+    styles: [...BASE_POSITIONED_STYLE_FIELDS, 'bgColor', 'color', 'avatarSize'],
+  },
+  'inquiry-box': {
+    structure: [
+      'title', 'nameLabel', 'contactLabel', 'inquiryTitleLabel', 'contentLabel',
+      'pictureLabel', 'submitButtonText', 'successMessage',
+    ],
+    styles: [
+      ...BASE_POSITIONED_STYLE_FIELDS,
+      'bgColor', 'primaryColor', 'buttonColor', 'buttonTextColor',
+      'inputBorderColor', 'labelColor', 'titleColor',
+    ],
+  },
+};
+
+const FIXED_COMPONENT_NAMES = {
+  'goods-list': 'fix-goods-list',
+  coupon: 'fix-coupon',
+  navigation: 'fix-menus',
+  'brand-navbar': 'fix-brand-navbar',
+  search: 'fix-search',
+  banner: 'fix-banner',
+  'store-information': 'store-information',
+  'discount-promotion': 'discount-promotion',
+  'service-list': 'service-list',
+  'event-list': 'event-list',
+  'event-calendar': 'event-calendar',
+  'blog-list': 'blog-list',
+};
+
+const POSITION_PATHS = ['top', 'mode', 'isSeat', 'zIndex'];
+const SPACING_PATHS = ['marginLR', 'marginTop', 'marginBottom', 'borderTopLR', 'borderBottomLR'];
+const FIXED_COMPONENT_PROP_PATHS = {
+  'goods-list': [
+    'data.gap', 'data.num', 'data.list', 'data.mode', 'data.type', 'data.source',
+    'data.isShadow', 'data.attribute', 'data.isVoucher', 'data.allProducts',
+    ...POSITION_PATHS.map((field) => `position.${field}`),
+    'styleColor.color', 'styleColor.backgroundColor',
+    ...SPACING_PATHS.map((field) => `styleSpacing.${field}`),
+  ],
+  'discount-promotion': [
+    'data.gap', 'data.num', 'data.list', 'data.mode', 'data.type', 'data.source',
+    'data.isShadow', 'data.attribute', 'data.isVoucher', 'data.allProducts',
+    ...POSITION_PATHS.map((field) => `position.${field}`),
+    'styleColor.color', 'styleColor.backgroundColor',
+    ...SPACING_PATHS.map((field) => `styleSpacing.${field}`),
+  ],
+  coupon: [
+    'data.title', 'data.subtitle', 'data.logo', 'data.couponName', 'data.merchantName',
+    'data.themeColor', 'data.titleColor', 'data.subtitleColor', 'data.backgroundImage',
+    'data.titleFontFamily', 'data.titleFontSize', 'data.titleFontWeight',
+    'data.subtitleFontFamily', 'data.subtitleFontSize', 'data.subtitleFontWeight',
+    'data.couponNameFontFamily', 'data.couponNameFontSize', 'data.couponNameFontWeight',
+    'data.merchantNameFontFamily', 'data.merchantNameFontSize', 'data.merchantNameFontWeight',
+  ],
+  search: [
+    'mode', 'placeholder', 'backgroundColor',
+    ...POSITION_PATHS.map((field) => `position.${field}`),
+    'styleColor.color', 'styleColor.opacity', 'styleColor.backgroundColor',
+    ...SPACING_PATHS.map((field) => `styleSpacing.${field}`),
+    'styleSpacing.padding',
+  ],
+  navigation: [
+    'style.shape', 'style.pageNum', 'style.rowNum', 'style.iconSize',
+    'styleColor.color', 'styleColor.backgroundColor', 'styleColor.opacity',
+    'styleColor.fontWeight', 'styleColor.fontStyle', 'styleColor.textDecoration',
+    ...SPACING_PATHS.map((field) => `styleSpacing.${field}`),
+    ...POSITION_PATHS.map((field) => `position.${field}`),
+    'list',
+  ],
+  'brand-navbar': [
+    'brand.logo', 'brand.name', 'brand.showLogo',
+    'layout.mode', 'layout.itemGap', 'layout.paddingX', 'layout.height',
+    'styleColor.backgroundColor', 'styleColor.textColor',
+    'styleColor.menuBackgroundColor', 'styleColor.menuTextColor',
+    'typography.brandFontSize', 'typography.navFontSize', 'typography.fontWeight',
+    'iconStyle.brandIconSize', 'iconStyle.itemIconSize', 'iconStyle.menuIconSize',
+    'items',
+  ],
+  banner: [
+    'mode', 'height',
+    'styleColor.color', 'styleColor.backgroundColor', 'styleColor.opacity',
+    ...SPACING_PATHS.map((field) => `styleSpacing.${field}`),
+    'indicatorDots', 'autoplay', 'list',
+  ],
+  'store-information': [
+    'data.backgroundImage', 'data.logo', 'data.storeName', 'data.slogan',
+    'data.phone', 'data.email', 'data.address', 'data.businessHours',
+  ],
+  'event-list': ['data.events', 'data.styleMode'],
+  'event-calendar': [
+    'data.events', 'data.viewMode', 'data.styleMode', 'data.themePreset',
+    'data.primaryColor', 'data.secondaryColor', 'data.accentColor',
+    'data.backgroundColor', 'data.surfaceColor', 'data.textColor', 'data.mutedTextColor',
+  ],
+  'service-list': [
+    'data.storeName', 'data.totalSales', 'data.logo', 'data.themeColor',
+    'data.categories', 'data.services',
+  ],
+  'blog-list': [
+    'data.blogContents',
+    ...SPACING_PATHS.map((field) => `styleSpacing.${field}`),
+    'styleColor.titleColor', 'styleColor.titleFontSize', 'styleColor.titleFontWeight',
+    'styleColor.subtitleColor', 'styleColor.subtitleFontSize', 'styleColor.subtitleFontWeight',
+    'styleColor.backgroundColor',
+  ],
 };
 
 main();
@@ -369,9 +619,9 @@ function fixedComponent(type, child) {
     title: string(child.title || 'FREE COUPON'), subtitle: string(child.subtitle || 'Click to claim'), logo: string(child.logo || ''), couponName: string(child.couponName || 'Special Discount'), merchantName: string(child.merchantName || 'Your Store Name'), themeColor: color(child.themeColor || '#90ee90'), titleColor: color(child.titleColor || '#333333'), subtitleColor: color(child.subtitleColor || '#666666'), backgroundImage: string(child.backgroundImage || ''), titleFontFamily: string(child.titleFontFamily || 'inherit'), titleFontSize: number(child.titleFontSize, 24), titleFontWeight: child.titleFontWeight ?? 'bold', subtitleFontFamily: string(child.subtitleFontFamily || 'inherit'), subtitleFontSize: number(child.subtitleFontSize, 14), subtitleFontWeight: child.subtitleFontWeight ?? 'normal', couponNameFontFamily: string(child.couponNameFontFamily || 'inherit'), couponNameFontSize: number(child.couponNameFontSize, 18), couponNameFontWeight: child.couponNameFontWeight ?? 'normal', merchantNameFontFamily: string(child.merchantNameFontFamily || 'inherit'), merchantNameFontSize: number(child.merchantNameFontSize, 16), merchantNameFontWeight: child.merchantNameFontWeight ?? 'normal',
   } } };
   if (type === 'search') return { name: 'fix-search', props: { mode: string(child.mode || 'mode-1'), placeholder: string(child.placeholder || 'Enter keywords to search'), backgroundColor: color(child.backgroundColor || '#f6f7fa'), position: { ...position, top: number(child.top ?? child.y, 44), zIndex: number(child.zIndex, 1) }, styleColor: { color: color(child.color || '#000000'), opacity: number(child.opacity, 1), backgroundColor: color(child.bgColor || '#ffffff') }, styleSpacing: { ...spacing, padding: number(child.padding, 24), borderTopLR: number(child.radius, 24), borderBottomLR: number(child.radius, 24) } } };
-  if (type === 'navigation') return { name: 'fix-menus', props: { style: { shape: string(child.shape || 'round'), pageNum: number(child.pageNum, 2), rowNum: number(child.rowNum, 4), iconSize: number(child.iconSize, 50) }, styleColor: { color: color(child.color || '#000000'), backgroundColor: color(child.bgColor || '#f6f7fa'), opacity: number(child.opacity, 1), fontWeight: child.fontWeight ?? 'normal', fontStyle: child.fontStyle ?? 'normal', textDecoration: child.textDecoration ?? 'none' }, styleSpacing: spacing, position: { ...position, zIndex: number(child.zIndex, 1) }, list: (Array.isArray(child.items) ? child.items : []).map((item) => ({ text: string(item.text || item.label || 'Button'), useText: item.useText !== false, mode: string(item.mode || 'mode-1'), link: item.link && typeof item.link === 'object' ? item.link : { page: '', appid: '', type: '', name: '' }, icon: string(item.icon || ''), color: color(item.color || '#000000'), backgroundColor: color(item.backgroundColor || '#ffffff') })) } };
-  if (type === 'brand-navbar') return { name: 'fix-brand-navbar', props: { brand: { logo: string(child.logo || child.brand?.logo || ''), name: string(child.brandName || child.brand?.name || 'Merchant Name'), showLogo: child.showLogo ?? child.brand?.showLogo ?? true }, layout: { mode: string(child.layout?.mode || child.mode || 'inline'), itemGap: number(child.layout?.itemGap ?? child.itemGap, 16), paddingX: number(child.layout?.paddingX ?? child.paddingX, 16), height: number(child.layout?.height ?? child.height, 64) }, styleColor: { backgroundColor: color(child.styleColor?.backgroundColor || child.bgColor || '#ffffff'), textColor: color(child.styleColor?.textColor || child.color || '#111827'), menuBackgroundColor: color(child.styleColor?.menuBackgroundColor || '#111827'), menuTextColor: color(child.styleColor?.menuTextColor || '#ffffff') }, typography: { brandFontSize: number(child.typography?.brandFontSize ?? child.brandFontSize, 18), navFontSize: number(child.typography?.navFontSize ?? child.navFontSize, 14), fontWeight: child.typography?.fontWeight ?? child.fontWeight ?? '600' }, iconStyle: { brandIconSize: number(child.iconStyle?.brandIconSize, 40), itemIconSize: number(child.iconStyle?.itemIconSize, 18), menuIconSize: number(child.iconStyle?.menuIconSize, 20) }, items: (Array.isArray(child.items) ? child.items : []).map((item, itemIndex) => ({ id: safeId(item.id || `brand-navbar-item-${itemIndex + 1}`, `brand-navbar-item-${itemIndex + 1}`), label: string(item.label || item.text || `Item ${itemIndex + 1}`), renderMode: string(item.renderMode || 'text'), icon: string(item.icon || ''), target: item.target && typeof item.target === 'object' ? item.target : { kind: 'section', sectionId: string(item.sectionId || '') } })) } };
-  if (type === 'banner') return { name: 'fix-banner', props: { mode: string(child.mode || 'card'), height: number(child.height, 500), styleColor: { color: color(child.color || '#000000'), backgroundColor: color(child.bgColor || '#f6f7fa'), opacity: number(child.opacity, 1) }, styleSpacing: spacing, indicatorDots: child.indicatorDots !== false, autoplay: child.autoplay !== false, list: (Array.isArray(child.items) ? child.items : []).map((item) => ({ pic: string(item.pic || item.src || item.url || ''), link: item.link && typeof item.link === 'object' ? item.link : { name: '', type: '', appid: '', page: '' } })) } };
+  if (type === 'navigation') return { name: 'fix-menus', props: { style: { shape: string(child.shape || 'round'), pageNum: number(child.pageNum, 2), rowNum: number(child.rowNum, 4), iconSize: number(child.iconSize, 50) }, styleColor: { color: color(child.color || '#000000'), backgroundColor: color(child.bgColor || '#f6f7fa'), opacity: number(child.opacity, 1), fontWeight: child.fontWeight ?? 'normal', fontStyle: child.fontStyle ?? 'normal', textDecoration: child.textDecoration ?? 'none' }, styleSpacing: spacing, position: { ...position, zIndex: number(child.zIndex, 1) }, list: (Array.isArray(child.items) ? child.items : []).map((item) => ({ text: string(item.text || item.label || 'Button'), useText: item.useText !== false, mode: string(item.mode || 'mode-1'), link: { page: '', appid: '', type: '', name: '', ...(item.link && typeof item.link === 'object' ? item.link : {}) }, icon: string(item.icon || ''), color: color(item.color || '#000000'), backgroundColor: color(item.backgroundColor || '#ffffff') })) } };
+  if (type === 'brand-navbar') return { name: 'fix-brand-navbar', props: { brand: { logo: string(child.logo || child.brand?.logo || ''), name: string(child.brandName || child.brand?.name || 'Merchant Name'), showLogo: child.showLogo ?? child.brand?.showLogo ?? true }, layout: { mode: string(child.layout?.mode || child.mode || 'inline'), itemGap: number(child.layout?.itemGap ?? child.itemGap, 16), paddingX: number(child.layout?.paddingX ?? child.paddingX, 16), height: number(child.layout?.height ?? child.height, 64) }, styleColor: { backgroundColor: color(child.styleColor?.backgroundColor || child.bgColor || '#ffffff'), textColor: color(child.styleColor?.textColor || child.color || '#111827'), menuBackgroundColor: color(child.styleColor?.menuBackgroundColor || '#111827'), menuTextColor: color(child.styleColor?.menuTextColor || '#ffffff') }, typography: { brandFontSize: number(child.typography?.brandFontSize ?? child.brandFontSize, 18), navFontSize: number(child.typography?.navFontSize ?? child.navFontSize, 14), fontWeight: child.typography?.fontWeight ?? child.fontWeight ?? '600' }, iconStyle: { brandIconSize: number(child.iconStyle?.brandIconSize, 40), itemIconSize: number(child.iconStyle?.itemIconSize, 18), menuIconSize: number(child.iconStyle?.menuIconSize, 20) }, items: (Array.isArray(child.items) ? child.items : []).map((item, itemIndex) => ({ id: safeId(item.id || `brand-navbar-item-${itemIndex + 1}`, `brand-navbar-item-${itemIndex + 1}`), label: string(item.label || item.text || `Item ${itemIndex + 1}`), renderMode: string(item.renderMode || 'text'), icon: string(item.icon || ''), target: { kind: 'section', sectionId: string(item.sectionId || ''), ...(item.target && typeof item.target === 'object' ? item.target : {}) } })) } };
+  if (type === 'banner') return { name: 'fix-banner', props: { mode: string(child.mode || 'card'), height: number(child.height, 500), styleColor: { color: color(child.color || '#000000'), backgroundColor: color(child.bgColor || '#f6f7fa'), opacity: number(child.opacity, 1) }, styleSpacing: spacing, indicatorDots: child.indicatorDots !== false, autoplay: child.autoplay !== false, list: (Array.isArray(child.items) ? child.items : []).map((item) => ({ pic: string(item.pic || item.src || item.url || ''), link: { name: '', type: '', appid: '', page: '', ...(item.link && typeof item.link === 'object' ? item.link : {}) } })) } };
   if (type === 'store-information') return { name: 'store-information', props: { data: { backgroundImage: string(child.backgroundImage || ''), logo: string(child.logo || ''), storeName: string(child.storeName || ''), slogan: string(child.slogan || ''), phone: string(child.phone || ''), email: string(child.email || ''), address: string(child.address || ''), businessHours: string(child.businessHours || '') } } };
   if (type === 'event-list') return { name: 'event-list', props: { data: { events: [], styleMode: number(child.styleMode, 0) } } };
   if (type === 'event-calendar') return { name: 'event-calendar', props: { data: { events: [], viewMode: string(child.viewMode || 'month'), styleMode: number(child.styleMode, 0), themePreset: string(child.themePreset || 'amber-velvet'), primaryColor: color(child.primaryColor || '#b45309'), secondaryColor: color(child.secondaryColor || '#7c2d12'), accentColor: color(child.accentColor || '#fbbf24'), backgroundColor: color(child.backgroundColor || '#110d09'), surfaceColor: color(child.surfaceColor || '#261813'), textColor: color(child.textColor || '#fff7ed'), mutedTextColor: color(child.mutedTextColor || '#fcd9a6') } } };
@@ -556,7 +806,15 @@ function styleChild(type, child, index) {
   if (type === 'img') {
     const fit = imageFit(child.fit ?? child.fitMode);
     const objectPosition = string(child.objectPosition || '50% 50%');
-    styles.customCSS = control('Custom CSS', 'customCSS', `object-fit: ${fit}; object-position: ${objectPosition};`);
+    const customCSS = string(child.customCSS).trim();
+    styles.customCSS = control('Custom CSS', 'customCSS', [
+      `object-fit: ${fit}; object-position: ${objectPosition};`,
+      customCSS,
+    ].filter(Boolean).join(' '));
+  }
+
+  if (type !== 'img' && string(child.customCSS).trim()) {
+    styles.customCSS = control('Custom CSS', 'customCSS', string(child.customCSS).trim());
   }
 
   if (type === 'button') {
@@ -637,7 +895,7 @@ function styleChild(type, child, index) {
 }
 
 function textStyleChild(child, index, width) {
-  return {
+  const styles = {
     width: control('Width', 'width', width),
     paddingInline: control('Horizontal Padding', 'paddingInline', number(child.paddingInline ?? child.padding, 20)),
     paddingBlock: control('Vertical Padding', 'paddingBlock', number(child.paddingBlock ?? child.padding, 10)),
@@ -654,6 +912,10 @@ function textStyleChild(child, index, width) {
     top: control('Top Distance', 'top', number(child.y ?? child.top, 0)),
     left: control('Left Distance', 'left', number(child.x ?? child.left, 0)),
   };
+  if (string(child.customCSS).trim()) {
+    styles.customCSS = control('Custom CSS', 'customCSS', string(child.customCSS).trim());
+  }
+  return styles;
 }
 
 function validateIr(input, { hasCanonical = false } = {}) {
@@ -665,6 +927,7 @@ function validateIr(input, { hasCanonical = false } = {}) {
     return { passed: false, errors: ['IR root must be a JSON object'], warnings, metrics };
   }
   validateEnglishOnly(input, 'IR', errors);
+  validateComponentUsagePolicy(input, metrics, errors);
 
   const mode = input.mode ?? 'extend';
   if (mode !== 'extend' && mode !== 'replace') {
@@ -769,6 +1032,7 @@ function validateIr(input, { hasCanonical = false } = {}) {
     errors.push('A new or replacement page must contain at least one non-navbar content section');
   }
   applyCompositionGuidance(metrics, mode, hasCanonical, warnings);
+  validateDesignProfile(input.designProfile, mode, hasCanonical, errors, warnings);
   return { passed: errors.length === 0, errors, warnings, metrics };
 }
 
@@ -783,6 +1047,44 @@ function validateEnglishOnly(value, path, errors) {
   }
   if (!value || typeof value !== 'object') return;
   for (const [key, item] of Object.entries(value)) validateEnglishOnly(item, `${path}.${key}`, errors);
+}
+
+function validateComponentUsagePolicy(input, metrics, errors) {
+  const declarations = input.explicitComponents ?? [];
+  if (!Array.isArray(declarations)) {
+    errors.push('explicitComponents must be an array of component type names');
+    return;
+  }
+  const explicitTypes = new Set();
+  for (const [index, declaration] of declarations.entries()) {
+    try {
+      const type = normalizeType(declaration);
+      if (DEPRECATED_COMPONENT_TYPES.has(type)) {
+        errors.push(`explicitComponents[${index}] declares deprecated component ${type}`);
+        continue;
+      }
+      explicitTypes.add(type);
+    } catch (error) {
+      errors.push(`explicitComponents[${index}]: ${error instanceof Error ? error.message : String(error)}`);
+    }
+  }
+
+  for (const type of DEPRECATED_COMPONENT_TYPES) {
+    if ((metrics.componentCounts[type] || 0) > 0) {
+      errors.push(`${type} is deprecated and must not be generated`);
+    }
+  }
+  for (const type of CONDITIONAL_SINGLE_USE_TYPES) {
+    const count = metrics.componentCounts[type] || 0;
+    if (count > 1) {
+      errors.push(`${type} may be used at most once when the page context warrants it; found ${count}`);
+    }
+  }
+  for (const type of EXPLICIT_ONLY_COMPONENT_TYPES) {
+    if ((metrics.componentCounts[type] || 0) > 0 && !explicitTypes.has(type)) {
+      errors.push(`${type} may be generated only when explicitly requested; add it to explicitComponents as an audit declaration`);
+    }
+  }
 }
 
 function validateVisualChild(child, type, childPath, context) {
@@ -1095,6 +1397,36 @@ function applyCompositionGuidance(metrics, mode, hasCanonical, warnings) {
   if (metrics.richTextCount > 2 && metrics.richTextRatio > 0.25) {
     warnings.push(`Rich text represents ${(metrics.richTextRatio * 100).toFixed(0)}% of text components; prefer separate text components unless mixed formatting is required`);
   }
+  if (isCompletePage && metrics.componentCount >= 8 && metrics.corePrimitiveRatio < 0.6) {
+    warnings.push(`Core primitives represent only ${(metrics.corePrimitiveRatio * 100).toFixed(0)}% of components; text, img, button, and rectangle should carry most of the page`);
+  }
+}
+
+function validateDesignProfile(profile, mode, hasCanonical, errors, warnings) {
+  const isCompletePage = mode === 'replace' || !hasCanonical;
+  if (profile === undefined) {
+    if (isCompletePage) {
+      warnings.push('No designProfile was recorded; run the UI/UX design-system and controlled-variation stage before final delivery');
+    }
+    return;
+  }
+  if (!profile || typeof profile !== 'object' || Array.isArray(profile)) {
+    errors.push('designProfile must be an object when provided');
+    return;
+  }
+  validateRequiredPaths(profile, [
+    'source',
+    'query',
+    'direction',
+    'variationSeed',
+    'axes.layout',
+    'axes.palette',
+    'axes.typography',
+    'axes.imageRhythm',
+  ], 'designProfile', errors);
+  if (hasPath(profile, 'source') && !/ui-ux-pro-max/i.test(string(profile.source))) {
+    warnings.push('designProfile.source does not identify UI/UX Pro Max; confirm an equivalent design-intelligence review was completed');
+  }
 }
 
 function validateSourceAspect(child, width, height, fit, childPath, errors, warnings) {
@@ -1125,41 +1457,267 @@ function validateSourceAspect(child, width, height, fit, childPath, errors, warn
 function validateDesignJson(designJson) {
   const errors = [];
   const seenIds = new Map();
+  const componentCounts = {};
   if (!Array.isArray(designJson) || designJson.length === 0) {
     return { passed: false, errors: ['designJson must be a non-empty array'] };
   }
   for (const [componentIndex, component] of designJson.entries()) {
     const path = `designJson[${componentIndex}]`;
-    if (!component || typeof component !== 'object') {
-      errors.push(`${path} must be an object`);
-      continue;
+    validateOutputComponent(component, path, {
+      topLevel: true,
+      seenIds,
+      errors,
+      componentCounts,
+    });
+  }
+  for (const type of CONDITIONAL_SINGLE_USE_TYPES) {
+    const count = componentCounts[type] || 0;
+    if (count > 1) {
+      errors.push(`designJson contains ${count} ${type} components; this component may appear at most once`);
     }
-    registerId(component.id, `top-${componentIndex + 1}`, path, seenIds, errors);
-    if (component.type === 'free-box') {
-      const children = component.field?.structure?.child?.component_list?.value;
-      if (!Array.isArray(children)) {
-        errors.push(`${path} component_list must be an array`);
-        continue;
-      }
-      for (const [childIndex, child] of children.entries()) {
-        const childPath = `${path}.component_list[${childIndex}]`;
-        try {
-          normalizeType(child?.type);
-        } catch (error) {
-          errors.push(`${childPath}: ${error instanceof Error ? error.message : String(error)}`);
-        }
-        registerId(child?.id, `${component.id || `top-${componentIndex + 1}`}-child-${childIndex + 1}`, childPath, seenIds, errors);
-      }
-      continue;
-    }
-    try {
-      normalizeType(component.type);
-    } catch (error) {
-      errors.push(`${path}: ${error instanceof Error ? error.message : String(error)}`);
-    }
-    if (!component.field && !component.component) errors.push(`${path} must contain field or component data`);
   }
   return { passed: errors.length === 0, errors };
+}
+
+function validateOutputComponent(component, path, context) {
+  const { topLevel, seenIds, errors, componentCounts } = context;
+  if (!component || typeof component !== 'object' || Array.isArray(component)) {
+    errors.push(`${path} must be an object`);
+    return;
+  }
+  validateRequiredPaths(component, ['id', 'label', 'type'], path, errors);
+  registerId(component.id, path.replace(/[^A-Za-z0-9]+/g, '-'), path, seenIds, errors);
+  if (component.type === 'free-box') {
+    if (!topLevel) errors.push(`${path} cannot nest a free-box component`);
+    validateFreeBoxOutput(component, path, context);
+    return;
+  }
+
+  let type;
+  try {
+    type = normalizeType(component.type);
+  } catch (error) {
+    errors.push(`${path}: ${error instanceof Error ? error.message : String(error)}`);
+    return;
+  }
+  if (component.type !== type) {
+    errors.push(`${path}.type must use canonical component type "${type}"`);
+  }
+  componentCounts[type] = (componentCounts[type] || 0) + 1;
+  if (DEPRECATED_COMPONENT_TYPES.has(type)) {
+    errors.push(`${path} uses deprecated component ${type}`);
+  }
+
+  if (FIXED_COMPONENT_TYPES.has(type)) {
+    if (!topLevel) errors.push(`${path} ${type} must be a top-level component beside free-box components`);
+    validateFixedOutput(component, type, path, errors);
+    return;
+  }
+  if (TOP_LEVEL_BLOCK_TYPES.has(type) && !topLevel) {
+    errors.push(`${path} ${type} must be a top-level component beside free-box components`);
+  }
+  validateFieldOutput(component, type, path, context);
+}
+
+function validateFreeBoxOutput(component, path, context) {
+  const { errors } = context;
+  const requiredPaths = [
+    'field.structure.label',
+    'field.structure.child.sectionName',
+    'field.structure.child.component_list',
+    'field.styles.label',
+    'field.styles.child.width',
+    'field.styles.child.height',
+    'field.styles.child.justify',
+    'field.styles.child.bgColor',
+    'field.config.label',
+    'field.config.child.editMode',
+    'field.config.child.showGuides',
+    'field.config.child.enableHorizontalScroll',
+    'field.config.child.gridSize',
+  ];
+  validateRequiredPaths(component, requiredPaths, path, errors);
+  const controls = [
+    'field.structure.child.sectionName',
+    'field.structure.child.component_list',
+    'field.styles.child.width',
+    'field.styles.child.height',
+    'field.styles.child.justify',
+    'field.styles.child.bgColor',
+    'field.config.child.editMode',
+    'field.config.child.showGuides',
+    'field.config.child.enableHorizontalScroll',
+    'field.config.child.gridSize',
+  ];
+  for (const controlPath of controls) {
+    validateControl(readPath(component, controlPath), `${path}.${controlPath}`, errors);
+  }
+  const children = readPath(component, 'field.structure.child.component_list.value');
+  if (!Array.isArray(children)) {
+    errors.push(`${path}.field.structure.child.component_list.value must be an array`);
+    return;
+  }
+  for (const [index, child] of children.entries()) {
+    validateOutputComponent(child, `${path}.field.structure.child.component_list.value[${index}]`, {
+      ...context,
+      topLevel: false,
+    });
+  }
+}
+
+function validateFieldOutput(component, type, path, context) {
+  const { errors } = context;
+  const contract = FIELD_COMPONENT_CONTRACTS[type];
+  if (!contract) {
+    errors.push(`${path} has no final output field contract for component type ${type}`);
+    return;
+  }
+  validateRequiredPaths(component, [
+    'field.structure.label',
+    'field.structure.child',
+    'field.styles.label',
+    'field.styles.child',
+  ], path, errors);
+  for (const field of contract.structure) {
+    const controlPath = `field.structure.child.${field}`;
+    validateRequiredPaths(component, [controlPath], path, errors);
+    validateControl(readPath(component, controlPath), `${path}.${controlPath}`, errors);
+  }
+  for (const field of contract.styles) {
+    const controlPath = `field.styles.child.${field}`;
+    validateRequiredPaths(component, [controlPath], path, errors);
+    validateControl(readPath(component, controlPath), `${path}.${controlPath}`, errors);
+  }
+
+  if (['text', 'img', 'button', 'rectangle', 'circle'].includes(type)) {
+    const linkPath = 'field.structure.child.link.value';
+    validateRequiredPaths(component, [
+      `${linkPath}.page`,
+      `${linkPath}.url`,
+      `${linkPath}.type`,
+      `${linkPath}.serviceId`,
+      `${linkPath}.productId`,
+    ], path, errors);
+  }
+  if (type === 'tabs') validateTabOutput(component, path, context);
+}
+
+function validateTabOutput(component, path, context) {
+  const { errors } = context;
+  for (let tabIndex = 1; tabIndex <= 5; tabIndex += 1) {
+    const valuePath = `field.structure.child.tab${tabIndex}Content.value`;
+    const requiredPaths = [
+      `${valuePath}.structure.label`,
+      `${valuePath}.structure.child.component_list`,
+      `${valuePath}.styles.label`,
+      `${valuePath}.styles.child.height`,
+      `${valuePath}.styles.child.justify`,
+      `${valuePath}.styles.child.bgColor`,
+    ];
+    validateRequiredPaths(component, requiredPaths, path, errors);
+    for (const suffix of [
+      'structure.child.component_list',
+      'styles.child.height',
+      'styles.child.justify',
+      'styles.child.bgColor',
+    ]) {
+      validateControl(readPath(component, `${valuePath}.${suffix}`), `${path}.${valuePath}.${suffix}`, errors);
+    }
+    const childrenPath = `${valuePath}.structure.child.component_list.value`;
+    const children = readPath(component, childrenPath);
+    if (!Array.isArray(children)) {
+      errors.push(`${path}.${childrenPath} must be an array`);
+      continue;
+    }
+    for (const [childIndex, child] of children.entries()) {
+      validateOutputComponent(child, `${path}.${childrenPath}[${childIndex}]`, {
+        ...context,
+        topLevel: false,
+      });
+    }
+  }
+}
+
+function validateFixedOutput(component, type, path, errors) {
+  const propPaths = FIXED_COMPONENT_PROP_PATHS[type];
+  validateRequiredPaths(component, ['component.name', 'component.props'], path, errors);
+  if (!propPaths) {
+    errors.push(`${path} has no final output property contract for component type ${type}`);
+    return;
+  }
+  if (component.component?.name !== FIXED_COMPONENT_NAMES[type]) {
+    errors.push(`${path}.component.name must be "${FIXED_COMPONENT_NAMES[type]}"`);
+  }
+  validateRequiredPaths(component.component?.props, propPaths, `${path}.component.props`, errors);
+
+  if (type === 'navigation') {
+    validateArrayItemPaths(component.component?.props?.list, [
+      'text', 'useText', 'mode', 'link', 'link.page', 'link.appid', 'link.type',
+      'link.name', 'icon', 'color', 'backgroundColor',
+    ], `${path}.component.props.list`, errors);
+  }
+  if (type === 'brand-navbar') {
+    validateArrayItemPaths(component.component?.props?.items, [
+      'id', 'label', 'renderMode', 'icon', 'target', 'target.kind',
+    ], `${path}.component.props.items`, errors);
+  }
+  if (type === 'banner') {
+    validateArrayItemPaths(component.component?.props?.list, [
+      'pic', 'link', 'link.name', 'link.type', 'link.appid', 'link.page',
+    ], `${path}.component.props.list`, errors);
+  }
+  if (type === 'service-list') {
+    validateArrayItemPaths(component.component?.props?.data?.categories, [
+      'label', 'value', 'icon',
+    ], `${path}.component.props.data.categories`, errors);
+  }
+}
+
+function validateArrayItemPaths(value, requiredPaths, path, errors) {
+  if (!Array.isArray(value)) {
+    errors.push(`${path} must be an array`);
+    return;
+  }
+  for (const [index, item] of value.entries()) {
+    validateRequiredPaths(item, requiredPaths, `${path}[${index}]`, errors);
+  }
+}
+
+function validateControl(value, path, errors) {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) {
+    errors.push(`${path} must be a control object`);
+    return;
+  }
+  validateRequiredPaths(value, ['label', 'type', 'value'], path, errors);
+  if (Object.hasOwn(value, 'type') && !string(value.type).trim()) {
+    errors.push(`${path}.type must not be empty`);
+  }
+}
+
+function validateRequiredPaths(value, requiredPaths, path, errors) {
+  for (const requiredPath of requiredPaths) {
+    if (!hasPath(value, requiredPath)) {
+      errors.push(`${path} missing required field "${requiredPath}"`);
+    }
+  }
+}
+
+function hasPath(value, path) {
+  let current = value;
+  for (const segment of path.split('.')) {
+    if (!current || typeof current !== 'object' || !Object.hasOwn(current, segment)) return false;
+    current = current[segment];
+  }
+  return current !== undefined;
+}
+
+function readPath(value, path) {
+  let current = value;
+  for (const segment of path.split('.')) {
+    if (!current || typeof current !== 'object' || !Object.hasOwn(current, segment)) return undefined;
+    current = current[segment];
+  }
+  return current;
 }
 
 function normalizeType(type) {

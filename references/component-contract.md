@@ -5,8 +5,9 @@ Read this file before writing `unico-design-ir.json`. Generated components are d
 ## Contents
 
 - Core types
+- Component usage policy
+- Deprecated types
 - Extended visual types
-  - img-text
   - video-player
   - countdown
   - tabs
@@ -37,8 +38,22 @@ The existing core types remain supported:
 - `text`: `text`, typography, padding, color, and link fields; compiled output always uses `label: "Text"`, `Text Content`, and `Text Style`, and omits the `height` style field
 - `img`: `src`, radius and link fields
 - `button`: `text`, colors, radius, padding and link fields
-- `rectangle` / `circle`: background, border and link fields
+- `rectangle`: background, border and link fields
 - `rich-text`: `html`/`content`/`text`, `paddingInline`, `paddingBlock`, and typography fields; height is estimated automatically when `h` is omitted
+
+## Component Usage Policy
+
+| Tier | Components | Rule |
+| --- | --- | --- |
+| Frequent foundation | `text`, `img`, `button`, `rectangle`, compiler-generated `free-box` | Use these as the dominant page-building system |
+| Moderate | `rich-text` | Use only for genuinely mixed formatting |
+| Conditional single-use | `banner`, `blog-list`, `service-list`, `event-list`, `event-calendar`, `store-information`, `inquiry-box`, `goods-list`, `map` | Use only when context warrants the behavior; each type may appear at most once |
+| Deprecated | `img-text`, `circle` | Never generate; compilation fails |
+| Explicit-only | `video-player`, `countdown`, `tabs`, `accordion`, `rating`, `social-share`, `person-profile`, `coupon`, `navigation`, `brand-navbar`, `search`, `discount-promotion` | Use only when the user explicitly requests the capability and declare the canonical type in `explicitComponents` |
+
+Do not add a component to `explicitComponents` merely to bypass validation. It is an audit record of a direct user request.
+
+All free-positioned visual types may optionally provide `customCSS` as a declaration-only string. Use it only for CSS effects that the runtime accepts and that cannot be represented by structured fields; never put selectors, HTML, scripts, or external rules in this field. `img` always receives compiler-generated `object-fit` and `object-position` declarations, which are prepended to the supplied value.
 
 ### Text component output invariants
 
@@ -109,22 +124,11 @@ Explicit `h` is never silently overridden. If a foreground component starts insi
 - Forbid every SVG source, including `.svg`/`.svgz` paths, query parameters that request SVG, `data:image/svg+xml`, and inline `<svg>`. Never generate SVG imagery.
 - Search online for every image, then verify `HTTP 200` and `Content-Type: image/*` before export. See `verified-image-sources.md` for verified fallback URLs and validation rules.
 
+## Deprecated Types
+
+`img-text` and `circle` remain recognizable only so the compiler can return a precise deprecation error. They are not valid generation targets, even when requested. Replace `img-text` with separate `img` and `text` components. Use a `rectangle` with its documented radius field when a rounded geometric surface is needed.
+
 ## Extended Visual Types
-
-### img-text
-
-```json
-{
-  "type": "img-text",
-  "items": [
-    { "name": "Studio", "imgUrl": "https://images.unsplash.com/photo-1560869683-94e483e13bb0?auto=format&fit=crop&w=1200&q=80", "href": "" }
-  ],
-  "fontSize": 16,
-  "color": "#111111",
-  "bgColor": "#ffffff",
-  "radius": 16
-}
-```
 
 ### video-player
 
@@ -275,6 +279,8 @@ Every top-level component must be the only non-navbar child of its IR section. T
 
 This applies to `goods-list`, `coupon`, `navigation`, `search`, `banner`, `store-information`, `discount-promotion`, `service-list`, `event-list`, `event-calendar`, `blog-list`, `map`, and `inquiry-box`. Input aliases are accepted as `product-list` → `goods-list`, `blog` → `blog-list`, `inquiry` → `inquiry-box`, and `storeinfo`/`store-info` → `store-information`.
 
+Placement does not override selection policy. Conditional single-use types still require contextual justification and are limited to one instance. Explicit-only types still require a matching `explicitComponents` declaration.
+
 Example compiled event block:
 
 ```json
@@ -355,7 +361,7 @@ Accepted fields: `titleColor`, `titleFontSize`, `titleFontWeight`, `subtitleColo
 - Keep `x + w <= 386` unless overflow is explicitly requested.
 - Keep every non-overflow child bottom (`y + h`) within its section height.
 - Same-column text and rich-text boxes must not overlap and should have at least 8px vertical separation.
-- Images, rectangles, and circles that overlap readable or interactive content must use a lower `zIndex`; do not overlay a separate text component on a button.
+- Images and rectangles that overlap readable or interactive content must use a lower `zIndex`; do not overlay a separate text component on a button.
 - Button horizontal and vertical padding default to `0`.
 - Text-bearing rectangles must omit `h` for automatic card sizing or provide enough explicit height to contain all higher-layer content plus bottom padding.
 - Newly generated image-bearing components may use only searched, verified HTTP(S) raster-image direct URLs; SVG and local/generated image sources are forbidden.
@@ -363,8 +369,22 @@ Accepted fields: `titleColor`, `titleFontSize`, `titleFontWeight`, `subtitleColo
 - `goods-list` and `discount-promotion` default to automatic/all-products data mode unless the user explicitly requests a selection mode.
 - Top-level/business components are never nested in `component_list`; the compiler removes their dedicated IR carrier and preserves their order beside `free-box` entries.
 - `brand-navbar` is a top-level component; the compiler removes it from section children and emits it before other page blocks.
-- Existing canonical components must never be recreated through compact IR during an edit. Use `mode: "extend"` and include only new sections.
+- Existing canonical components must never be recreated through compact IR during an edit. Use `mode: "extend"` and include only new sections. The final validator still audits preserved components for complete required fields.
 - Every top-level/business component occupies a dedicated one-child IR section and compiles directly to the top-level `designJson` array. Legacy canonical top-level components are preserved during `extend`.
 - Do not generate empty `video-player` or image components merely as placeholders. If no usable media URL exists, omit the media component and retain explanatory text only when the user needs it.
 - Do not invent URLs, ratings, contact details or dates presented as facts.
 - Unknown component types are compilation errors and must be removed or replaced deliberately.
+
+## Final Output Completeness
+
+After IR compilation and canonical extension, the compiler validates every component against an independent output contract:
+
+- root `id`, `label`, and canonical `type`;
+- complete `free-box` structure, styles, config, and control wrappers;
+- all required structure and style controls for every field component;
+- complete link-value fields for text, image, button, and rectangle components;
+- fixed component name and required business-property paths;
+- every tab container and nested child recursively;
+- unique IDs, business-component top-level placement, deprecated types, and conditional single-use limits.
+
+Every control object must include `label`, `type`, and `value`. A missing field fails compilation with its exact path. The canonical page is not overwritten after any final-output validation failure.

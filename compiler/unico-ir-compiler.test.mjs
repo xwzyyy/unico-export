@@ -27,8 +27,9 @@ function cleanup(directory) {
 test('compiles valid IR, estimates text height, and removes empty navbar carriers', () => {
   const run = runCompiler({
     mode: 'replace',
-    message: 'case-derived-layout-v3 test',
+    message: 'controlled-variation-v4 test',
     canvasWidth: 386,
+    explicitComponents: ['brand-navbar'],
     sections: [
       {
         id: 'navbar-carrier',
@@ -204,16 +205,26 @@ test('stops on malformed canonical pages and preserves the original file', () =>
   }
 });
 
-test('extend preserves legacy top-level components and appends only new free boxes', () => {
-  const legacyDesign = [
-    { id: 'legacy-rich', label: 'Legacy Rich Text', type: 'rich-text', field: { structure: { child: {} }, styles: { child: {} } } },
-    {
-      id: 'legacy-section',
-      label: 'Legacy Section',
-      type: 'free-box',
-      field: { structure: { child: { component_list: { value: [] } } }, styles: { child: {} } },
-    },
-  ];
+test('extend preserves complete canonical components and appends only new free boxes', () => {
+  const seed = runCompiler({
+    mode: 'replace',
+    sections: [
+      { id: 'legacy-events', children: [{ type: 'event-list', id: 'legacy-event-list' }] },
+      {
+        id: 'legacy-section',
+        height: 180,
+        children: [{ type: 'text', id: 'legacy-text', text: 'Existing content', x: 20, y: 40, w: 346 }],
+      },
+      {
+        id: 'legacy-rich-carrier',
+        height: 180,
+        children: [{ type: 'rich-text', id: 'legacy-rich', html: '<p>Existing formatted content</p>', x: 20, y: 40, w: 346 }],
+      },
+    ],
+  });
+  assert.equal(seed.execution.status, 0, seed.execution.stderr);
+  const legacyRich = seed.result.designJson[2].field.structure.child.component_list.value[0];
+  const legacyDesign = [legacyRich, ...seed.result.designJson.slice(0, 2)];
   const canonical = `${JSON.stringify({ designJson: legacyDesign, message: 'legacy' }, null, 2)}\n`;
   const run = runCompiler({
     mode: 'extend',
@@ -221,22 +232,213 @@ test('extend preserves legacy top-level components and appends only new free box
   }, canonical);
   try {
     assert.equal(run.execution.status, 0, run.execution.stderr);
-    assert.deepEqual(run.result.designJson.slice(0, 2), legacyDesign);
-    assert.equal(run.result.designJson[2].type, 'free-box');
+    assert.deepEqual(run.result.designJson.slice(0, 3), legacyDesign);
+    assert.equal(run.result.designJson[3].type, 'free-box');
+  } finally {
+    cleanup(seed.directory);
+    cleanup(run.directory);
+  }
+});
+
+test('final output validation rejects incomplete component contracts from canonical JSON', () => {
+  const incompleteCanonical = {
+    designJson: [
+      {
+        id: 'legacy-section',
+        label: 'Legacy Section',
+        type: 'free-box',
+        field: {
+          structure: {
+            label: 'Freeform Container',
+            child: {
+              component_list: {
+                label: 'Widgets List',
+                type: 'component_list',
+                value: [{
+                  id: 'broken-text',
+                  label: 'Text',
+                  type: 'text',
+                  field: {
+                    structure: { label: 'Text Content', child: {} },
+                    styles: { label: 'Text Style', child: {} },
+                  },
+                }],
+              },
+            },
+          },
+          styles: { label: 'Container Style', child: {} },
+        },
+      },
+      {
+        id: 'broken-events',
+        label: 'Event List',
+        type: 'event-list',
+        component: {
+          name: 'event-list',
+          props: { data: { events: [] } },
+        },
+      },
+    ],
+  };
+  const run = runCompiler({
+    mode: 'extend',
+    sections: [{
+      id: 'addition',
+      height: 160,
+      children: [{ type: 'text', id: 'addition-text', text: 'New content', x: 20, y: 40, w: 346 }],
+    }],
+  }, `${JSON.stringify(incompleteCanonical, null, 2)}\n`);
+  try {
+    assert.equal(run.execution.status, 1);
+    assert.equal(run.result.validation.passed, false);
+    assert.match(run.result.validation.errors.join('\n'), /missing required field/);
+    assert.match(run.result.validation.errors.join('\n'), /data\.styleMode/);
+    assert.deepEqual(JSON.parse(readFileSync(run.canonicalPath, 'utf8')), incompleteCanonical);
   } finally {
     cleanup(run.directory);
   }
 });
 
-test('all supported components compile to valid JSON and report composition metrics', () => {
+test('enforces deprecated, explicit-only, and single-use component policies', () => {
+  const deprecated = runCompiler({
+    mode: 'replace',
+    sections: [{
+      id: 'deprecated-shape',
+      height: 160,
+      children: [{ type: 'circle', id: 'circle', x: 20, y: 20, w: 80, h: 80 }],
+    }],
+  });
+  const undeclared = runCompiler({
+    mode: 'replace',
+    sections: [{
+      id: 'undeclared-rating',
+      height: 160,
+      children: [{ type: 'rating', id: 'rating', rating: '4.8', reviewCount: '128', x: 20, y: 20, w: 250, h: 60 }],
+    }],
+  });
+  const repeated = runCompiler({
+    mode: 'replace',
+    sections: [
+      { id: 'events-one', children: [{ type: 'event-list', id: 'events-1' }] },
+      { id: 'events-two', children: [{ type: 'event-list', id: 'events-2' }] },
+    ],
+  });
+  const declared = runCompiler({
+    mode: 'replace',
+    explicitComponents: ['rating'],
+    sections: [{
+      id: 'declared-rating',
+      height: 160,
+      children: [{ type: 'rating', id: 'rating', rating: '4.8', reviewCount: '128', x: 20, y: 20, w: 250, h: 60 }],
+    }],
+  });
+  try {
+    assert.equal(deprecated.execution.status, 1);
+    assert.match(deprecated.result.validation.errors.join('\n'), /deprecated/);
+    assert.equal(undeclared.execution.status, 1);
+    assert.match(undeclared.result.validation.errors.join('\n'), /explicitly requested/);
+    assert.equal(repeated.execution.status, 1);
+    assert.match(repeated.result.validation.errors.join('\n'), /at most once/);
+    assert.equal(declared.execution.status, 0, declared.execution.stderr);
+  } finally {
+    cleanup(deprecated.directory);
+    cleanup(undeclared.directory);
+    cleanup(repeated.directory);
+    cleanup(declared.directory);
+  }
+});
+
+test('completes nested fixed-component link fields before the final audit', () => {
+  const run = runCompiler({
+    mode: 'replace',
+    explicitComponents: ['navigation'],
+    sections: [
+      {
+        id: 'navigation-carrier',
+        children: [{
+          type: 'navigation',
+          id: 'navigation',
+          items: [{ text: 'Home', link: { page: 'home' } }],
+        }],
+      },
+      {
+        id: 'banner-carrier',
+        children: [{
+          type: 'banner',
+          id: 'banner',
+          items: [{ src: verifiedImageUrl, link: { page: 'events' } }],
+        }],
+      },
+    ],
+  });
+  try {
+    assert.equal(run.execution.status, 0, run.execution.stderr);
+    assert.deepEqual(run.result.designJson[0].component.props.list[0].link, {
+      page: 'home',
+      appid: '',
+      type: '',
+      name: '',
+    });
+    assert.deepEqual(run.result.designJson[1].component.props.list[0].link, {
+      name: '',
+      type: '',
+      appid: '',
+      page: 'events',
+    });
+  } finally {
+    cleanup(run.directory);
+  }
+});
+
+test('records and validates the UI/UX controlled-variation design profile', () => {
+  const section = {
+    id: 'profile-section',
+    height: 160,
+    children: [{ type: 'text', id: 'profile-text', text: 'Distinctive content', x: 20, y: 40, w: 346 }],
+  };
+  const missing = runCompiler({ mode: 'replace', sections: [section] });
+  const malformed = runCompiler({
+    mode: 'replace',
+    designProfile: { source: 'ui-ux-pro-max' },
+    sections: [section],
+  });
+  const valid = runCompiler({
+    mode: 'replace',
+    designProfile: {
+      source: 'ui-ux-pro-max-fallback',
+      query: 'editorial service mobile landing page',
+      direction: 'Editorial service guide',
+      variationSeed: 'service-ledger-12',
+      axes: {
+        layout: 'asymmetric editorial stack',
+        palette: 'warm paper and ink',
+        typography: 'display serif and compact sans',
+        imageRhythm: 'alternating landscape and portrait crops',
+      },
+    },
+    sections: [section],
+  });
+  try {
+    assert.equal(missing.execution.status, 0, missing.execution.stderr);
+    assert.match(missing.result.validation.warnings.join('\n'), /No designProfile/);
+    assert.equal(malformed.execution.status, 1);
+    assert.match(malformed.result.validation.errors.join('\n'), /designProfile.*missing required field/);
+    assert.equal(valid.execution.status, 0, valid.execution.stderr);
+    assert.doesNotMatch(valid.result.validation.warnings.join('\n'), /No designProfile/);
+  } finally {
+    cleanup(missing.directory);
+    cleanup(malformed.directory);
+    cleanup(valid.directory);
+  }
+});
+
+test('all active components compile to valid JSON and report composition metrics', () => {
   const visual = [
     ['text', { text: 'Specific content' }],
     ['img', { src: verifiedImageUrl, fit: 'contain', sourceWidth: 1200, sourceHeight: 800 }],
     ['button', { text: 'Book a session' }],
     ['rectangle', {}],
-    ['circle', {}],
     ['rich-text', { html: '<p>Formatted content</p>' }],
-    ['img-text', { items: [{ name: 'Item', imgUrl: verifiedImageUrl }] }],
     ['video-player', { url: 'assets/video.mp4' }],
     ['countdown', { title: 'Registration closes', targetDate: '2026-08-01' }],
     ['tabs', { tabs: [{ title: 'One', height: 180, children: [{ type: 'text', text: 'Tab content', x: 10, y: 10, w: 280 }] }] }],
@@ -260,15 +462,24 @@ test('all supported components compile to valid JSON and report composition metr
   sections.push({ id: 'fixed-service', children: [{ type: 'service-list', id: 'service', storeName: 'Service Provider' }] });
   for (const type of fixed) sections.push({ id: `fixed-${type}`, children: [{ type, id: `child-${type}` }] });
 
-  const run = runCompiler({ mode: 'replace', canvasWidth: 386, sections });
+  const run = runCompiler({
+    mode: 'replace',
+    canvasWidth: 386,
+    explicitComponents: [
+      'video-player', 'countdown', 'tabs', 'accordion', 'rating', 'social-share',
+      'person-profile', 'coupon', 'navigation', 'brand-navbar', 'search',
+      'discount-promotion',
+    ],
+    sections,
+  });
   try {
     assert.equal(run.execution.status, 0, run.execution.stderr);
     assert.equal(run.result.validation.passed, true);
     assert.equal(run.result.validation.metrics.componentCounts.text, 2);
-    assert.equal(run.result.validation.metrics.imageCount, 2);
+    assert.equal(run.result.validation.metrics.imageCount, 1);
     assert.equal(run.result.validation.metrics.richTextCount, 1);
     assert.ok(run.result.validation.metrics.corePrimitiveRatio > 0);
-    assert.equal(run.result.designJson.length, 28);
+    assert.equal(run.result.designJson.length, 26);
   } finally {
     cleanup(run.directory);
   }
@@ -587,6 +798,7 @@ test('rejects explicit rectangle card heights that cannot contain their text', (
 test('business components occupy carrier sections but compile beside free boxes', () => {
   const run = runCompiler({
     mode: 'replace',
+    explicitComponents: ['coupon'],
     sections: [
       { id: 'intro', height: 160, children: [{ type: 'text', id: 'intro-text', text: 'Event introduction', x: 20, y: 40, w: 346 }] },
       { id: 'event-carrier', children: [{ type: 'event-list', id: 'event', styleMode: 0 }] },
