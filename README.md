@@ -8,7 +8,7 @@ All skill sources and generated IR content are English-only. Compiler validation
 
 1. Read `unico-page.json` from the active project when it exists.
 2. Treat its `designJson` array as the current canvas.
-3. Run UI/UX Pro Max design-system guidance and the controlled-variation stage in `references/design-optimization.md`.
+3. Use the local design-planning and controlled-variation stage in `references/design-optimization.md`, based on the user's brief and this skill's references. Do not search for or invoke external design skills or tools.
 4. Apply the user's request while preserving unrelated sections and component properties. Existing components are not round-tripped through IR.
 5. Compile the updated design with `compiler/unico-ir-compiler.mjs`.
 6. Review the final type-specific component completeness audit.
@@ -51,7 +51,7 @@ Event List, Service List, Product List, Blog, Coupon, Inquiry, Map, Store Inform
 - [`SKILL.md`](SKILL.md) — execution workflow and compiler contract
 - [`references/component-contract.md`](references/component-contract.md) — supported component fields
 - [`references/design-guidelines.md`](references/design-guidelines.md) — current visual design guidance
-- [`references/design-optimization.md`](references/design-optimization.md) — UI/UX Pro Max integration and controlled variation
+- [`references/design-optimization.md`](references/design-optimization.md) — local design planning and controlled variation
 
 ## Compatibility
 

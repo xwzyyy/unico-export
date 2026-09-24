@@ -1406,7 +1406,7 @@ function validateDesignProfile(profile, mode, hasCanonical, errors, warnings) {
   const isCompletePage = mode === 'replace' || !hasCanonical;
   if (profile === undefined) {
     if (isCompletePage) {
-      warnings.push('No designProfile was recorded; run the UI/UX design-system and controlled-variation stage before final delivery');
+      warnings.push('No designProfile was recorded; derive a design direction from the brief and local Unico guidance before final delivery');
     }
     return;
   }
@@ -1424,9 +1424,6 @@ function validateDesignProfile(profile, mode, hasCanonical, errors, warnings) {
     'axes.typography',
     'axes.imageRhythm',
   ], 'designProfile', errors);
-  if (hasPath(profile, 'source') && !/ui-ux-pro-max/i.test(string(profile.source))) {
-    warnings.push('designProfile.source does not identify UI/UX Pro Max; confirm an equivalent design-intelligence review was completed');
-  }
 }
 
 function validateSourceAspect(child, width, height, fit, childPath, errors, warnings) {

@@ -10,7 +10,7 @@ Change this revision label whenever an experiment materially changes the design 
 
 Create a deliberate, production-oriented mobile page rather than a generic component demo. Translate the user's brief into a clear visual concept, content hierarchy, section rhythm, and conversion path before writing the IR.
 
-Run the mandatory UI/UX design-intelligence and controlled-variation workflow in `design-optimization.md` before selecting a composition. Record the chosen direction in IR `designProfile`.
+Use the local design-planning and controlled-variation workflow in `design-optimization.md` before selecting a composition. Base decisions on the user's brief and this skill's references; do not search for or invoke external design skills or tools. Record the chosen direction in IR `designProfile`.
 
 ## Current Tuning Profile
 
@@ -62,4 +62,4 @@ These values are the main experiment controls. Edit them first when comparing ou
 
 Use this section for temporary prompt experiments. Remove obsolete instructions instead of accumulating contradictory rules.
 
-- Active revision combines patterns measured from the five finished Unico cases with mandatory UI/UX Pro Max guidance and controlled visual variation. See `case-derived-layout-rules.md` and `design-optimization.md`.
+- Active revision combines patterns measured from the five finished Unico cases with local design guidance and controlled visual variation. See `case-derived-layout-rules.md` and `design-optimization.md`.

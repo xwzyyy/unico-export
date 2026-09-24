@@ -7,7 +7,7 @@ description: Design, validate, and export production-ready mobile pages for Unic
 
 Use this plugin when the user wants Open Design to produce a Unico DND page directly.
 
-Before making design decisions, read `references/design-guidelines.md`, `references/design-optimization.md`, and `references/case-derived-layout-rules.md` from this skill directory. Follow the current prompt revision and the case-derived rules for component frequency, section composition, text spacing, image aspect ratios, controlled visual variation, and dedicated business sections. Always use the staged copies from the active run instead of relying on remembered guidance.
+Before making design decisions, read `references/design-guidelines.md`, `references/design-optimization.md`, and `references/case-derived-layout-rules.md` from this skill directory. Follow the current prompt revision and the case-derived rules for component frequency, section composition, text spacing, image aspect ratios, controlled visual variation, and dedicated business sections. Always use the staged copies from the active run instead of relying on remembered guidance. Use only these local project references and the user's brief for design planning; do not search for, load, install, or invoke the UI/UX Pro Max skill or its tools.
 
 Before writing IR, read `references/component-contract.md` and use only the documented IR fields for the components selected by the design. If the page needs network images, also read `references/verified-image-sources.md`, search for theme-specific real images, and verify every final direct URL before export. Treat component selection as a policy, not a menu: build primarily with `text`, `img`, `button`, `rectangle`, and compiler-generated `free-box` containers.
 
@@ -16,7 +16,7 @@ Use English exclusively in every generated string, including page copy, labels, 
 Do not create HTML first unless the user explicitly asks for an HTML prototype. The fast production path is:
 
 1. Read `unico-page.json` when it exists. Treat its `designJson` array as the canonical current canvas.
-2. Run the mandatory design-optimization stage in `references/design-optimization.md`. Invoke the available UI/UX design-intelligence skill, preferring UI/UX Pro Max and its `--design-system` workflow. Generate multiple internal directions, select one controlled variation, and record it in IR `designProfile`. If the search CLI is unavailable, use the loaded UI/UX Pro Max rules plus the local reference and record the fallback source explicitly.
+2. Run the local design-planning stage in `references/design-optimization.md` for a new or redesigned page. Base it on the project references and user's brief; do not search for or invoke external design skills or their tools. Generate multiple internal directions, select one controlled variation, and record it in IR `designProfile`.
 3. Make the design decisions with AI: audience, hierarchy, copy, sections, color, spacing, visual rhythm, differentiation, and conversion goals.
 4. Preserve all existing page content unrelated to the request. For edits, do not translate existing components into IR. Write IR only for new sections or intentionally replaced content.
 5. Write `unico-design-ir.json` with `"mode": "extend"` for normal edits. Use `"mode": "replace"` only when the user explicitly requests a full redesign.
@@ -64,7 +64,7 @@ The IR is a compact JSON object:
   "canvasWidth": 386,
   "explicitComponents": [],
   "designProfile": {
-    "source": "ui-ux-pro-max",
+    "source": "unico-export",
     "query": "community events warm editorial image-led mobile landing page",
     "direction": "Warm editorial community journal",
     "variationSeed": "community-journal-07",

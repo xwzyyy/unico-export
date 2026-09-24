@@ -390,7 +390,7 @@ test('completes nested fixed-component link fields before the final audit', () =
   }
 });
 
-test('records and validates the UI/UX controlled-variation design profile', () => {
+test('records and validates the local controlled-variation design profile', () => {
   const section = {
     id: 'profile-section',
     height: 160,
@@ -399,13 +399,13 @@ test('records and validates the UI/UX controlled-variation design profile', () =
   const missing = runCompiler({ mode: 'replace', sections: [section] });
   const malformed = runCompiler({
     mode: 'replace',
-    designProfile: { source: 'ui-ux-pro-max' },
+    designProfile: { source: 'unico-export' },
     sections: [section],
   });
   const valid = runCompiler({
     mode: 'replace',
     designProfile: {
-      source: 'ui-ux-pro-max-fallback',
+      source: 'unico-export',
       query: 'editorial service mobile landing page',
       direction: 'Editorial service guide',
       variationSeed: 'service-ledger-12',

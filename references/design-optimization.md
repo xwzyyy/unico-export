@@ -2,22 +2,9 @@
 
 Run this stage before writing Unico IR for every new page or full redesign. For a small `extend` edit, apply it only to the new section while preserving the current page system.
 
-## 1. Invoke Design Intelligence
+## 1. Plan Design from the Brief
 
-Prefer the installed UI/UX Pro Max skill. Read its current instructions and start with its required design-system search using a multi-dimensional query:
-
-```text
-<product type> <industry> <audience> <tone> <content density> mobile landing page
-```
-
-Use the actual bundled `search.py` path from the installed skill:
-
-```bash
-python "<resolved-ui-ux-pro-max>/scripts/search.py" "<query>" --design-system -p "<project name>"
-python "<resolved-ui-ux-pro-max>/scripts/search.py" "visual hierarchy accessibility spacing differentiation" --domain ux -n 6
-```
-
-Do not assume that an example path in another skill exists. Resolve the installed package first. If the CLI or its data files are unavailable, do not claim that a search ran. Use the loaded UI/UX Pro Max guidance plus this reference as a documented fallback.
+Use the user's brief and the local references in this skill to make design decisions. Do not search for, load, install, or invoke the UI/UX Pro Max skill, its search scripts, or any other external design skill/tool. This workflow is self-contained and does not require external design-system or UX searches. Record concise rationale based on the brief and the local guidelines; never claim that external research was performed.
 
 Project constraints override generic recommendations:
 
@@ -83,7 +70,7 @@ Add this metadata to `unico-design-ir.json`:
 ```json
 {
   "designProfile": {
-    "source": "ui-ux-pro-max",
+    "source": "unico-export",
     "query": "community events young professionals warm editorial image-led mobile landing page",
     "direction": "Warm editorial community journal",
     "variationSeed": "community-journal-07",
@@ -97,7 +84,7 @@ Add this metadata to `unico-design-ir.json`:
 }
 ```
 
-Use `"source": "ui-ux-pro-max-fallback"` only when the skill guidance was loaded but its search tool could not run. The compiler validates a supplied profile and warns when a complete page has no profile.
+Use `"source": "unico-export"` for a profile based on this skill's local guidance. The compiler validates a supplied profile and warns when a complete page has no profile.
 
 ## 6. Optimize the Chosen Direction
 
