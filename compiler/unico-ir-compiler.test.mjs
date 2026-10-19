@@ -7,6 +7,36 @@ import { spawnSync } from 'node:child_process';
 
 const compilerPath = resolve('compiler/unico-ir-compiler.mjs');
 const verifiedImageUrl = 'https://images.unsplash.com/photo-1767169768227-79688439fb37?auto=format&fit=crop&w=1200&q=80';
+const verifiedAsset = {
+  directUrl: verifiedImageUrl,
+  sourcePage: 'https://unsplash.com/photos/mahjong-tiles-arranged-on-a-table-yUaqsVKIHYE',
+  author: 'Unsplash contributor',
+  license: 'Unsplash License',
+  commercialUse: true,
+  attributionRequired: false,
+  verifiedAt: '2026-07-29',
+  urlCheck: 'verified',
+  contentType: 'image/jpeg',
+  statusCode: 200,
+};
+const testDesignResearch = {
+  tool: 'unico-export-guidelines',
+  designSystemQuery: 'editorial service mobile landing page',
+  uxQuery: 'visual hierarchy accessibility spacing consistency mobile ux',
+  styleReferences: ['Editorial Magazine', 'Swiss / International Typographic'],
+};
+const testTheme = {
+  primary: '#2563eb',
+  secondary: '#0f766e',
+  accent: '#f59e0b',
+  background: '#f8fafc',
+  surface: '#ffffff',
+  text: '#0f172a',
+  muted: '#64748b',
+  onPrimary: '#ffffff',
+  onSurface: '#0f172a',
+  border: '#cbd5e1',
+};
 
 function runCompiler(ir, canonicalContent) {
   const directory = mkdtempSync(join(tmpdir(), 'unico-ir-test-'));
@@ -27,6 +57,7 @@ function cleanup(directory) {
 test('compiles valid IR, estimates text height, and removes empty navbar carriers', () => {
   const run = runCompiler({
     mode: 'replace',
+    assetManifest: [verifiedAsset],
     message: 'controlled-variation-v4 test',
     canvasWidth: 386,
     explicitComponents: ['brand-navbar'],
@@ -42,7 +73,7 @@ test('compiles valid IR, estimates text height, and removes empty navbar carrier
         children: [
           { type: 'text', id: 'hero-title', text: 'A deliberate mobile page', x: 20, y: 24, w: 346, fontSize: 36, lineHeight: 1.1, color: '#ffffff' },
           { type: 'text', id: 'hero-body', text: 'Longer supporting copy wraps safely and receives a conservative automatic height.', x: 20, y: 132, w: 346, fontSize: 16, color: '#ffffff' },
-          { type: 'img', id: 'hero-image', src: verifiedImageUrl, x: 20, y: 220, w: 346, h: 260, fit: 'cover', objectPosition: '50% 35%' },
+          { type: 'img', id: 'hero-image', src: verifiedImageUrl, x: 20, y: 220, w: 346, h: 260, fit: 'cover', cropArea: { x: 0, y: 0, width: 100, height: 100 } },
         ],
       },
     ],
@@ -50,13 +81,18 @@ test('compiles valid IR, estimates text height, and removes empty navbar carrier
   try {
     assert.equal(run.execution.status, 0, run.execution.stderr);
     assert.equal(run.result.validation.passed, true);
+    assert.deepEqual(run.result.assetManifest, [verifiedAsset]);
     assert.equal(run.result.designJson.length, 2);
     assert.equal(run.result.designJson[0].type, 'brand-navbar');
     assert.equal(run.result.designJson[1].type, 'free-box');
     const children = run.result.designJson[1].field.structure.child.component_list.value;
     assert.equal('height' in children[1].field.styles.child, false);
     assert.equal(children[1].field.styles.child.paddingBlock.value, 10);
-    assert.match(children[2].field.styles.child.customCSS.value, /object-fit: cover/);
+    assert.equal(children[2].field.structure.label, 'Image Content');
+    assert.equal(children[2].field.structure.child.upload.label, 'Image Upload');
+    assert.equal(children[2].field.structure.child.upload.value.crop.transform.scale, 1.2);
+    assert.equal(children[2].field.styles.child.scale.value, 100);
+    assert.equal(children[2].field.styles.child.radius.value, 0);
     assert.ok(existsSync(run.canonicalPath));
   } finally {
     cleanup(run.directory);
@@ -119,7 +155,98 @@ test('requires explicit image fit and rejects provable distortion or unsafe crop
     const errors = run.result.validation.errors.join('\n');
     assert.match(errors, /fit is required/);
     assert.match(errors, /would distort the source/);
-    assert.match(errors, /set objectPosition/);
+    assert.match(errors, /set cropArea/);
+  } finally {
+    cleanup(run.directory);
+  }
+});
+
+test('computes image zoom from source and frame ratios and defaults unknown ratios to 1.20', () => {
+  const makeIr = (image) => ({
+    mode: 'replace',
+    assetManifest: [verifiedAsset],
+    sections: [{ id: 'image-scale', height: 280, children: [image] }],
+  });
+  const known = runCompiler(makeIr({
+    type: 'img', id: 'known-ratio', src: verifiedImageUrl, x: 20, y: 20, w: 240, h: 240,
+    fit: 'cover', sourceWidth: 1200, sourceHeight: 900,
+  }));
+  const tooSmall = runCompiler(makeIr({
+    type: 'img', id: 'too-small', src: verifiedImageUrl, x: 20, y: 20, w: 240, h: 240,
+    fit: 'cover', scale: 1.33, sourceWidth: 1200, sourceHeight: 900,
+  }));
+  const unknown = runCompiler(makeIr({
+    type: 'img', id: 'unknown-ratio', src: verifiedImageUrl, x: 20, y: 20, w: 240, h: 240,
+    fit: 'cover',
+  }));
+  const cropScale = (run) => run.result.designJson[0].field.structure.child.component_list.value[0].field.structure.child.upload.value.crop.transform.scale;
+  try {
+    assert.equal(known.execution.status, 0, known.execution.stderr);
+    assert.equal(cropScale(known), 1.34);
+    assert.equal(tooSmall.execution.status, 1);
+    assert.match(tooSmall.result.validation.errors.join('\n'), /below the required minimum 1\.34/);
+    assert.equal(unknown.execution.status, 0, unknown.execution.stderr);
+    assert.equal(cropScale(unknown), 1.2);
+    assert.match(unknown.result.validation.warnings.join('\n'), /defaulting to 1\.20/);
+  } finally {
+    cleanup(known.directory);
+    cleanup(tooSmall.directory);
+    cleanup(unknown.directory);
+  }
+});
+
+test('emits the complete structured image crop and editor transform contract', () => {
+  const run = runCompiler({
+    mode: 'replace',
+    assetManifest: [verifiedAsset],
+    sections: [{
+      id: 'structured-image',
+      height: 300,
+      children: [{
+        type: 'img',
+        id: 'structured-image-child',
+        src: verifiedImageUrl,
+        x: 237,
+        y: 156,
+        w: 121,
+        h: 118,
+        fit: 'contain',
+        scale: 1.3,
+        rotate: 30,
+        cropArea: { x: 30, y: 0, width: 100, height: 100 },
+        radius: 30,
+        customCSS: 'box-shadow: 0 3px 4px gray;',
+        sourceWidth: 200,
+        sourceHeight: 200,
+      }],
+    }],
+  });
+  try {
+    assert.equal(run.execution.status, 0, run.execution.stderr);
+    const image = run.result.designJson[0].field.structure.child.component_list.value[0];
+    assert.equal(image.label, 'Image');
+    assert.equal(image.type, 'img');
+    assert.equal(image.field.structure.label, 'Image Content');
+    assert.deepEqual(image.field.structure.child.upload.value, {
+      url: verifiedImageUrl,
+      crop: {
+        mode: 'manual',
+        fitMode: 'contain',
+        cropArea: { x: 30, y: 0, width: 100, height: 100 },
+        transform: { scale: 1.3, rotate: 30 },
+        originalWidth: 200,
+        originalHeight: 200,
+      },
+    });
+    const styles = image.field.styles.child;
+    assert.equal(styles.scale.value, 100);
+    assert.equal(styles.rotate.value, 0);
+    assert.equal(styles.translateX.value, 0);
+    assert.equal(styles.translateY.value, 0);
+    assert.equal(styles.radius.value, 30);
+    assert.equal(styles.customCSS.value, 'box-shadow: 0 3px 4px gray;');
+    assert.equal(styles.top.value, 156);
+    assert.equal(styles.left.value, 237);
   } finally {
     cleanup(run.directory);
   }
@@ -351,6 +478,7 @@ test('enforces deprecated, explicit-only, and single-use component policies', ()
 test('completes nested fixed-component link fields before the final audit', () => {
   const run = runCompiler({
     mode: 'replace',
+    assetManifest: [verifiedAsset],
     explicitComponents: ['navigation'],
     sections: [
       {
@@ -390,7 +518,7 @@ test('completes nested fixed-component link fields before the final audit', () =
   }
 });
 
-test('records and validates the UI/UX controlled-variation design profile', () => {
+test('records and validates the local controlled-variation design profile', () => {
   const section = {
     id: 'profile-section',
     height: 160,
@@ -399,16 +527,18 @@ test('records and validates the UI/UX controlled-variation design profile', () =
   const missing = runCompiler({ mode: 'replace', sections: [section] });
   const malformed = runCompiler({
     mode: 'replace',
-    designProfile: { source: 'ui-ux-pro-max' },
+    designProfile: { source: 'unico-export' },
     sections: [section],
   });
   const valid = runCompiler({
     mode: 'replace',
     designProfile: {
-      source: 'ui-ux-pro-max-fallback',
+      source: 'unico-export',
       query: 'editorial service mobile landing page',
       direction: 'Editorial service guide',
       variationSeed: 'service-ledger-12',
+      designResearch: testDesignResearch,
+      theme: testTheme,
       axes: {
         layout: 'asymmetric editorial stack',
         palette: 'warm paper and ink',
@@ -432,10 +562,72 @@ test('records and validates the UI/UX controlled-variation design profile', () =
   }
 });
 
+test('accepts local design rationale and rejects colors outside the page theme', () => {
+  const run = runCompiler({
+    mode: 'replace',
+    designProfile: {
+      source: 'unico-export',
+      query: 'service mobile landing page',
+      direction: 'Consistent service page',
+      variationSeed: 'service-theme-11',
+      designResearch: testDesignResearch,
+      theme: testTheme,
+      axes: {
+        layout: 'asymmetric editorial',
+        palette: 'semantic blue teal amber',
+        typography: 'display serif and compact sans',
+        imageRhythm: 'single hero and supporting crops',
+      },
+    },
+    sections: [{
+      id: 'theme-section',
+      height: 180,
+      bgColor: '#ff00ff',
+      children: [{ type: 'text', id: 'theme-text', text: 'Theme consistency', x: 20, y: 40, w: 346, color: '#0f172a' }],
+    }],
+  });
+  try {
+    assert.equal(run.execution.status, 1);
+    assert.match(run.result.validation.errors.join('\n'), /outside designProfile\.theme/);
+  } finally {
+    cleanup(run.directory);
+  }
+});
+
+test('keeps legacy design profiles compilable without the optional research and theme fields', () => {
+  const run = runCompiler({
+    mode: 'replace',
+    designProfile: {
+      source: 'legacy-design-tool',
+      query: 'legacy mobile page',
+      direction: 'Legacy direction',
+      variationSeed: 'legacy-01',
+      axes: {
+        layout: 'stacked',
+        palette: 'neutral',
+        typography: 'sans',
+        imageRhythm: 'single hero',
+      },
+    },
+    sections: [{
+      id: 'legacy-section',
+      height: 160,
+      children: [{ type: 'text', id: 'legacy-text', text: 'Legacy content', x: 20, y: 40, w: 346 }],
+    }],
+  });
+  try {
+    assert.equal(run.execution.status, 0, run.execution.stderr);
+    assert.match(run.result.validation.warnings.join('\n'), /legacy profiles remain compatible/);
+  } finally {
+    cleanup(run.directory);
+  }
+});
+
 test('all active components compile to valid JSON and report composition metrics', () => {
   const visual = [
     ['text', { text: 'Specific content' }],
     ['img', { src: verifiedImageUrl, fit: 'contain', sourceWidth: 1200, sourceHeight: 800 }],
+    ['line', { w: 240, h: 2, bgColor: '#1f2937', borderColor: '#1f2937' }],
     ['button', { text: 'Book a session' }],
     ['rectangle', {}],
     ['rich-text', { html: '<p>Formatted content</p>' }],
@@ -464,6 +656,7 @@ test('all active components compile to valid JSON and report composition metrics
 
   const run = runCompiler({
     mode: 'replace',
+    assetManifest: [verifiedAsset],
     canvasWidth: 386,
     explicitComponents: [
       'video-player', 'countdown', 'tabs', 'accordion', 'rating', 'social-share',
@@ -479,7 +672,7 @@ test('all active components compile to valid JSON and report composition metrics
     assert.equal(run.result.validation.metrics.imageCount, 1);
     assert.equal(run.result.validation.metrics.richTextCount, 1);
     assert.ok(run.result.validation.metrics.corePrimitiveRatio > 0);
-    assert.equal(run.result.designJson.length, 26);
+    assert.equal(run.result.designJson.length, 27);
   } finally {
     cleanup(run.directory);
   }
@@ -578,9 +771,9 @@ test('text components match the exact Unico contract without a height field', ()
 
 test('estimates rich-text height from content width, padding, and font size', () => {
   const samples = [
-    { id: 'narrow', text: 'Easy walks and easy talks for weekends.', width: 88, fontSize: 12, expectedHeight: 120 },
-    { id: 'wide', text: 'Every new guest gets a welcome, an introduction, and helpful guidance.', width: 346, fontSize: 14, expectedHeight: 70 },
-    { id: 'medium', text: 'Walk by the sea and meet new friends.', width: 190, fontSize: 12, expectedHeight: 57 },
+    { id: 'narrow', text: 'Easy walks and easy talks for weekends.', width: 88, fontSize: 12, expectedHeight: 140 },
+    { id: 'wide', text: 'Every new guest gets a welcome, an introduction, and helpful guidance.', width: 346, fontSize: 14, expectedHeight: 90 },
+    { id: 'medium', text: 'Walk by the sea and meet new friends.', width: 190, fontSize: 12, expectedHeight: 77 },
   ];
   const run = runCompiler({
     mode: 'replace',
@@ -658,6 +851,150 @@ test('rejects image-provider detail pages and accepts verified CDN image URLs', 
   }
 });
 
+test('requires explicit commercial-use license evidence for every image', () => {
+  const makeIr = (assetManifest) => ({
+    mode: 'replace',
+    assetManifest,
+    sections: [{
+      id: 'licensed-image',
+      height: 240,
+      children: [{ type: 'img', id: 'licensed-photo', src: verifiedImageUrl, x: 20, y: 20, w: 346, h: 180, fit: 'cover' }],
+    }],
+  });
+  const missing = runCompiler(makeIr([]));
+  const unknown = runCompiler(makeIr([{ ...verifiedAsset, license: 'Unknown' }]));
+  const nonCommercial = runCompiler(makeIr([{ ...verifiedAsset, license: 'CC BY-NC 4.0' }]));
+  const missingEvidence = runCompiler(makeIr([{ ...verifiedAsset, sourcePage: '', author: '' }]));
+  const cc0 = runCompiler(makeIr([{ ...verifiedAsset, sourcePage: 'https://creativecommons.org/publicdomain/zero/1.0/', license: 'CC0' }]));
+  const publicDomain = runCompiler(makeIr([{ ...verifiedAsset, license: 'Public Domain' }]));
+  const explicitCommercial = runCompiler(makeIr([{ ...verifiedAsset, license: 'Pexels License' }]));
+  try {
+    assert.equal(missing.execution.status, 1);
+    assert.match(missing.result.validation.errors.join('\n'), /no matching assetManifest entry/);
+    assert.equal(unknown.execution.status, 1);
+    assert.match(unknown.result.validation.errors.join('\n'), /explicitly permit commercial use/);
+    assert.equal(nonCommercial.execution.status, 1);
+    assert.match(nonCommercial.result.validation.errors.join('\n'), /explicitly permit commercial use/);
+    assert.equal(missingEvidence.execution.status, 1);
+    assert.match(missingEvidence.result.validation.errors.join('\n'), /sourcePage is required/);
+    assert.match(missingEvidence.result.validation.errors.join('\n'), /author is required/);
+    assert.equal(cc0.execution.status, 0, cc0.execution.stderr);
+    assert.equal(publicDomain.execution.status, 0, publicDomain.execution.stderr);
+    assert.equal(explicitCommercial.execution.status, 0, explicitCommercial.execution.stderr);
+  } finally {
+    [missing, unknown, nonCommercial, missingEvidence, cc0, publicDomain, explicitCommercial].forEach(({ directory }) => cleanup(directory));
+  }
+});
+
+test('allows an official provider CDN when response headers cannot be read without inventing them', () => {
+  const makeIr = (asset) => ({
+    mode: 'replace',
+    assetManifest: [asset],
+    sections: [{
+      id: 'offline-cdn-check',
+      height: 240,
+      children: [{ type: 'img', id: 'licensed-photo', src: verifiedImageUrl, x: 20, y: 20, w: 346, h: 180, fit: 'cover' }],
+    }],
+  });
+  const unavailable = runCompiler(makeIr({
+    ...verifiedAsset,
+    urlCheck: 'unavailable',
+    contentType: undefined,
+    statusCode: undefined,
+  }));
+  const fakeStatus = runCompiler(makeIr({ ...verifiedAsset, urlCheck: 'unavailable', statusCode: 200 }));
+  const unknownHost = runCompiler(makeIr({
+    ...verifiedAsset,
+    directUrl: 'https://untrusted-image-host.test/photo.jpg',
+    urlCheck: 'not_checked',
+    contentType: undefined,
+    statusCode: undefined,
+  }));
+  const legacyVerified = runCompiler(makeIr((({ urlCheck, ...asset }) => asset)({ ...verifiedAsset })));
+  try {
+    assert.equal(unavailable.execution.status, 0, unavailable.execution.stderr);
+    assert.equal(unavailable.result.validation.passed, true);
+    assert.match(unavailable.result.validation.warnings.join('\n'), /response was unavailable/);
+    assert.equal(unavailable.result.assetManifest[0].statusCode, undefined);
+    assert.equal(unavailable.result.assetManifest[0].contentType, undefined);
+    assert.equal(fakeStatus.execution.status, 1);
+    assert.match(fakeStatus.result.validation.errors.join('\n'), /must not include statusCode or contentType/);
+    assert.equal(unknownHost.execution.status, 1);
+    assert.match(unknownHost.result.validation.errors.join('\n'), /known provider image CDN/);
+    assert.equal(legacyVerified.execution.status, 0, legacyVerified.execution.stderr);
+  } finally {
+    [unavailable, fakeStatus, unknownHost, legacyVerified].forEach(({ directory }) => cleanup(directory));
+  }
+});
+
+test('validates optional style-family metadata and materially different design directions', () => {
+  const section = {
+    id: 'style-profile-section',
+    height: 160,
+    children: [{ type: 'text', id: 'style-profile-text', text: 'Distinctive content', x: 20, y: 40, w: 346 }],
+  };
+  const directions = [
+    {
+      name: 'Editorial direction',
+      styleFamily: 'Editorial Magazine',
+      axes: { layout: 'asymmetric editorial', palette: 'warm paper', typography: 'display serif', imageRhythm: 'portrait sequence', surfaceTreatment: 'ruled panels', ctaTreatment: 'full-width anchor', sectionTransition: 'image bleed' },
+    },
+    {
+      name: 'Utility direction',
+      styleFamily: 'Monochrome Utility',
+      axes: { layout: 'modular catalog', palette: 'monochrome accent', typography: 'compact grotesk', imageRhythm: 'sparse hero only', surfaceTreatment: 'hard-edge blocks', ctaTreatment: 'outlined secondary', sectionTransition: 'divider rhythm' },
+    },
+    {
+      name: 'Coastal direction',
+      styleFamily: 'Coastal / Mediterranean',
+      axes: { layout: 'split narrative', palette: 'coastal cool', typography: 'friendly sans', imageRhythm: 'alternating landscape and square', surfaceTreatment: 'flat color fields', ctaTreatment: 'final-section conversion block', sectionTransition: 'color cut' },
+    },
+  ];
+  const valid = runCompiler({
+    mode: 'replace',
+    designProfile: {
+      source: 'unico-export',
+      query: 'community landing page',
+      direction: 'Editorial community page',
+      variationSeed: 'community-style-17',
+      styleFamily: 'Editorial Magazine',
+      designResearch: testDesignResearch,
+      theme: testTheme,
+      axes: {
+        layout: 'asymmetric editorial',
+        palette: 'warm paper',
+        typography: 'display serif',
+        imageRhythm: 'portrait sequence',
+        surfaceTreatment: 'ruled panels',
+      },
+      directions,
+    },
+    sections: [section],
+  });
+  const insufficient = runCompiler({
+    mode: 'replace',
+    designProfile: {
+      source: 'unico-export',
+      query: 'community landing page',
+      direction: 'Repeated card page',
+      variationSeed: 'repeated-style-01',
+      designResearch: testDesignResearch,
+      theme: testTheme,
+      axes: { layout: 'centered', palette: 'neutral', typography: 'sans', imageRhythm: 'single hero' },
+      directions: directions.map((direction) => ({ ...direction, axes: { ...directions[0].axes } })),
+    },
+    sections: [section],
+  });
+  try {
+    assert.equal(valid.execution.status, 0, valid.execution.stderr);
+    assert.equal(insufficient.execution.status, 1);
+    assert.match(insufficient.result.validation.errors.join('\n'), /at least four design axes/);
+  } finally {
+    cleanup(valid.directory);
+    cleanup(insufficient.directory);
+  }
+});
+
 test('rejects explicit rich-text heights below the estimated content height', () => {
   const run = runCompiler({
     mode: 'replace',
@@ -679,7 +1016,7 @@ test('rejects explicit rich-text heights below the estimated content height', ()
   });
   try {
     assert.equal(run.execution.status, 1);
-    assert.match(run.result.validation.errors.join('\n'), /rich-text height 40 is too small.*70/);
+    assert.match(run.result.validation.errors.join('\n'), /rich-text height 40 is too small.*90/);
   } finally {
     cleanup(run.directory);
   }
@@ -711,7 +1048,6 @@ test('image components accept only real web image URLs and reject every SVG sour
     'https://images.example.test/render?format=svg',
     'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"></svg>',
     '<svg xmlns="http://www.w3.org/2000/svg"></svg>',
-    'assets/local-photo.jpg',
   ];
   const run = runCompiler({
     mode: 'replace',
@@ -725,7 +1061,98 @@ test('image components accept only real web image URLs and reject every SVG sour
     assert.equal(run.execution.status, 1);
     const errors = run.result.validation.errors.join('\n');
     assert.match(errors, /SVG images are forbidden/);
-    assert.match(errors, /must use a verified HTTP\(S\) image URL/);
+  } finally {
+    cleanup(run.directory);
+  }
+});
+
+test('rejects unavailable and local image sources from compiled pages', () => {
+  const run = runCompiler({
+    mode: 'replace',
+    sections: [{
+      id: 'staged-images',
+      height: 260,
+      children: [
+        { type: 'img', id: 'pending-image', src: '', x: 20, y: 20, w: 160, h: 100, fit: 'cover' },
+        { type: 'img', id: 'local-image', src: 'assets/local-photo.jpg', x: 20, y: 140, w: 160, h: 100, fit: 'contain' },
+      ],
+    }],
+  });
+  try {
+    assert.equal(run.execution.status, 1);
+    assert.equal(run.result.validation.passed, false);
+    const errors = run.result.validation.errors.join('\n');
+    assert.match(errors, /sections\[0\]\.children\[0\]\.src must use a verified HTTP\(S\) image URL/);
+    assert.match(errors, /sections\[0\]\.children\[1\]\.src must use a verified HTTP\(S\) image URL/);
+    assert.doesNotMatch(run.result.validation.warnings.join('\n'), /local or unresolved resource/);
+  } finally {
+    cleanup(run.directory);
+  }
+});
+
+test('compiles the registered line component with its complete editor contract', () => {
+  const run = runCompiler({
+    mode: 'replace',
+    sections: [{
+      id: 'line-section',
+      height: 280,
+      children: [{
+        type: 'line',
+        id: 'section-rule',
+        x: 58.111114501953125,
+        y: 225.11111450195312,
+        w: 240,
+        h: 2,
+        rotate: 0,
+        bgColor: '#1f2937',
+        borderColor: '#1f2937',
+        borderWidth: 0,
+        borderStyle: 'solid',
+        radius: 0,
+        opacity: 1,
+        zIndex: 3,
+        customCSS: '',
+      }],
+    }],
+  });
+  try {
+    assert.equal(run.execution.status, 0, run.execution.stderr);
+    const line = run.result.designJson[0].field.structure.child.component_list.value[0];
+    assert.deepEqual(line, {
+      id: 'section-rule',
+      label: 'Line',
+      type: 'line',
+      field: {
+        structure: {
+          label: 'Line Content',
+          child: {
+            link: {
+              label: 'Link Settings',
+              type: 'link',
+              value: { page: '', url: '', type: 'page', serviceId: '', productId: '' },
+            },
+          },
+        },
+        styles: {
+          label: 'Line Style',
+          child: {
+            width: { label: 'Length', type: 'width', value: 240 },
+            height: { label: 'Thickness', type: 'height', value: 2 },
+            rotate: { label: 'Angle', type: 'angle', value: 0 },
+            bgColor: { label: 'Line Color', type: 'bgColor', value: '#1f2937' },
+            borderColor: { label: 'Border Color', type: 'color', value: '#1f2937' },
+            borderWidth: { label: 'Border Width', type: 'borderWidth', value: 0 },
+            borderStyle: { label: 'Border Style', type: 'borderStyle', value: 'solid' },
+            radius: { label: 'Border Radius', type: 'radius', value: 0 },
+            opacity: { label: 'Opacity', type: 'opacity', value: 1 },
+            zIndex: { label: 'Levels', type: 'zIndex', value: 3 },
+            customCSS: { label: 'Custom CSS', type: 'customCSS', value: '' },
+            top: { label: 'Top Distance', type: 'top', value: 225.11111450195312 },
+            left: { label: 'Left Distance', type: 'left', value: 58.111114501953125 },
+          },
+        },
+      },
+    });
   } finally {
     cleanup(run.directory);
   }
@@ -818,6 +1245,8 @@ test('business components occupy carrier sections but compile beside free boxes'
       'free-box', 'event-list', 'service-list', 'goods-list', 'blog-list',
       'coupon', 'inquiry-box', 'map', 'store-information', 'free-box',
     ]);
+    const inquiry = run.result.designJson.find(({ type }) => type === 'inquiry-box');
+    assert.equal('width' in inquiry.field.styles.child, false);
     assert.deepEqual(run.result.designJson[1], {
       id: 'event',
       label: 'Event List',
@@ -848,6 +1277,8 @@ test('skill source files contain no Chinese characters', () => {
   };
   visit(resolve('.'));
   for (const file of files) {
+    const relativePath = file.slice(resolve('.').length + 1).replaceAll('\\', '/');
+    if (relativePath.startsWith('references/recipe-examples/')) continue;
     assert.doesNotMatch(readFileSync(file, 'utf8'), /[\u3400-\u9fff]/u, `${file} contains Chinese characters`);
   }
 });

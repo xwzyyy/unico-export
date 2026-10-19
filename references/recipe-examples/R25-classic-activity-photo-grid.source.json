@@ -1,0 +1,1536 @@
+{
+  "id": "sbr-dance",
+  "label": "Dance",
+  "type": "free-box",
+  "field": {
+    "structure": {
+      "label": "Freeform Container",
+      "child": {
+        "sectionName": {
+          "label": "Section Name",
+          "type": "text",
+          "value": "Dance"
+        },
+        "component_list": {
+          "label": "Widgets List",
+          "type": "component_list",
+          "value": [
+            {
+              "id": "sbr-dance-grid",
+              "label": "rectangle",
+              "type": "rectangle",
+              "field": {
+                "structure": {
+                  "label": "Content",
+                  "child": {
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "external",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 386
+                    },
+                    "height": {
+                      "label": "Height",
+                      "type": "height",
+                      "value": 713.766
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 0
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 0
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 0
+                    },
+                    "bgColor": {
+                      "label": "Background Color",
+                      "type": "bgColor",
+                      "value": "#551f0b"
+                    },
+                    "radius": {
+                      "label": "Border Radius",
+                      "type": "radius",
+                      "value": 0
+                    },
+                    "borderColor": {
+                      "label": "Border Color",
+                      "type": "color",
+                      "value": "#fff0d8"
+                    },
+                    "borderWidth": {
+                      "label": "Border Width",
+                      "type": "borderWidth",
+                      "value": 0
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": "background-image: linear-gradient(90deg, rgba(255,240,216,.035) 1px, transparent 1px); background-size: 24px 24px;"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "sbr-dance-kicker",
+              "label": "Text",
+              "type": "text",
+              "field": {
+                "structure": {
+                  "label": "Text Content",
+                  "child": {
+                    "text": {
+                      "label": "Text",
+                      "type": "text",
+                      "value": "AFTER DARK"
+                    },
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "external",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Text Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 203.27
+                    },
+                    "paddingInline": {
+                      "label": "Horizontal Padding",
+                      "type": "paddingInline",
+                      "value": 0
+                    },
+                    "paddingBlock": {
+                      "label": "Vertical Padding",
+                      "type": "paddingBlock",
+                      "value": 0
+                    },
+                    "fontSize": {
+                      "label": "Font Size",
+                      "type": "fontSize",
+                      "value": 9,
+                      "max": 200
+                    },
+                    "fontFamily": {
+                      "label": "Font Family",
+                      "type": "fontFamily",
+                      "value": "DM Sans, Arial, sans-serif"
+                    },
+                    "color": {
+                      "label": "Font Color",
+                      "type": "color",
+                      "value": "#ff9b32"
+                    },
+                    "fontWeight": {
+                      "label": "Font Weight",
+                      "type": "fontWeight",
+                      "value": 600
+                    },
+                    "letterSpacing": {
+                      "label": "Letter Spacing",
+                      "type": "letterSpacing",
+                      "value": 0,
+                      "min": -30
+                    },
+                    "lineHeight": {
+                      "label": "Line Height",
+                      "type": "lineHeight",
+                      "value": 1.35
+                    },
+                    "fontStyle": {
+                      "label": "Italic",
+                      "type": "fontStyle",
+                      "value": "normal"
+                    },
+                    "textDecoration": {
+                      "label": "Underline",
+                      "type": "textDecoration",
+                      "value": "none"
+                    },
+                    "justify": {
+                      "label": "Layout",
+                      "type": "justify",
+                      "value": "left"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 1
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 28.99
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 17
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": ""
+                    },
+                    "rotate": {
+                      "label": "Rotate",
+                      "type": "angle",
+                      "value": 0,
+                      "min": -180,
+                      "max": 180
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "sbr-dance-title",
+              "label": "Text",
+              "type": "text",
+              "field": {
+                "structure": {
+                  "label": "Text Content",
+                  "child": {
+                    "text": {
+                      "label": "Text",
+                      "type": "text",
+                      "value": "DANCE FLOOR."
+                    },
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "external",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Text Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 233
+                    },
+                    "paddingInline": {
+                      "label": "Horizontal Padding",
+                      "type": "paddingInline",
+                      "value": 0
+                    },
+                    "paddingBlock": {
+                      "label": "Vertical Padding",
+                      "type": "paddingBlock",
+                      "value": 0
+                    },
+                    "fontSize": {
+                      "label": "Font Size",
+                      "type": "fontSize",
+                      "value": 29,
+                      "max": 200
+                    },
+                    "fontFamily": {
+                      "label": "Font Family",
+                      "type": "fontFamily",
+                      "value": "Plus Jakarta Sans, Arial, sans-serif"
+                    },
+                    "color": {
+                      "label": "Font Color",
+                      "type": "color",
+                      "value": "#fff0d8"
+                    },
+                    "fontWeight": {
+                      "label": "Font Weight",
+                      "type": "fontWeight",
+                      "value": 800
+                    },
+                    "letterSpacing": {
+                      "label": "Letter Spacing",
+                      "type": "letterSpacing",
+                      "value": 0,
+                      "min": -30
+                    },
+                    "lineHeight": {
+                      "label": "Line Height",
+                      "type": "lineHeight",
+                      "value": 0.94
+                    },
+                    "fontStyle": {
+                      "label": "Italic",
+                      "type": "fontStyle",
+                      "value": "normal"
+                    },
+                    "textDecoration": {
+                      "label": "Underline",
+                      "type": "textDecoration",
+                      "value": "none"
+                    },
+                    "justify": {
+                      "label": "Layout",
+                      "type": "justify",
+                      "value": "left"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 1
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 49.99
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 17
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": ""
+                    },
+                    "rotate": {
+                      "label": "Rotate",
+                      "type": "angle",
+                      "value": 0,
+                      "min": -180,
+                      "max": 180
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "sbr-dance-note",
+              "label": "Text",
+              "type": "text",
+              "field": {
+                "structure": {
+                  "label": "Text Content",
+                  "child": {
+                    "text": {
+                      "label": "Text",
+                      "type": "text",
+                      "value": "THE PART WHERE “ONE MORE” BECOMES THREE."
+                    },
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "external",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Text Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 112
+                    },
+                    "paddingInline": {
+                      "label": "Horizontal Padding",
+                      "type": "paddingInline",
+                      "value": 0
+                    },
+                    "paddingBlock": {
+                      "label": "Vertical Padding",
+                      "type": "paddingBlock",
+                      "value": 0
+                    },
+                    "fontSize": {
+                      "label": "Font Size",
+                      "type": "fontSize",
+                      "value": 9,
+                      "max": 200
+                    },
+                    "fontFamily": {
+                      "label": "Font Family",
+                      "type": "fontFamily",
+                      "value": "DM Sans, Arial, sans-serif"
+                    },
+                    "color": {
+                      "label": "Font Color",
+                      "type": "color",
+                      "value": "#e8c6a2"
+                    },
+                    "fontWeight": {
+                      "label": "Font Weight",
+                      "type": "fontWeight",
+                      "value": 400
+                    },
+                    "letterSpacing": {
+                      "label": "Letter Spacing",
+                      "type": "letterSpacing",
+                      "value": 0,
+                      "min": -30
+                    },
+                    "lineHeight": {
+                      "label": "Line Height",
+                      "type": "lineHeight",
+                      "value": 1.35
+                    },
+                    "fontStyle": {
+                      "label": "Italic",
+                      "type": "fontStyle",
+                      "value": "normal"
+                    },
+                    "textDecoration": {
+                      "label": "Underline",
+                      "type": "textDecoration",
+                      "value": "none"
+                    },
+                    "justify": {
+                      "label": "Layout",
+                      "type": "justify",
+                      "value": "right"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 1
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 53.16
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 257
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": ""
+                    },
+                    "rotate": {
+                      "label": "Rotate",
+                      "type": "angle",
+                      "value": 0,
+                      "min": -180,
+                      "max": 180
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "sbr-dance-left-frame",
+              "label": "rectangle",
+              "type": "rectangle",
+              "field": {
+                "structure": {
+                  "label": "Content",
+                  "child": {
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "external",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 173
+                    },
+                    "height": {
+                      "label": "Height",
+                      "type": "height",
+                      "value": 155
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 0
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 161.25
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 21
+                    },
+                    "bgColor": {
+                      "label": "Background Color",
+                      "type": "bgColor",
+                      "value": "#6b2a12"
+                    },
+                    "radius": {
+                      "label": "Border Radius",
+                      "type": "radius",
+                      "value": 0
+                    },
+                    "borderColor": {
+                      "label": "Border Color",
+                      "type": "color",
+                      "value": "#ff9b32"
+                    },
+                    "borderWidth": {
+                      "label": "Border Width",
+                      "type": "borderWidth",
+                      "value": 1
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "sbr-dance-left",
+              "label": "Image",
+              "type": "img",
+              "field": {
+                "structure": {
+                  "label": "Image Content",
+                  "child": {
+                    "upload": {
+                      "label": "Image Upload",
+                      "type": "upload",
+                      "value": {
+                        "url": "https://unicoawsapp.s3.amazonaws.com/materials/f93de7f07e524884bd8642d11e47b24c.jpg",
+                        "crop": {
+                          "mode": "manual",
+                          "fitMode": "contain",
+                          "cropArea": {
+                            "x": 0,
+                            "y": 0,
+                            "width": 100,
+                            "height": 100
+                          },
+                          "transform": {
+                            "scale": 1.46,
+                            "rotate": 0
+                          },
+                          "originalWidth": 1080,
+                          "originalHeight": 720
+                        }
+                      }
+                    },
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "external",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Image Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 169
+                    },
+                    "height": {
+                      "label": "Height",
+                      "type": "height",
+                      "value": 151
+                    },
+                    "scale": {
+                      "label": "Scale",
+                      "type": "slider",
+                      "value": 100
+                    },
+                    "rotate": {
+                      "label": "Rotate",
+                      "type": "slider",
+                      "value": 0
+                    },
+                    "translateX": {
+                      "label": "Position X",
+                      "type": "slider",
+                      "value": 0
+                    },
+                    "translateY": {
+                      "label": "Position Y",
+                      "type": "slider",
+                      "value": 0
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 0
+                    },
+                    "radius": {
+                      "label": "Border Radius",
+                      "type": "radius",
+                      "value": 0
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": "filter: saturate(1.1) contrast(1.05);"
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 164
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 23
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "sbr-dance-right-frame",
+              "label": "rectangle",
+              "type": "rectangle",
+              "field": {
+                "structure": {
+                  "label": "Content",
+                  "child": {
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "external",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 173
+                    },
+                    "height": {
+                      "label": "Height",
+                      "type": "height",
+                      "value": 153
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 0
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 163.25
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 200
+                    },
+                    "bgColor": {
+                      "label": "Background Color",
+                      "type": "bgColor",
+                      "value": "#df6f20"
+                    },
+                    "radius": {
+                      "label": "Border Radius",
+                      "type": "radius",
+                      "value": 0
+                    },
+                    "borderColor": {
+                      "label": "Border Color",
+                      "type": "color",
+                      "value": "#ff9b32"
+                    },
+                    "borderWidth": {
+                      "label": "Border Width",
+                      "type": "borderWidth",
+                      "value": 1
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "sbr-dance-right",
+              "label": "Image",
+              "type": "img",
+              "field": {
+                "structure": {
+                  "label": "Image Content",
+                  "child": {
+                    "upload": {
+                      "label": "Image Upload",
+                      "type": "upload",
+                      "value": {
+                        "url": "https://unicoawsapp.s3.amazonaws.com/materials/9c26f1cd5cdf410abd427bbdef4549d0.jpg",
+                        "crop": {
+                          "mode": "manual",
+                          "fitMode": "contain",
+                          "cropArea": {
+                            "x": 0,
+                            "y": 0,
+                            "width": 100,
+                            "height": 100
+                          },
+                          "transform": {
+                            "scale": 1.27,
+                            "rotate": 0
+                          },
+                          "originalWidth": 1080,
+                          "originalHeight": 762
+                        }
+                      }
+                    },
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "external",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Image Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 170
+                    },
+                    "height": {
+                      "label": "Height",
+                      "type": "height",
+                      "value": 151
+                    },
+                    "scale": {
+                      "label": "Scale",
+                      "type": "slider",
+                      "value": 100
+                    },
+                    "rotate": {
+                      "label": "Rotate",
+                      "type": "slider",
+                      "value": 0
+                    },
+                    "translateX": {
+                      "label": "Position X",
+                      "type": "slider",
+                      "value": 0
+                    },
+                    "translateY": {
+                      "label": "Position Y",
+                      "type": "slider",
+                      "value": 0
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 0
+                    },
+                    "radius": {
+                      "label": "Border Radius",
+                      "type": "radius",
+                      "value": 0
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": "filter: saturate(1.1) contrast(1.05);"
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 164.25
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 202
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "sbr-dance-wide-frame",
+              "label": "rectangle",
+              "type": "rectangle",
+              "field": {
+                "structure": {
+                  "label": "Content",
+                  "child": {
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "external",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 350
+                    },
+                    "height": {
+                      "label": "Height",
+                      "type": "height",
+                      "value": 233.52
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 0
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 322.25
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 22
+                    },
+                    "bgColor": {
+                      "label": "Background Color",
+                      "type": "bgColor",
+                      "value": "#6b2a12"
+                    },
+                    "radius": {
+                      "label": "Border Radius",
+                      "type": "radius",
+                      "value": 0
+                    },
+                    "borderColor": {
+                      "label": "Border Color",
+                      "type": "color",
+                      "value": "#ff9b32"
+                    },
+                    "borderWidth": {
+                      "label": "Border Width",
+                      "type": "borderWidth",
+                      "value": 1
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "sbr-dance-wide",
+              "label": "Image",
+              "type": "img",
+              "field": {
+                "structure": {
+                  "label": "Image Content",
+                  "child": {
+                    "upload": {
+                      "label": "Image Upload",
+                      "type": "upload",
+                      "value": {
+                        "url": "https://unicoawsapp.s3.amazonaws.com/materials/58a47986efc64560881ddcb552c23de4.jpg",
+                        "crop": {
+                          "mode": "manual",
+                          "fitMode": "contain",
+                          "cropArea": {
+                            "x": 0,
+                            "y": 0,
+                            "width": 100,
+                            "height": 100
+                          },
+                          "transform": {
+                            "scale": 1.12,
+                            "rotate": 0
+                          },
+                          "originalWidth": 1080,
+                          "originalHeight": 720
+                        }
+                      }
+                    },
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "external",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Image Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 346
+                    },
+                    "height": {
+                      "label": "Height",
+                      "type": "height",
+                      "value": 229.51999999999998
+                    },
+                    "scale": {
+                      "label": "Scale",
+                      "type": "slider",
+                      "value": 100
+                    },
+                    "rotate": {
+                      "label": "Rotate",
+                      "type": "slider",
+                      "value": 0
+                    },
+                    "translateX": {
+                      "label": "Position X",
+                      "type": "slider",
+                      "value": 0
+                    },
+                    "translateY": {
+                      "label": "Position Y",
+                      "type": "slider",
+                      "value": 0
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 0
+                    },
+                    "radius": {
+                      "label": "Border Radius",
+                      "type": "radius",
+                      "value": 0
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": "filter: saturate(1.1) contrast(1.05);"
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 324.25
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 24
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "sbr-dance-label-left",
+              "label": "Text",
+              "type": "text",
+              "field": {
+                "structure": {
+                  "label": "Text Content",
+                  "child": {
+                    "text": {
+                      "label": "Text",
+                      "type": "text",
+                      "value": "THE CROWD"
+                    },
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "external",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Text Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 151
+                    },
+                    "paddingInline": {
+                      "label": "Horizontal Padding",
+                      "type": "paddingInline",
+                      "value": 0
+                    },
+                    "paddingBlock": {
+                      "label": "Vertical Padding",
+                      "type": "paddingBlock",
+                      "value": 0
+                    },
+                    "fontSize": {
+                      "label": "Font Size",
+                      "type": "fontSize",
+                      "value": 8,
+                      "max": 200
+                    },
+                    "fontFamily": {
+                      "label": "Font Family",
+                      "type": "fontFamily",
+                      "value": "DM Sans, Arial, sans-serif"
+                    },
+                    "color": {
+                      "label": "Font Color",
+                      "type": "color",
+                      "value": "#e8c6a2"
+                    },
+                    "fontWeight": {
+                      "label": "Font Weight",
+                      "type": "fontWeight",
+                      "value": 700
+                    },
+                    "letterSpacing": {
+                      "label": "Letter Spacing",
+                      "type": "letterSpacing",
+                      "value": 0,
+                      "min": -30
+                    },
+                    "lineHeight": {
+                      "label": "Line Height",
+                      "type": "lineHeight",
+                      "value": 1.35
+                    },
+                    "fontStyle": {
+                      "label": "Italic",
+                      "type": "fontStyle",
+                      "value": "normal"
+                    },
+                    "textDecoration": {
+                      "label": "Underline",
+                      "type": "textDecoration",
+                      "value": "none"
+                    },
+                    "justify": {
+                      "label": "Layout",
+                      "type": "justify",
+                      "value": "left"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 1
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 291
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 29
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": ""
+                    },
+                    "rotate": {
+                      "label": "Rotate",
+                      "type": "angle",
+                      "value": 0,
+                      "min": -180,
+                      "max": 180
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "sbr-dance-label-right",
+              "label": "Text",
+              "type": "text",
+              "field": {
+                "structure": {
+                  "label": "Text Content",
+                  "child": {
+                    "text": {
+                      "label": "Text",
+                      "type": "text",
+                      "value": "THE ENERGY"
+                    },
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "external",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Text Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 151
+                    },
+                    "paddingInline": {
+                      "label": "Horizontal Padding",
+                      "type": "paddingInline",
+                      "value": 0
+                    },
+                    "paddingBlock": {
+                      "label": "Vertical Padding",
+                      "type": "paddingBlock",
+                      "value": 0
+                    },
+                    "fontSize": {
+                      "label": "Font Size",
+                      "type": "fontSize",
+                      "value": 8,
+                      "max": 200
+                    },
+                    "fontFamily": {
+                      "label": "Font Family",
+                      "type": "fontFamily",
+                      "value": "DM Sans, Arial, sans-serif"
+                    },
+                    "color": {
+                      "label": "Font Color",
+                      "type": "color",
+                      "value": "#e8c6a2"
+                    },
+                    "fontWeight": {
+                      "label": "Font Weight",
+                      "type": "fontWeight",
+                      "value": 700
+                    },
+                    "letterSpacing": {
+                      "label": "Letter Spacing",
+                      "type": "letterSpacing",
+                      "value": 0,
+                      "min": -30
+                    },
+                    "lineHeight": {
+                      "label": "Line Height",
+                      "type": "lineHeight",
+                      "value": 1.35
+                    },
+                    "fontStyle": {
+                      "label": "Italic",
+                      "type": "fontStyle",
+                      "value": "normal"
+                    },
+                    "textDecoration": {
+                      "label": "Underline",
+                      "type": "textDecoration",
+                      "value": "none"
+                    },
+                    "justify": {
+                      "label": "Layout",
+                      "type": "justify",
+                      "value": "left"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 1
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 291
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 207
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": ""
+                    },
+                    "rotate": {
+                      "label": "Rotate",
+                      "type": "angle",
+                      "value": 0,
+                      "min": -180,
+                      "max": 180
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "sbr-dance-label-wide",
+              "label": "Text",
+              "type": "text",
+              "field": {
+                "structure": {
+                  "label": "Text Content",
+                  "child": {
+                    "text": {
+                      "label": "Text",
+                      "type": "text",
+                      "value": "BOBA · MAHJONG · MUSIC"
+                    },
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "external",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Text Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 330
+                    },
+                    "paddingInline": {
+                      "label": "Horizontal Padding",
+                      "type": "paddingInline",
+                      "value": 0
+                    },
+                    "paddingBlock": {
+                      "label": "Vertical Padding",
+                      "type": "paddingBlock",
+                      "value": 0
+                    },
+                    "fontSize": {
+                      "label": "Font Size",
+                      "type": "fontSize",
+                      "value": 8,
+                      "max": 200
+                    },
+                    "fontFamily": {
+                      "label": "Font Family",
+                      "type": "fontFamily",
+                      "value": "DM Sans, Arial, sans-serif"
+                    },
+                    "color": {
+                      "label": "Font Color",
+                      "type": "color",
+                      "value": "#e8c6a2"
+                    },
+                    "fontWeight": {
+                      "label": "Font Weight",
+                      "type": "fontWeight",
+                      "value": 700
+                    },
+                    "letterSpacing": {
+                      "label": "Letter Spacing",
+                      "type": "letterSpacing",
+                      "value": 0,
+                      "min": -30
+                    },
+                    "lineHeight": {
+                      "label": "Line Height",
+                      "type": "lineHeight",
+                      "value": 1.35
+                    },
+                    "fontStyle": {
+                      "label": "Italic",
+                      "type": "fontStyle",
+                      "value": "normal"
+                    },
+                    "textDecoration": {
+                      "label": "Underline",
+                      "type": "textDecoration",
+                      "value": "none"
+                    },
+                    "justify": {
+                      "label": "Layout",
+                      "type": "justify",
+                      "value": "center"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 1
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 523
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 35
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": ""
+                    },
+                    "rotate": {
+                      "label": "Rotate",
+                      "type": "angle",
+                      "value": 0,
+                      "min": -180,
+                      "max": 180
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "label": "Line",
+              "type": "line",
+              "field": {
+                "structure": {
+                  "label": "Line Content",
+                  "child": {
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "external",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Line Style",
+                  "child": {
+                    "width": {
+                      "label": "Length",
+                      "type": "width",
+                      "value": 342,
+                      "min": 1,
+                      "max": 2000
+                    },
+                    "height": {
+                      "label": "Thickness",
+                      "type": "height",
+                      "value": 1,
+                      "min": 1,
+                      "max": 100
+                    },
+                    "rotate": {
+                      "label": "Angle",
+                      "type": "angle",
+                      "value": 0,
+                      "min": -180,
+                      "max": 180
+                    },
+                    "bgColor": {
+                      "label": "Line Color",
+                      "type": "bgColor",
+                      "value": "#FF9B32"
+                    },
+                    "borderColor": {
+                      "label": "Border Color",
+                      "type": "color",
+                      "value": "#1f2937"
+                    },
+                    "borderWidth": {
+                      "label": "Border Width",
+                      "type": "borderWidth",
+                      "value": 0,
+                      "min": 0,
+                      "max": 20
+                    },
+                    "borderStyle": {
+                      "label": "Border Style",
+                      "type": "borderStyle",
+                      "value": "solid"
+                    },
+                    "radius": {
+                      "label": "Border Radius",
+                      "type": "radius",
+                      "value": 0,
+                      "min": 0,
+                      "max": 50
+                    },
+                    "opacity": {
+                      "label": "Opacity",
+                      "type": "opacity",
+                      "value": 1,
+                      "min": 0,
+                      "max": 1
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 3
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": ""
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 129,
+                      "min": 0,
+                      "max": 2000
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 23,
+                      "min": 0,
+                      "max": 2000
+                    }
+                  }
+                }
+              },
+              "id": "17885086767163k4yj2ypg"
+            }
+          ]
+        }
+      }
+    },
+    "styles": {
+      "label": "Container Style",
+      "child": {
+        "width": {
+          "label": "Container Width",
+          "type": "width",
+          "value": 386,
+          "min": 386,
+          "max": 2000
+        },
+        "height": {
+          "label": "Container Height",
+          "type": "height",
+          "value": 587.766
+        },
+        "justify": {
+          "label": "Layout",
+          "type": "justify",
+          "value": "left"
+        },
+        "bgColor": {
+          "label": "Background Color",
+          "type": "bgColor",
+          "value": "#551f0b"
+        },
+        "customCSS": {
+          "label": "Custom CSS",
+          "type": "customCSS",
+          "value": ""
+        }
+      }
+    },
+    "config": {
+      "label": "Alignment & Grid Settings",
+      "child": {
+        "editMode": {
+          "label": "Edit Mode",
+          "type": "editMode",
+          "value": "free-form"
+        },
+        "showGuides": {
+          "label": "Show Alignment Guides",
+          "type": "showGuides",
+          "value": true
+        },
+        "enableHorizontalScroll": {
+          "label": "Enable Horizontal Scroll",
+          "type": "enableHorizontalScroll",
+          "value": false
+        },
+        "gridSize": {
+          "label": "Grid Size (px)",
+          "type": "gridSize",
+          "value": 10
+        }
+      }
+    }
+  }
+}

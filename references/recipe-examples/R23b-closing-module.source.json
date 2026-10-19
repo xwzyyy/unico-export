@@ -1,0 +1,884 @@
+{
+  "id": "c42da610-556f-4ae5-82bc-6e8b22872c59",
+  "label": "Freeform Container",
+  "type": "free-box",
+  "field": {
+    "structure": {
+      "label": "Freeform Container",
+      "child": {
+        "sectionName": {
+          "label": "Section Name",
+          "type": "text",
+          "value": "REACH OUT"
+        },
+        "component_list": {
+          "label": "Widgets List",
+          "type": "component_list",
+          "value": [
+            {
+              "id": "2de6eda3-fd9d-4ecd-8f82-97ac4fa5e5df",
+              "label": "Image",
+              "type": "img",
+              "field": {
+                "structure": {
+                  "label": "Image Content",
+                  "child": {
+                    "upload": {
+                      "label": "Image Upload",
+                      "type": "upload",
+                      "value": {
+                        "url": "https://unicoawsapp.s3.amazonaws.com/materials/b3ccd453867f4b958fde1d167fe4e1e0.svg",
+                        "crop": {
+                          "mode": "manual",
+                          "fitMode": "contain",
+                          "cropArea": {
+                            "x": 0,
+                            "y": 0,
+                            "width": 100,
+                            "height": 100
+                          },
+                          "transform": {
+                            "scale": 1,
+                            "rotate": 0
+                          },
+                          "originalWidth": 573,
+                          "originalHeight": 56
+                        }
+                      }
+                    },
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "external",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Image Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 366
+                    },
+                    "height": {
+                      "label": "Height",
+                      "type": "height",
+                      "value": 50
+                    },
+                    "scale": {
+                      "label": "Scale",
+                      "type": "slider",
+                      "value": 100
+                    },
+                    "rotate": {
+                      "label": "Rotate",
+                      "type": "slider",
+                      "value": 0
+                    },
+                    "translateX": {
+                      "label": "Position X",
+                      "type": "slider",
+                      "value": 0
+                    },
+                    "translateY": {
+                      "label": "Position Y",
+                      "type": "slider",
+                      "value": 0
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 2
+                    },
+                    "radius": {
+                      "label": "Border Radius",
+                      "type": "radius",
+                      "value": 0
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": "filter: none; opacity: 1; transform: none; box-shadow: none; mix-blend-mode: normal; object-fit: fill; object-position: 50% 50%;"
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 297
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 12
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "a10ea416-afd7-4322-ab77-9538fa62a0f4",
+              "label": "Text",
+              "type": "text",
+              "field": {
+                "structure": {
+                  "label": "Text Content",
+                  "child": {
+                    "text": {
+                      "label": "Text",
+                      "type": "text",
+                      "value": "COME JOIN THE FUN"
+                    },
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "external",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Text Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 346
+                    },
+                    "paddingInline": {
+                      "label": "Horizontal Padding",
+                      "type": "paddingInline",
+                      "value": 20
+                    },
+                    "paddingBlock": {
+                      "label": "Vertical Padding",
+                      "type": "paddingBlock",
+                      "value": 10
+                    },
+                    "fontSize": {
+                      "label": "Font Size",
+                      "type": "fontSize",
+                      "value": 48
+                    },
+                    "fontFamily": {
+                      "label": "Font Family",
+                      "type": "fontFamily",
+                      "value": "Bungee, sans-serif"
+                    },
+                    "color": {
+                      "label": "Font Color",
+                      "type": "color",
+                      "value": "rgb(255, 255, 255)"
+                    },
+                    "fontWeight": {
+                      "label": "Font Weight",
+                      "type": "fontWeight",
+                      "value": "700"
+                    },
+                    "letterSpacing": {
+                      "label": "Letter Spacing",
+                      "type": "letterSpacing",
+                      "value": 0
+                    },
+                    "lineHeight": {
+                      "label": "Line Height",
+                      "type": "lineHeight",
+                      "value": 1
+                    },
+                    "fontStyle": {
+                      "label": "Italic",
+                      "type": "fontStyle",
+                      "value": "normal"
+                    },
+                    "textDecoration": {
+                      "label": "Underline",
+                      "type": "textDecoration",
+                      "value": "none"
+                    },
+                    "justify": {
+                      "label": "Layout",
+                      "type": "justify",
+                      "value": "center"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 3
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 356
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 20
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": ""
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "961f6320-c050-4a8c-9c74-6e4c628ee447",
+              "label": "Text",
+              "type": "text",
+              "field": {
+                "structure": {
+                  "label": "Text Content",
+                  "child": {
+                    "text": {
+                      "label": "Text",
+                      "type": "text",
+                      "value": "All ages and backgrounds welcome. We’d love to see you at the table."
+                    },
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "external",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Text Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 318
+                    },
+                    "paddingInline": {
+                      "label": "Horizontal Padding",
+                      "type": "paddingInline",
+                      "value": 20
+                    },
+                    "paddingBlock": {
+                      "label": "Vertical Padding",
+                      "type": "paddingBlock",
+                      "value": 10
+                    },
+                    "fontSize": {
+                      "label": "Font Size",
+                      "type": "fontSize",
+                      "value": 16
+                    },
+                    "fontFamily": {
+                      "label": "Font Family",
+                      "type": "fontFamily",
+                      "value": "\"DM Sans\", sans-serif"
+                    },
+                    "color": {
+                      "label": "Font Color",
+                      "type": "color",
+                      "value": "rgb(251, 246, 232)"
+                    },
+                    "fontWeight": {
+                      "label": "Font Weight",
+                      "type": "fontWeight",
+                      "value": "400"
+                    },
+                    "letterSpacing": {
+                      "label": "Letter Spacing",
+                      "type": "letterSpacing",
+                      "value": 0
+                    },
+                    "lineHeight": {
+                      "label": "Line Height",
+                      "type": "lineHeight",
+                      "value": 1.5
+                    },
+                    "fontStyle": {
+                      "label": "Italic",
+                      "type": "fontStyle",
+                      "value": "normal"
+                    },
+                    "textDecoration": {
+                      "label": "Underline",
+                      "type": "textDecoration",
+                      "value": "none"
+                    },
+                    "justify": {
+                      "label": "Layout",
+                      "type": "justify",
+                      "value": "center"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 4
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 477
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 29
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": ""
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "1f28aef1-c77c-4cf8-b846-4e60beab826e",
+              "label": "Button",
+              "type": "button",
+              "field": {
+                "structure": {
+                  "label": "Button Text",
+                  "child": {
+                    "text": {
+                      "label": "Text",
+                      "type": "text",
+                      "value": "mahjongsocialgroup@gmail.com"
+                    },
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "external",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Button Style",
+                  "child": {
+                    "width": {
+                      "label": "Button Width",
+                      "type": "width",
+                      "value": 346,
+                      "min": 0,
+                      "max": 700
+                    },
+                    "height": {
+                      "label": "Button Height",
+                      "type": "height",
+                      "value": 56,
+                      "min": 0,
+                      "max": 300
+                    },
+                    "paddingInline": {
+                      "label": "Horizontal Padding",
+                      "type": "paddingInline",
+                      "value": 0
+                    },
+                    "paddingBlock": {
+                      "label": "Vertical Padding",
+                      "type": "paddingBlock",
+                      "value": 0
+                    },
+                    "radius": {
+                      "label": "Button Radius",
+                      "type": "radius",
+                      "value": 16
+                    },
+                    "fontSize": {
+                      "label": "Font Size",
+                      "type": "fontSize",
+                      "value": 15
+                    },
+                    "color": {
+                      "label": "Font Color",
+                      "type": "color",
+                      "value": "rgb(255, 255, 255)"
+                    },
+                    "bgColor": {
+                      "label": "Button Color",
+                      "type": "bgColor",
+                      "value": "rgb(192, 34, 40)"
+                    },
+                    "borderColor": {
+                      "label": "Border Color",
+                      "type": "color",
+                      "value": "rgb(255, 255, 255)"
+                    },
+                    "borderWidth": {
+                      "label": "Border Width",
+                      "type": "borderWidth",
+                      "value": 0
+                    },
+                    "fontWeight": {
+                      "label": "Bold",
+                      "type": "fontWeight",
+                      "value": 700
+                    },
+                    "fontStyle": {
+                      "label": "Italic",
+                      "type": "fontStyle",
+                      "value": "normal"
+                    },
+                    "textDecoration": {
+                      "label": "Underline",
+                      "type": "textDecoration",
+                      "value": "none"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 5
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 554
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 21
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "03cb065b-5052-47f7-9c39-1e7a80915069",
+              "label": "Button",
+              "type": "button",
+              "field": {
+                "structure": {
+                  "label": "Button Text",
+                  "child": {
+                    "text": {
+                      "label": "Text",
+                      "type": "text",
+                      "value": "JOIN THE CLUB NOW!"
+                    },
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "external",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Button Style",
+                  "child": {
+                    "width": {
+                      "label": "Button Width",
+                      "type": "width",
+                      "value": 346,
+                      "min": 0,
+                      "max": 700
+                    },
+                    "height": {
+                      "label": "Button Height",
+                      "type": "height",
+                      "value": 52,
+                      "min": 0,
+                      "max": 300
+                    },
+                    "paddingInline": {
+                      "label": "Horizontal Padding",
+                      "type": "paddingInline",
+                      "value": 0
+                    },
+                    "paddingBlock": {
+                      "label": "Vertical Padding",
+                      "type": "paddingBlock",
+                      "value": 0
+                    },
+                    "radius": {
+                      "label": "Button Radius",
+                      "type": "radius",
+                      "value": 16
+                    },
+                    "fontSize": {
+                      "label": "Font Size",
+                      "type": "fontSize",
+                      "value": 14
+                    },
+                    "color": {
+                      "label": "Font Color",
+                      "type": "color",
+                      "value": "rgb(255, 255, 255)"
+                    },
+                    "bgColor": {
+                      "label": "Button Color",
+                      "type": "bgColor",
+                      "value": "transparent"
+                    },
+                    "borderColor": {
+                      "label": "Border Color",
+                      "type": "color",
+                      "value": "rgb(255, 255, 255)"
+                    },
+                    "borderWidth": {
+                      "label": "Border Width",
+                      "type": "borderWidth",
+                      "value": 2
+                    },
+                    "fontWeight": {
+                      "label": "Bold",
+                      "type": "fontWeight",
+                      "value": "700"
+                    },
+                    "fontStyle": {
+                      "label": "Italic",
+                      "type": "fontStyle",
+                      "value": "normal"
+                    },
+                    "textDecoration": {
+                      "label": "Underline",
+                      "type": "textDecoration",
+                      "value": "none"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 6
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 627
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 20
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "1782040544990nyfv9ic3w",
+              "label": "Image",
+              "type": "img",
+              "field": {
+                "structure": {
+                  "label": "Image Content",
+                  "child": {
+                    "upload": {
+                      "label": "Image Upload",
+                      "type": "upload",
+                      "value": {
+                        "url": "https://unicoawsapp.s3.amazonaws.com/materials/9f77c2d1156a43f1a3668c1f063db20d.jpg",
+                        "crop": {
+                          "mode": "manual",
+                          "fitMode": "contain",
+                          "cropArea": {
+                            "x": 3,
+                            "y": -42,
+                            "width": 100,
+                            "height": 100
+                          },
+                          "transform": {
+                            "scale": 1.41,
+                            "rotate": 0
+                          },
+                          "originalWidth": 1440,
+                          "originalHeight": 1440
+                        }
+                      }
+                    },
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "page",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Image Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 348
+                    },
+                    "height": {
+                      "label": "Height",
+                      "type": "height",
+                      "value": 252
+                    },
+                    "scale": {
+                      "label": "Scale",
+                      "type": "slider",
+                      "value": 100
+                    },
+                    "rotate": {
+                      "label": "Rotate",
+                      "type": "slider",
+                      "value": 0
+                    },
+                    "translateX": {
+                      "label": "Position X",
+                      "type": "slider",
+                      "value": 0
+                    },
+                    "translateY": {
+                      "label": "Position Y",
+                      "type": "slider",
+                      "value": 0
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 1
+                    },
+                    "radius": {
+                      "label": "Border Radius",
+                      "type": "radius",
+                      "value": 15
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": "filter: none; opacity: 1; transform: none; box-shadow: none; mix-blend-mode: normal; object-fit: cover; object-position: 50% 50%;"
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 31
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 21
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "178204332003154ytnvto5",
+              "label": "Text",
+              "type": "text",
+              "field": {
+                "structure": {
+                  "label": "Text Content",
+                  "child": {
+                    "text": {
+                      "label": "Text",
+                      "type": "text",
+                      "value": "© 2026 MKE MAHJONG SOCIAL GROUP"
+                    },
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "external",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Text Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 354
+                    },
+                    "paddingInline": {
+                      "label": "Horizontal Padding",
+                      "type": "paddingInline",
+                      "value": 20
+                    },
+                    "paddingBlock": {
+                      "label": "Vertical Padding",
+                      "type": "paddingBlock",
+                      "value": 10
+                    },
+                    "fontSize": {
+                      "label": "Font Size",
+                      "type": "fontSize",
+                      "value": 12
+                    },
+                    "fontFamily": {
+                      "label": "Font Family",
+                      "type": "fontFamily",
+                      "value": "\"DM Sans\", sans-serif"
+                    },
+                    "color": {
+                      "label": "Font Color",
+                      "type": "color",
+                      "value": "rgb(251, 246, 232)"
+                    },
+                    "fontWeight": {
+                      "label": "Font Weight",
+                      "type": "fontWeight",
+                      "value": "400"
+                    },
+                    "letterSpacing": {
+                      "label": "Letter Spacing",
+                      "type": "letterSpacing",
+                      "value": 0
+                    },
+                    "lineHeight": {
+                      "label": "Line Height",
+                      "type": "lineHeight",
+                      "value": 1.5
+                    },
+                    "fontStyle": {
+                      "label": "Italic",
+                      "type": "fontStyle",
+                      "value": "normal"
+                    },
+                    "textDecoration": {
+                      "label": "Underline",
+                      "type": "textDecoration",
+                      "value": "none"
+                    },
+                    "justify": {
+                      "label": "Layout",
+                      "type": "justify",
+                      "value": "center"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 2
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 694
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 12
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": ""
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "styles": {
+      "label": "Container Style",
+      "child": {
+        "width": {
+          "label": "Container Width",
+          "type": "width",
+          "value": 386,
+          "min": 386,
+          "max": 2000
+        },
+        "height": {
+          "label": "Container Height",
+          "type": "height",
+          "value": 743
+        },
+        "justify": {
+          "label": "Layout",
+          "type": "justify",
+          "value": "left"
+        },
+        "bgColor": {
+          "label": "Background Color",
+          "type": "bgColor",
+          "value": "rgb(20, 82, 43)"
+        },
+        "left": {
+          "label": "Left Distance",
+          "type": "left",
+          "value": 0
+        },
+        "top": {
+          "label": "Top Distance",
+          "type": "top",
+          "value": 0
+        },
+        "zIndex": {
+          "label": "Levels",
+          "type": "zIndex",
+          "value": 1
+        },
+        "customCSS": {
+          "label": "Custom CSS",
+          "type": "customCSS",
+          "value": ""
+        }
+      }
+    },
+    "config": {
+      "label": "Alignment & Grid Settings",
+      "child": {
+        "editMode": {
+          "label": "Edit Mode",
+          "type": "editMode",
+          "value": "free-form"
+        },
+        "showGuides": {
+          "label": "Show Alignment Guides",
+          "type": "showGuides",
+          "value": true
+        },
+        "enableHorizontalScroll": {
+          "label": "Enable Horizontal Scroll",
+          "type": "enableHorizontalScroll",
+          "value": false
+        },
+        "gridSize": {
+          "label": "Grid Size (px)",
+          "type": "gridSize",
+          "value": 10
+        }
+      }
+    }
+  },
+  "component": {
+    "name": "free-box",
+    "props": {}
+  }
+}

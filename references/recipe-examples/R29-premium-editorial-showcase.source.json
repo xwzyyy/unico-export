@@ -1,0 +1,2050 @@
+{
+  "label": "Freeform Container",
+  "type": "free-box",
+  "icon": "https://unicoawsapp.s3.us-east-1.amazonaws.com/dndicon/ziyourongqi.png",
+  "field": {
+    "structure": {
+      "label": "Freeform Container",
+      "child": {
+        "component_list": {
+          "label": "Widgets List",
+          "type": "component_list",
+          "value": [
+            {
+              "label": "Image",
+              "type": "img",
+              "field": {
+                "structure": {
+                  "label": "Image Content",
+                  "child": {
+                    "upload": {
+                      "label": "Image Upload",
+                      "type": "upload",
+                      "value": {
+                        "url": "https://unicoawsapp.s3.amazonaws.com/materials/f89d2a68ed774e0da4819ff4e6caed1f.jpg",
+                        "crop": {
+                          "mode": "manual",
+                          "fitMode": "contain",
+                          "cropArea": {
+                            "x": 0,
+                            "y": 0,
+                            "width": 100,
+                            "height": 100
+                          },
+                          "transform": {
+                            "scale": 1,
+                            "rotate": 0
+                          },
+                          "originalWidth": 1351,
+                          "originalHeight": 1080
+                        }
+                      }
+                    },
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "page",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Image Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 388
+                    },
+                    "height": {
+                      "label": "Height",
+                      "type": "height",
+                      "value": 312
+                    },
+                    "scale": {
+                      "label": "Scale",
+                      "type": "slider",
+                      "value": 100
+                    },
+                    "rotate": {
+                      "label": "Rotate",
+                      "type": "slider",
+                      "value": 0
+                    },
+                    "translateX": {
+                      "label": "Position X",
+                      "type": "slider",
+                      "value": 0
+                    },
+                    "translateY": {
+                      "label": "Position Y",
+                      "type": "slider",
+                      "value": 0
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 5
+                    },
+                    "radius": {
+                      "label": "Border Radius",
+                      "type": "radius",
+                      "value": 0
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": ""
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": -3
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": -1
+                    }
+                  }
+                }
+              },
+              "id": "4876a16f-b9c9-4815-ae7c-d4d48f0cf859"
+            },
+            {
+              "label": "Rectangle",
+              "type": "rectangle",
+              "field": {
+                "structure": {
+                  "label": "Rectangle Content",
+                  "child": {
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "page",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Rectangle Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 330
+                    },
+                    "height": {
+                      "label": "Height",
+                      "type": "height",
+                      "value": 70
+                    },
+                    "bgColor": {
+                      "label": "Background Color",
+                      "type": "bgColor",
+                      "value": "#181818"
+                    },
+                    "borderColor": {
+                      "label": "Border Color",
+                      "type": "color",
+                      "value": "#ffffffff"
+                    },
+                    "borderWidth": {
+                      "label": "Border Width",
+                      "type": "borderWidth",
+                      "value": 0
+                    },
+                    "radius": {
+                      "label": "Border Radius",
+                      "type": "radius",
+                      "value": 1
+                    },
+                    "backdropFilter": {
+                      "label": "Background Blur",
+                      "type": "backdropFilter",
+                      "value": 0
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": "border-left: 3px solid #333333;"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 5
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 623
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 31.1600341796875
+                    }
+                  }
+                }
+              },
+              "id": "4203a7e1-6513-4116-a025-d9fa54bb60d6"
+            },
+            {
+              "label": "Text",
+              "type": "text",
+              "field": {
+                "structure": {
+                  "label": "Text Content",
+                  "child": {
+                    "text": {
+                      "label": "Text",
+                      "type": "text",
+                      "value": "AI 不是替代电影， 而是在重构电影的 生产方式"
+                    },
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "page",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Text Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 235
+                    },
+                    "paddingInline": {
+                      "label": "Horizontal Padding",
+                      "type": "paddingInline",
+                      "value": 20
+                    },
+                    "paddingBlock": {
+                      "label": "Vertical Padding",
+                      "type": "paddingBlock",
+                      "value": 10
+                    },
+                    "fontSize": {
+                      "label": "Font Size",
+                      "type": "fontSize",
+                      "value": 26
+                    },
+                    "fontFamily": {
+                      "label": "Font Family",
+                      "type": "fontFamily",
+                      "value": "inherit"
+                    },
+                    "color": {
+                      "label": "Font Color",
+                      "type": "color",
+                      "value": "#FFFFFF"
+                    },
+                    "fontWeight": {
+                      "label": "Font Weight",
+                      "type": "fontWeight",
+                      "value": 700
+                    },
+                    "letterSpacing": {
+                      "label": "Letter Spacing",
+                      "type": "letterSpacing",
+                      "value": 0
+                    },
+                    "lineHeight": {
+                      "label": "Line Height",
+                      "type": "lineHeight",
+                      "value": 1.5
+                    },
+                    "fontStyle": {
+                      "label": "Italic",
+                      "type": "fontStyle",
+                      "value": "normal"
+                    },
+                    "textDecoration": {
+                      "label": "Underline",
+                      "type": "textDecoration",
+                      "value": "none"
+                    },
+                    "justify": {
+                      "label": "Layout",
+                      "type": "justify",
+                      "value": "left"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 5
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 364
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 21.1600341796875
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": ""
+                    }
+                  }
+                }
+              },
+              "id": "6a16ae44-356b-4bd6-90a8-c610f4ff0a75"
+            },
+            {
+              "label": "Rectangle",
+              "type": "rectangle",
+              "field": {
+                "structure": {
+                  "label": "Rectangle Content",
+                  "child": {
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "page",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Rectangle Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 192.8399658203125
+                    },
+                    "height": {
+                      "label": "Height",
+                      "type": "height",
+                      "value": 25
+                    },
+                    "bgColor": {
+                      "label": "Background Color",
+                      "type": "bgColor",
+                      "value": "transparent"
+                    },
+                    "borderColor": {
+                      "label": "Border Color",
+                      "type": "color",
+                      "value": "#98702A"
+                    },
+                    "borderWidth": {
+                      "label": "Border Width",
+                      "type": "borderWidth",
+                      "value": 1
+                    },
+                    "radius": {
+                      "label": "Border Radius",
+                      "type": "radius",
+                      "value": 2
+                    },
+                    "backdropFilter": {
+                      "label": "Background Blur",
+                      "type": "backdropFilter",
+                      "value": 0
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": ""
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 5
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 323
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 31.1600341796875
+                    }
+                  }
+                }
+              },
+              "id": "7405e9da-8ccf-46d2-b31f-d510d8bb1d9f"
+            },
+            {
+              "label": "Text",
+              "type": "text",
+              "field": {
+                "structure": {
+                  "label": "Text Content",
+                  "child": {
+                    "text": {
+                      "label": "Text",
+                      "type": "text",
+                      "value": "MARS LANDING FILM, LLC"
+                    },
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "page",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Text Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 247
+                    },
+                    "paddingInline": {
+                      "label": "Horizontal Padding",
+                      "type": "paddingInline",
+                      "value": 19
+                    },
+                    "paddingBlock": {
+                      "label": "Vertical Padding",
+                      "type": "paddingBlock",
+                      "value": 10
+                    },
+                    "fontSize": {
+                      "label": "Font Size",
+                      "type": "fontSize",
+                      "value": 11
+                    },
+                    "fontFamily": {
+                      "label": "Font Family",
+                      "type": "fontFamily",
+                      "value": "inherit"
+                    },
+                    "color": {
+                      "label": "Font Color",
+                      "type": "color",
+                      "value": "#C8A96E"
+                    },
+                    "fontWeight": {
+                      "label": "Font Weight",
+                      "type": "fontWeight",
+                      "value": 700
+                    },
+                    "letterSpacing": {
+                      "label": "Letter Spacing",
+                      "type": "letterSpacing",
+                      "value": 1.5
+                    },
+                    "lineHeight": {
+                      "label": "Line Height",
+                      "type": "lineHeight",
+                      "value": 1.5
+                    },
+                    "fontStyle": {
+                      "label": "Italic",
+                      "type": "fontStyle",
+                      "value": "normal"
+                    },
+                    "textDecoration": {
+                      "label": "Underline",
+                      "type": "textDecoration",
+                      "value": "none"
+                    },
+                    "justify": {
+                      "label": "Layout",
+                      "type": "justify",
+                      "value": "left"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 5
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 323
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 30.79998779296875
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": ""
+                    }
+                  }
+                }
+              },
+              "id": "5a56b590-d972-4c5b-99fb-61dad11d9497"
+            },
+            {
+              "label": "Text",
+              "type": "text",
+              "field": {
+                "structure": {
+                  "label": "Text Content",
+                  "child": {
+                    "text": {
+                      "label": "Text",
+                      "type": "text",
+                      "value": "Mars Landing Film, LLC 专注于 AI 原生电影与新型内容开发。我们正在探索：如何以更低成本、更高效率，完成真正具有情感表达与商业价值的电影作品。这里不仅是 AI 技术实验，更是一次关于未来电影工业的尝试。"
+                    },
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "page",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Text Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 344
+                    },
+                    "paddingInline": {
+                      "label": "Horizontal Padding",
+                      "type": "paddingInline",
+                      "value": 20
+                    },
+                    "paddingBlock": {
+                      "label": "Vertical Padding",
+                      "type": "paddingBlock",
+                      "value": 10
+                    },
+                    "fontSize": {
+                      "label": "Font Size",
+                      "type": "fontSize",
+                      "value": 11
+                    },
+                    "fontFamily": {
+                      "label": "Font Family",
+                      "type": "fontFamily",
+                      "value": "inherit"
+                    },
+                    "color": {
+                      "label": "Font Color",
+                      "type": "color",
+                      "value": "#BBBBBB"
+                    },
+                    "fontWeight": {
+                      "label": "Font Weight",
+                      "type": "fontWeight",
+                      "value": 400
+                    },
+                    "letterSpacing": {
+                      "label": "Letter Spacing",
+                      "type": "letterSpacing",
+                      "value": 1
+                    },
+                    "lineHeight": {
+                      "label": "Line Height",
+                      "type": "lineHeight",
+                      "value": 2
+                    },
+                    "fontStyle": {
+                      "label": "Italic",
+                      "type": "fontStyle",
+                      "value": "normal"
+                    },
+                    "textDecoration": {
+                      "label": "Underline",
+                      "type": "textDecoration",
+                      "value": "none"
+                    },
+                    "justify": {
+                      "label": "Layout",
+                      "type": "justify",
+                      "value": "left"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 5
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 491
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 22
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": ""
+                    }
+                  }
+                }
+              },
+              "id": "1780308344883bdd635sbr"
+            },
+            {
+              "label": "Button",
+              "type": "button",
+              "field": {
+                "structure": {
+                  "label": "Button Text",
+                  "child": {
+                    "text": {
+                      "label": "Text",
+                      "type": "text",
+                      "value": "查 看 AI 项 目"
+                    },
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "page",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Button Style",
+                  "child": {
+                    "width": {
+                      "label": "Button Width",
+                      "type": "width",
+                      "value": 80,
+                      "min": 0,
+                      "max": 700
+                    },
+                    "height": {
+                      "label": "Button Height",
+                      "type": "height",
+                      "value": 33,
+                      "min": 0,
+                      "max": 300
+                    },
+                    "paddingInline": {
+                      "label": "Horizontal Padding",
+                      "type": "paddingInline",
+                      "value": 0
+                    },
+                    "paddingBlock": {
+                      "label": "Vertical Padding",
+                      "type": "paddingBlock",
+                      "value": 0
+                    },
+                    "radius": {
+                      "label": "Button Radius",
+                      "type": "radius",
+                      "value": 1
+                    },
+                    "fontSize": {
+                      "label": "Font Size",
+                      "type": "fontSize",
+                      "value": 10
+                    },
+                    "color": {
+                      "label": "Font Color",
+                      "type": "color",
+                      "value": "#000000"
+                    },
+                    "bgColor": {
+                      "label": "Button Color",
+                      "type": "bgColor",
+                      "value": "#C8A96E"
+                    },
+                    "borderColor": {
+                      "label": "Border Color",
+                      "type": "color",
+                      "value": "#444444"
+                    },
+                    "borderWidth": {
+                      "label": "Border Width",
+                      "type": "borderWidth",
+                      "value": 0
+                    },
+                    "fontWeight": {
+                      "label": "Bold",
+                      "type": "fontWeight",
+                      "value": "normal"
+                    },
+                    "fontStyle": {
+                      "label": "Italic",
+                      "type": "fontStyle",
+                      "value": "normal"
+                    },
+                    "textDecoration": {
+                      "label": "Underline",
+                      "type": "textDecoration",
+                      "value": "none"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 5
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 873
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 32
+                    }
+                  }
+                }
+              },
+              "id": "1780305928378t61bcvk9a"
+            },
+            {
+              "label": "Button",
+              "type": "button",
+              "field": {
+                "structure": {
+                  "label": "Button Text",
+                  "child": {
+                    "text": {
+                      "label": "Text",
+                      "type": "text",
+                      "value": "合 作 与 投 资"
+                    },
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "page",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Button Style",
+                  "child": {
+                    "width": {
+                      "label": "Button Width",
+                      "type": "width",
+                      "value": 98,
+                      "min": 0,
+                      "max": 700
+                    },
+                    "height": {
+                      "label": "Button Height",
+                      "type": "height",
+                      "value": 34,
+                      "min": 0,
+                      "max": 300
+                    },
+                    "paddingInline": {
+                      "label": "Horizontal Padding",
+                      "type": "paddingInline",
+                      "value": 0
+                    },
+                    "paddingBlock": {
+                      "label": "Vertical Padding",
+                      "type": "paddingBlock",
+                      "value": 0
+                    },
+                    "radius": {
+                      "label": "Button Radius",
+                      "type": "radius",
+                      "value": 0
+                    },
+                    "fontSize": {
+                      "label": "Font Size",
+                      "type": "fontSize",
+                      "value": 11
+                    },
+                    "color": {
+                      "label": "Font Color",
+                      "type": "color",
+                      "value": "#999999"
+                    },
+                    "bgColor": {
+                      "label": "Button Color",
+                      "type": "bgColor",
+                      "value": "transparent"
+                    },
+                    "borderColor": {
+                      "label": "Border Color",
+                      "type": "color",
+                      "value": "#555555"
+                    },
+                    "borderWidth": {
+                      "label": "Border Width",
+                      "type": "borderWidth",
+                      "value": 1
+                    },
+                    "fontWeight": {
+                      "label": "Bold",
+                      "type": "fontWeight",
+                      "value": "normal"
+                    },
+                    "fontStyle": {
+                      "label": "Italic",
+                      "type": "fontStyle",
+                      "value": "normal"
+                    },
+                    "textDecoration": {
+                      "label": "Underline",
+                      "type": "textDecoration",
+                      "value": "none"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 5
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 872
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 123
+                    }
+                  }
+                }
+              },
+              "id": "1780306128912k7jsf32qa"
+            },
+            {
+              "label": "Text",
+              "type": "text",
+              "field": {
+                "structure": {
+                  "label": "Text Content",
+                  "child": {
+                    "text": {
+                      "label": "Text",
+                      "type": "text",
+                      "value": "AI 原生电影"
+                    },
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "page",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Text Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 154
+                    },
+                    "paddingInline": {
+                      "label": "Horizontal Padding",
+                      "type": "paddingInline",
+                      "value": 20
+                    },
+                    "paddingBlock": {
+                      "label": "Vertical Padding",
+                      "type": "paddingBlock",
+                      "value": 10
+                    },
+                    "fontSize": {
+                      "label": "Font Size",
+                      "type": "fontSize",
+                      "value": 11
+                    },
+                    "fontFamily": {
+                      "label": "Font Family",
+                      "type": "fontFamily",
+                      "value": "inherit"
+                    },
+                    "color": {
+                      "label": "Font Color",
+                      "type": "color",
+                      "value": "#BBBBBB"
+                    },
+                    "fontWeight": {
+                      "label": "Font Weight",
+                      "type": "fontWeight",
+                      "value": 400
+                    },
+                    "letterSpacing": {
+                      "label": "Letter Spacing",
+                      "type": "letterSpacing",
+                      "value": 1
+                    },
+                    "lineHeight": {
+                      "label": "Line Height",
+                      "type": "lineHeight",
+                      "value": 2
+                    },
+                    "fontStyle": {
+                      "label": "Italic",
+                      "type": "fontStyle",
+                      "value": "normal"
+                    },
+                    "textDecoration": {
+                      "label": "Underline",
+                      "type": "textDecoration",
+                      "value": "none"
+                    },
+                    "justify": {
+                      "label": "Layout",
+                      "type": "justify",
+                      "value": "left"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 5
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 624
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 44
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": ""
+                    }
+                  }
+                }
+              },
+              "id": "1780308699752qdke4arvd"
+            },
+            {
+              "label": "Text",
+              "type": "text",
+              "field": {
+                "structure": {
+                  "label": "Text Content",
+                  "child": {
+                    "text": {
+                      "label": "Text",
+                      "type": "text",
+                      "value": "《怒赢世界杯》— 首部 AI 原生长片项目"
+                    },
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "page",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Text Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 324
+                    },
+                    "paddingInline": {
+                      "label": "Horizontal Padding",
+                      "type": "paddingInline",
+                      "value": 20
+                    },
+                    "paddingBlock": {
+                      "label": "Vertical Padding",
+                      "type": "paddingBlock",
+                      "value": 10
+                    },
+                    "fontSize": {
+                      "label": "Font Size",
+                      "type": "fontSize",
+                      "value": 11
+                    },
+                    "fontFamily": {
+                      "label": "Font Family",
+                      "type": "fontFamily",
+                      "value": "inherit"
+                    },
+                    "color": {
+                      "label": "Font Color",
+                      "type": "color",
+                      "value": "#666666"
+                    },
+                    "fontWeight": {
+                      "label": "Font Weight",
+                      "type": "fontWeight",
+                      "value": 400
+                    },
+                    "letterSpacing": {
+                      "label": "Letter Spacing",
+                      "type": "letterSpacing",
+                      "value": 1
+                    },
+                    "lineHeight": {
+                      "label": "Line Height",
+                      "type": "lineHeight",
+                      "value": 2
+                    },
+                    "fontStyle": {
+                      "label": "Italic",
+                      "type": "fontStyle",
+                      "value": "normal"
+                    },
+                    "textDecoration": {
+                      "label": "Underline",
+                      "type": "textDecoration",
+                      "value": "none"
+                    },
+                    "justify": {
+                      "label": "Layout",
+                      "type": "justify",
+                      "value": "left"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 5
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 652
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 39
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": ""
+                    }
+                  }
+                }
+              },
+              "id": "178030872594905yjnwchg"
+            },
+            {
+              "label": "Rectangle",
+              "type": "rectangle",
+              "field": {
+                "structure": {
+                  "label": "Rectangle Content",
+                  "child": {
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "page",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Rectangle Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 330
+                    },
+                    "height": {
+                      "label": "Height",
+                      "type": "height",
+                      "value": 70
+                    },
+                    "bgColor": {
+                      "label": "Background Color",
+                      "type": "bgColor",
+                      "value": "#181818"
+                    },
+                    "borderColor": {
+                      "label": "Border Color",
+                      "type": "color",
+                      "value": "#ffffffff"
+                    },
+                    "borderWidth": {
+                      "label": "Border Width",
+                      "type": "borderWidth",
+                      "value": 0
+                    },
+                    "radius": {
+                      "label": "Border Radius",
+                      "type": "radius",
+                      "value": 1
+                    },
+                    "backdropFilter": {
+                      "label": "Background Blur",
+                      "type": "backdropFilter",
+                      "value": 0
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": "border-left: 3px solid #333333;"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 5
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 698
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 32
+                    }
+                  }
+                }
+              },
+              "id": "1780309025990ec60sb3o4"
+            },
+            {
+              "label": "Rectangle",
+              "type": "rectangle",
+              "field": {
+                "structure": {
+                  "label": "Rectangle Content",
+                  "child": {
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "page",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Rectangle Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 330
+                    },
+                    "height": {
+                      "label": "Height",
+                      "type": "height",
+                      "value": 70
+                    },
+                    "bgColor": {
+                      "label": "Background Color",
+                      "type": "bgColor",
+                      "value": "#181818"
+                    },
+                    "borderColor": {
+                      "label": "Border Color",
+                      "type": "color",
+                      "value": "#ffffffff"
+                    },
+                    "borderWidth": {
+                      "label": "Border Width",
+                      "type": "borderWidth",
+                      "value": 0
+                    },
+                    "radius": {
+                      "label": "Border Radius",
+                      "type": "radius",
+                      "value": 1
+                    },
+                    "backdropFilter": {
+                      "label": "Background Blur",
+                      "type": "backdropFilter",
+                      "value": 0
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": "border-left: 3px solid #333333;"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 5
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 773
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 32
+                    }
+                  }
+                }
+              },
+              "id": "178030903213704yq2mqyf"
+            },
+            {
+              "label": "Text",
+              "type": "text",
+              "field": {
+                "structure": {
+                  "label": "Text Content",
+                  "child": {
+                    "text": {
+                      "label": "Text",
+                      "type": "text",
+                      "value": "AI Production Pipeline"
+                    },
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "page",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Text Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 154
+                    },
+                    "paddingInline": {
+                      "label": "Horizontal Padding",
+                      "type": "paddingInline",
+                      "value": 20
+                    },
+                    "paddingBlock": {
+                      "label": "Vertical Padding",
+                      "type": "paddingBlock",
+                      "value": 10
+                    },
+                    "fontSize": {
+                      "label": "Font Size",
+                      "type": "fontSize",
+                      "value": 11
+                    },
+                    "fontFamily": {
+                      "label": "Font Family",
+                      "type": "fontFamily",
+                      "value": "inherit"
+                    },
+                    "color": {
+                      "label": "Font Color",
+                      "type": "color",
+                      "value": "#BBBBBB"
+                    },
+                    "fontWeight": {
+                      "label": "Font Weight",
+                      "type": "fontWeight",
+                      "value": 400
+                    },
+                    "letterSpacing": {
+                      "label": "Letter Spacing",
+                      "type": "letterSpacing",
+                      "value": 1
+                    },
+                    "lineHeight": {
+                      "label": "Line Height",
+                      "type": "lineHeight",
+                      "value": 2
+                    },
+                    "fontStyle": {
+                      "label": "Italic",
+                      "type": "fontStyle",
+                      "value": "normal"
+                    },
+                    "textDecoration": {
+                      "label": "Underline",
+                      "type": "textDecoration",
+                      "value": "none"
+                    },
+                    "justify": {
+                      "label": "Layout",
+                      "type": "justify",
+                      "value": "left"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 5
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 700
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 45
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": ""
+                    }
+                  }
+                }
+              },
+              "id": "1780309047568zfcxjurjx"
+            },
+            {
+              "label": "Text",
+              "type": "text",
+              "field": {
+                "structure": {
+                  "label": "Text Content",
+                  "child": {
+                    "text": {
+                      "label": "Text",
+                      "type": "text",
+                      "value": "角色一致性 · AI 生成流程 · Prompt Workflow · 后期系统"
+                    },
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "page",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Text Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 324
+                    },
+                    "paddingInline": {
+                      "label": "Horizontal Padding",
+                      "type": "paddingInline",
+                      "value": 20
+                    },
+                    "paddingBlock": {
+                      "label": "Vertical Padding",
+                      "type": "paddingBlock",
+                      "value": 10
+                    },
+                    "fontSize": {
+                      "label": "Font Size",
+                      "type": "fontSize",
+                      "value": 11
+                    },
+                    "fontFamily": {
+                      "label": "Font Family",
+                      "type": "fontFamily",
+                      "value": "inherit"
+                    },
+                    "color": {
+                      "label": "Font Color",
+                      "type": "color",
+                      "value": "#666666"
+                    },
+                    "fontWeight": {
+                      "label": "Font Weight",
+                      "type": "fontWeight",
+                      "value": 400
+                    },
+                    "letterSpacing": {
+                      "label": "Letter Spacing",
+                      "type": "letterSpacing",
+                      "value": 1
+                    },
+                    "lineHeight": {
+                      "label": "Line Height",
+                      "type": "lineHeight",
+                      "value": 2
+                    },
+                    "fontStyle": {
+                      "label": "Italic",
+                      "type": "fontStyle",
+                      "value": "normal"
+                    },
+                    "textDecoration": {
+                      "label": "Underline",
+                      "type": "textDecoration",
+                      "value": "none"
+                    },
+                    "justify": {
+                      "label": "Layout",
+                      "type": "justify",
+                      "value": "left"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 5
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 727
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 43
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": ""
+                    }
+                  }
+                }
+              },
+              "id": "1780309052630yw13dtlvb"
+            },
+            {
+              "label": "Text",
+              "type": "text",
+              "field": {
+                "structure": {
+                  "label": "Text Content",
+                  "child": {
+                    "text": {
+                      "label": "Text",
+                      "type": "text",
+                      "value": "全球发行与商业化"
+                    },
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "page",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Text Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 154
+                    },
+                    "paddingInline": {
+                      "label": "Horizontal Padding",
+                      "type": "paddingInline",
+                      "value": 20
+                    },
+                    "paddingBlock": {
+                      "label": "Vertical Padding",
+                      "type": "paddingBlock",
+                      "value": 10
+                    },
+                    "fontSize": {
+                      "label": "Font Size",
+                      "type": "fontSize",
+                      "value": 11
+                    },
+                    "fontFamily": {
+                      "label": "Font Family",
+                      "type": "fontFamily",
+                      "value": "inherit"
+                    },
+                    "color": {
+                      "label": "Font Color",
+                      "type": "color",
+                      "value": "#BBBBBB"
+                    },
+                    "fontWeight": {
+                      "label": "Font Weight",
+                      "type": "fontWeight",
+                      "value": 400
+                    },
+                    "letterSpacing": {
+                      "label": "Letter Spacing",
+                      "type": "letterSpacing",
+                      "value": 1
+                    },
+                    "lineHeight": {
+                      "label": "Line Height",
+                      "type": "lineHeight",
+                      "value": 2
+                    },
+                    "fontStyle": {
+                      "label": "Italic",
+                      "type": "fontStyle",
+                      "value": "normal"
+                    },
+                    "textDecoration": {
+                      "label": "Underline",
+                      "type": "textDecoration",
+                      "value": "none"
+                    },
+                    "justify": {
+                      "label": "Layout",
+                      "type": "justify",
+                      "value": "left"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 5
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 775
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 44
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": ""
+                    }
+                  }
+                }
+              },
+              "id": "1780309058533x5biap63f"
+            },
+            {
+              "label": "Text",
+              "type": "text",
+              "field": {
+                "structure": {
+                  "label": "Text Content",
+                  "child": {
+                    "text": {
+                      "label": "Text",
+                      "type": "text",
+                      "value": "电影节 · 流媒体 · 品牌合作 · 国际市场"
+                    },
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "page",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Text Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 324
+                    },
+                    "paddingInline": {
+                      "label": "Horizontal Padding",
+                      "type": "paddingInline",
+                      "value": 20
+                    },
+                    "paddingBlock": {
+                      "label": "Vertical Padding",
+                      "type": "paddingBlock",
+                      "value": 10
+                    },
+                    "fontSize": {
+                      "label": "Font Size",
+                      "type": "fontSize",
+                      "value": 11
+                    },
+                    "fontFamily": {
+                      "label": "Font Family",
+                      "type": "fontFamily",
+                      "value": "inherit"
+                    },
+                    "color": {
+                      "label": "Font Color",
+                      "type": "color",
+                      "value": "#666666"
+                    },
+                    "fontWeight": {
+                      "label": "Font Weight",
+                      "type": "fontWeight",
+                      "value": 400
+                    },
+                    "letterSpacing": {
+                      "label": "Letter Spacing",
+                      "type": "letterSpacing",
+                      "value": 1
+                    },
+                    "lineHeight": {
+                      "label": "Line Height",
+                      "type": "lineHeight",
+                      "value": 2
+                    },
+                    "fontStyle": {
+                      "label": "Italic",
+                      "type": "fontStyle",
+                      "value": "normal"
+                    },
+                    "textDecoration": {
+                      "label": "Underline",
+                      "type": "textDecoration",
+                      "value": "none"
+                    },
+                    "justify": {
+                      "label": "Layout",
+                      "type": "justify",
+                      "value": "left"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 5
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 802
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 44
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": ""
+                    }
+                  }
+                }
+              },
+              "id": "178030906242826xx7xhxx"
+            },
+            {
+              "label": "Rectangle",
+              "type": "rectangle",
+              "field": {
+                "structure": {
+                  "label": "Rectangle Content",
+                  "child": {
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "page",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Rectangle Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 417
+                    },
+                    "height": {
+                      "label": "Height",
+                      "type": "height",
+                      "value": 77
+                    },
+                    "bgColor": {
+                      "label": "Background Color",
+                      "type": "bgColor",
+                      "value": "linear-gradient(0deg, #000000 10%, rgba(0,0,0, 0) 100%)"
+                    },
+                    "borderColor": {
+                      "label": "Border Color",
+                      "type": "color",
+                      "value": "#ffffffff"
+                    },
+                    "borderWidth": {
+                      "label": "Border Width",
+                      "type": "borderWidth",
+                      "value": 0
+                    },
+                    "radius": {
+                      "label": "Border Radius",
+                      "type": "radius",
+                      "value": 1
+                    },
+                    "backdropFilter": {
+                      "label": "Background Blur",
+                      "type": "backdropFilter",
+                      "value": 0
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": ""
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 5
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 240
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": -28
+                    }
+                  }
+                }
+              },
+              "id": "178034286630230d3jqd58"
+            },
+            {
+              "label": "Rectangle",
+              "type": "rectangle",
+              "field": {
+                "structure": {
+                  "label": "Rectangle Content",
+                  "child": {
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "page",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Rectangle Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 419
+                    },
+                    "height": {
+                      "label": "Height",
+                      "type": "height",
+                      "value": 176
+                    },
+                    "bgColor": {
+                      "label": "Background Color",
+                      "type": "bgColor",
+                      "value": "linear-gradient(180deg, #000000 10%, rgba(0,0,0, 0) 100%)"
+                    },
+                    "borderColor": {
+                      "label": "Border Color",
+                      "type": "color",
+                      "value": "#ffffffff"
+                    },
+                    "borderWidth": {
+                      "label": "Border Width",
+                      "type": "borderWidth",
+                      "value": 0
+                    },
+                    "radius": {
+                      "label": "Border Radius",
+                      "type": "radius",
+                      "value": 1
+                    },
+                    "backdropFilter": {
+                      "label": "Background Blur",
+                      "type": "backdropFilter",
+                      "value": 0
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": ""
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 5
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": -61
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": -21
+                    }
+                  }
+                }
+              },
+              "id": "1780342900394o7hu8frue"
+            },
+            {
+              "label": "Text",
+              "type": "text",
+              "field": {
+                "structure": {
+                  "label": "Text Content",
+                  "child": {
+                    "text": {
+                      "label": "Text",
+                      "type": "text",
+                      "value": "MARS LANDING FILM, LLC"
+                    },
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "page",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Text Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 247
+                    },
+                    "paddingInline": {
+                      "label": "Horizontal Padding",
+                      "type": "paddingInline",
+                      "value": 19
+                    },
+                    "paddingBlock": {
+                      "label": "Vertical Padding",
+                      "type": "paddingBlock",
+                      "value": 10
+                    },
+                    "fontSize": {
+                      "label": "Font Size",
+                      "type": "fontSize",
+                      "value": 9
+                    },
+                    "fontFamily": {
+                      "label": "Font Family",
+                      "type": "fontFamily",
+                      "value": "inherit"
+                    },
+                    "color": {
+                      "label": "Font Color",
+                      "type": "color",
+                      "value": "#FFFFFF"
+                    },
+                    "fontWeight": {
+                      "label": "Font Weight",
+                      "type": "fontWeight",
+                      "value": 700
+                    },
+                    "letterSpacing": {
+                      "label": "Letter Spacing",
+                      "type": "letterSpacing",
+                      "value": 1.5
+                    },
+                    "lineHeight": {
+                      "label": "Line Height",
+                      "type": "lineHeight",
+                      "value": 1.5
+                    },
+                    "fontStyle": {
+                      "label": "Italic",
+                      "type": "fontStyle",
+                      "value": "normal"
+                    },
+                    "textDecoration": {
+                      "label": "Underline",
+                      "type": "textDecoration",
+                      "value": "none"
+                    },
+                    "justify": {
+                      "label": "Layout",
+                      "type": "justify",
+                      "value": "left"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 5
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": -2
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 12
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": ""
+                    }
+                  }
+                }
+              },
+              "id": "1780343089678mcpq5f712"
+            }
+          ]
+        }
+      }
+    },
+    "styles": {
+      "label": "Container Style",
+      "child": {
+        "height": {
+          "label": "Container Height",
+          "type": "height",
+          "value": 943,
+          "max": 1000
+        },
+        "justify": {
+          "label": "Layout",
+          "type": "justify",
+          "value": "left"
+        },
+        "bgColor": {
+          "label": "Background Color",
+          "type": "bgColor",
+          "value": "#000000"
+        },
+        "width": {
+          "label": "Container Width",
+          "type": "width",
+          "value": 386,
+          "min": 386,
+          "max": 2000
+        },
+        "customCSS": {
+          "label": "Custom CSS",
+          "type": "customCSS",
+          "value": ""
+        }
+      }
+    },
+    "config": {
+      "label": "Alignment & Grid Settings",
+      "child": {
+        "editMode": {
+          "label": "Edit Mode",
+          "type": "editMode",
+          "value": "free-form"
+        },
+        "showGuides": {
+          "label": "Show Alignment Guides",
+          "type": "showGuides",
+          "value": true
+        },
+        "gridSize": {
+          "label": "Grid Size (px)",
+          "type": "gridSize",
+          "value": 10,
+          "min": 5,
+          "max": 50
+        },
+        "enableHorizontalScroll": {
+          "label": "Enable Horizontal Scroll",
+          "type": "enableHorizontalScroll",
+          "value": false
+        }
+      }
+    }
+  },
+  "component": {
+    "name": "free-box"
+  },
+  "id": "da19ca40-c256-4146-b6fb-3e471e9f386f"
+}

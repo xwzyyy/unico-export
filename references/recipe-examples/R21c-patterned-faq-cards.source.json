@@ -1,0 +1,2769 @@
+{
+  "id": "14cb7a53-d219-455f-b63c-28894ac8fcb1",
+  "label": "Freeform Container",
+  "type": "free-box",
+  "field": {
+    "structure": {
+      "label": "Freeform Container",
+      "child": {
+        "sectionName": {
+          "label": "Section Name",
+          "type": "text",
+          "value": "FAQs"
+        },
+        "component_list": {
+          "label": "Widgets List",
+          "type": "component_list",
+          "value": [
+            {
+              "id": "b55fcbcb-aba9-4621-8e05-5613eda33afb",
+              "label": "Rectangle",
+              "type": "rectangle",
+              "field": {
+                "structure": {
+                  "label": "Rectangle Content",
+                  "child": {
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "page",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Rectangle Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 342
+                    },
+                    "height": {
+                      "label": "Height",
+                      "type": "height",
+                      "value": 133
+                    },
+                    "bgColor": {
+                      "label": "Background Color",
+                      "type": "bgColor",
+                      "value": "rgba(246, 232, 201, 0.48)"
+                    },
+                    "borderColor": {
+                      "label": "Border Color",
+                      "type": "color",
+                      "value": "rgb(150, 59, 43) rgb(44, 32, 26) rgba(150, 59, 43, 0.42)"
+                    },
+                    "borderWidth": {
+                      "label": "Border Width",
+                      "type": "borderWidth",
+                      "value": 2
+                    },
+                    "radius": {
+                      "label": "Border Radius",
+                      "type": "radius",
+                      "value": 0
+                    },
+                    "backdropFilter": {
+                      "label": "Background Blur",
+                      "type": "backdropFilter",
+                      "value": 0
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": "background-size: auto; background-position: 0% 0%; background-repeat: repeat; box-shadow: none; filter: none; opacity: 1; transform: none; mix-blend-mode: normal; border-style: solid none;"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 1
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 43
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 22
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "ebb30a2a-b2a4-4f29-aa7f-38289bbf0f25",
+              "label": "Overlay",
+              "type": "rectangle",
+              "field": {
+                "structure": {
+                  "label": "Rectangle Content",
+                  "child": {
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "page",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Rectangle Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 30
+                    },
+                    "height": {
+                      "label": "Height",
+                      "type": "height",
+                      "value": 30
+                    },
+                    "bgColor": {
+                      "label": "Background Color",
+                      "type": "bgColor",
+                      "value": "transparent"
+                    },
+                    "borderColor": {
+                      "label": "Border Color",
+                      "type": "color",
+                      "value": "rgb(189, 135, 61)"
+                    },
+                    "borderWidth": {
+                      "label": "Border Width",
+                      "type": "borderWidth",
+                      "value": 1
+                    },
+                    "radius": {
+                      "label": "Border Radius",
+                      "type": "radius",
+                      "value": 0
+                    },
+                    "backdropFilter": {
+                      "label": "Background Blur",
+                      "type": "backdropFilter",
+                      "value": 0
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": "background-size: auto; background-position: 0% 0%; background-repeat: repeat; box-shadow: none; filter: none; opacity: 0.7; transform: matrix(0.707107, 0.707107, -0.707107, 0.707107, 0, 0); mix-blend-mode: normal; border-style: solid;"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 2
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 129
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 321
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "60695f10-8490-4a14-88c0-2c2aad24c0f7",
+              "label": "Rectangle",
+              "type": "rectangle",
+              "field": {
+                "structure": {
+                  "label": "Rectangle Content",
+                  "child": {
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "page",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Rectangle Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 342
+                    },
+                    "height": {
+                      "label": "Height",
+                      "type": "height",
+                      "value": 126
+                    },
+                    "bgColor": {
+                      "label": "Background Color",
+                      "type": "bgColor",
+                      "value": "rgb(227, 197, 143)"
+                    },
+                    "borderColor": {
+                      "label": "Border Color",
+                      "type": "color",
+                      "value": "rgb(74, 43, 31)"
+                    },
+                    "borderWidth": {
+                      "label": "Border Width",
+                      "type": "borderWidth",
+                      "value": 2
+                    },
+                    "radius": {
+                      "label": "Border Radius",
+                      "type": "radius",
+                      "value": 0
+                    },
+                    "backdropFilter": {
+                      "label": "Background Blur",
+                      "type": "backdropFilter",
+                      "value": 0
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": "background-size: auto; background-position: 0% 0%; background-repeat: repeat; box-shadow: rgba(74, 43, 31, 0.12) 3px 3px 0px 0px; filter: none; opacity: 1; transform: none; mix-blend-mode: normal; border-style: solid;"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 3
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 204
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 22
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "c4c966e5-2779-45fc-a8d8-e0700875608e",
+              "label": "Text",
+              "type": "text",
+              "field": {
+                "structure": {
+                  "label": "Text Content",
+                  "child": {
+                    "text": {
+                      "label": "Text",
+                      "type": "text",
+                      "value": "[ 柒 · 07 ]"
+                    },
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "page",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Text Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 97
+                    },
+                    "paddingInline": {
+                      "label": "Horizontal Padding",
+                      "type": "paddingInline",
+                      "value": 20
+                    },
+                    "paddingBlock": {
+                      "label": "Vertical Padding",
+                      "type": "paddingBlock",
+                      "value": 10
+                    },
+                    "fontSize": {
+                      "label": "Font Size",
+                      "type": "fontSize",
+                      "value": 10
+                    },
+                    "fontFamily": {
+                      "label": "Font Family",
+                      "type": "fontFamily",
+                      "value": "\"Courier Prime\", monospace"
+                    },
+                    "color": {
+                      "label": "Font Color",
+                      "type": "color",
+                      "value": "rgb(246, 232, 201)"
+                    },
+                    "fontWeight": {
+                      "label": "Font Weight",
+                      "type": "fontWeight",
+                      "value": "700"
+                    },
+                    "letterSpacing": {
+                      "label": "Letter Spacing",
+                      "type": "letterSpacing",
+                      "value": 1.6
+                    },
+                    "lineHeight": {
+                      "label": "Line Height",
+                      "type": "lineHeight",
+                      "value": 1.6
+                    },
+                    "fontStyle": {
+                      "label": "Italic",
+                      "type": "fontStyle",
+                      "value": "normal"
+                    },
+                    "textDecoration": {
+                      "label": "Underline",
+                      "type": "textDecoration",
+                      "value": "none"
+                    },
+                    "justify": {
+                      "label": "Layout",
+                      "type": "justify",
+                      "value": "center"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 4
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 66
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 35
+                    },
+                    "bgColor": {
+                      "label": "Background",
+                      "type": "bgColor",
+                      "value": "rgb(150, 59, 43)"
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": ""
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "99043c85-fd42-461a-b950-e7f098b74f9a",
+              "label": "Rectangle",
+              "type": "rectangle",
+              "field": {
+                "structure": {
+                  "label": "Rectangle Content",
+                  "child": {
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "page",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Rectangle Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 342
+                    },
+                    "height": {
+                      "label": "Height",
+                      "type": "height",
+                      "value": 126
+                    },
+                    "bgColor": {
+                      "label": "Background Color",
+                      "type": "bgColor",
+                      "value": "rgb(227, 197, 143)"
+                    },
+                    "borderColor": {
+                      "label": "Border Color",
+                      "type": "color",
+                      "value": "rgb(74, 43, 31)"
+                    },
+                    "borderWidth": {
+                      "label": "Border Width",
+                      "type": "borderWidth",
+                      "value": 2
+                    },
+                    "radius": {
+                      "label": "Border Radius",
+                      "type": "radius",
+                      "value": 0
+                    },
+                    "backdropFilter": {
+                      "label": "Background Blur",
+                      "type": "backdropFilter",
+                      "value": 0
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": "background-size: auto; background-position: 0% 0%; background-repeat: repeat; box-shadow: rgba(74, 43, 31, 0.12) 3px 3px 0px 0px; filter: none; opacity: 1; transform: none; mix-blend-mode: normal; border-style: solid;"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 5
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 340
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 22
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "309507b6-4ffd-4d03-bbf0-ea5512b0bcfe",
+              "label": "Text",
+              "type": "text",
+              "field": {
+                "structure": {
+                  "label": "Text Content",
+                  "child": {
+                    "text": {
+                      "label": "Text",
+                      "type": "text",
+                      "value": "FAQs"
+                    },
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "page",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Text Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 316
+                    },
+                    "paddingInline": {
+                      "label": "Horizontal Padding",
+                      "type": "paddingInline",
+                      "value": 20
+                    },
+                    "paddingBlock": {
+                      "label": "Vertical Padding",
+                      "type": "paddingBlock",
+                      "value": 10
+                    },
+                    "fontSize": {
+                      "label": "Font Size",
+                      "type": "fontSize",
+                      "value": 36
+                    },
+                    "fontFamily": {
+                      "label": "Font Family",
+                      "type": "fontFamily",
+                      "value": "\"Noto Serif TC\", serif"
+                    },
+                    "color": {
+                      "label": "Font Color",
+                      "type": "color",
+                      "value": "rgb(150, 59, 43)"
+                    },
+                    "fontWeight": {
+                      "label": "Font Weight",
+                      "type": "fontWeight",
+                      "value": "700"
+                    },
+                    "letterSpacing": {
+                      "label": "Letter Spacing",
+                      "type": "letterSpacing",
+                      "value": 2.88
+                    },
+                    "lineHeight": {
+                      "label": "Line Height",
+                      "type": "lineHeight",
+                      "value": 1.15
+                    },
+                    "fontStyle": {
+                      "label": "Italic",
+                      "type": "fontStyle",
+                      "value": "normal"
+                    },
+                    "textDecoration": {
+                      "label": "Underline",
+                      "type": "textDecoration",
+                      "value": "none"
+                    },
+                    "justify": {
+                      "label": "Layout",
+                      "type": "justify",
+                      "value": "left"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 6
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 97
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 35
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": ""
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "a71e3ea9-aa8b-470e-a9c4-cdf5f733b2e9",
+              "label": "Rectangle",
+              "type": "rectangle",
+              "field": {
+                "structure": {
+                  "label": "Rectangle Content",
+                  "child": {
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "page",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Rectangle Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 342
+                    },
+                    "height": {
+                      "label": "Height",
+                      "type": "height",
+                      "value": 126
+                    },
+                    "bgColor": {
+                      "label": "Background Color",
+                      "type": "bgColor",
+                      "value": "rgb(227, 197, 143)"
+                    },
+                    "borderColor": {
+                      "label": "Border Color",
+                      "type": "color",
+                      "value": "rgb(74, 43, 31)"
+                    },
+                    "borderWidth": {
+                      "label": "Border Width",
+                      "type": "borderWidth",
+                      "value": 2
+                    },
+                    "radius": {
+                      "label": "Border Radius",
+                      "type": "radius",
+                      "value": 0
+                    },
+                    "backdropFilter": {
+                      "label": "Background Blur",
+                      "type": "backdropFilter",
+                      "value": 0
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": "background-size: auto; background-position: 0% 0%; background-repeat: repeat; box-shadow: rgba(74, 43, 31, 0.12) 3px 3px 0px 0px; filter: none; opacity: 1; transform: none; mix-blend-mode: normal; border-style: solid;"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 7
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 476
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 22
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "18c82e80-57d7-4494-915f-29716c7702f0",
+              "label": "Text",
+              "type": "text",
+              "field": {
+                "structure": {
+                  "label": "Text Content",
+                  "child": {
+                    "text": {
+                      "label": "Text",
+                      "type": "text",
+                      "value": "TABLE NOTE / 拾 · 常見問題"
+                    },
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "page",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Text Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 316
+                    },
+                    "paddingInline": {
+                      "label": "Horizontal Padding",
+                      "type": "paddingInline",
+                      "value": 20
+                    },
+                    "paddingBlock": {
+                      "label": "Vertical Padding",
+                      "type": "paddingBlock",
+                      "value": 10
+                    },
+                    "fontSize": {
+                      "label": "Font Size",
+                      "type": "fontSize",
+                      "value": 11
+                    },
+                    "fontFamily": {
+                      "label": "Font Family",
+                      "type": "fontFamily",
+                      "value": "\"Courier Prime\", monospace"
+                    },
+                    "color": {
+                      "label": "Font Color",
+                      "type": "color",
+                      "value": "rgb(116, 102, 59)"
+                    },
+                    "fontWeight": {
+                      "label": "Font Weight",
+                      "type": "fontWeight",
+                      "value": "400"
+                    },
+                    "letterSpacing": {
+                      "label": "Letter Spacing",
+                      "type": "letterSpacing",
+                      "value": 2.2
+                    },
+                    "lineHeight": {
+                      "label": "Line Height",
+                      "type": "lineHeight",
+                      "value": 1.6
+                    },
+                    "fontStyle": {
+                      "label": "Italic",
+                      "type": "fontStyle",
+                      "value": "normal"
+                    },
+                    "textDecoration": {
+                      "label": "Underline",
+                      "type": "textDecoration",
+                      "value": "none"
+                    },
+                    "justify": {
+                      "label": "Layout",
+                      "type": "justify",
+                      "value": "left"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 8
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 144
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 35
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": ""
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "c08ac6ba-93cc-424a-bf69-bd90dd697170",
+              "label": "Text",
+              "type": "text",
+              "field": {
+                "structure": {
+                  "label": "Text Content",
+                  "child": {
+                    "text": {
+                      "label": "Text",
+                      "type": "text",
+                      "value": "01"
+                    },
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "page",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Text Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 49
+                    },
+                    "paddingInline": {
+                      "label": "Horizontal Padding",
+                      "type": "paddingInline",
+                      "value": 0
+                    },
+                    "paddingBlock": {
+                      "label": "Vertical Padding",
+                      "type": "paddingBlock",
+                      "value": 0
+                    },
+                    "fontSize": {
+                      "label": "Font Size",
+                      "type": "fontSize",
+                      "value": 14
+                    },
+                    "fontFamily": {
+                      "label": "Font Family",
+                      "type": "fontFamily",
+                      "value": "\"Courier Prime\", monospace"
+                    },
+                    "color": {
+                      "label": "Font Color",
+                      "type": "color",
+                      "value": "rgb(246, 232, 201)"
+                    },
+                    "fontWeight": {
+                      "label": "Font Weight",
+                      "type": "fontWeight",
+                      "value": 800
+                    },
+                    "letterSpacing": {
+                      "label": "Letter Spacing",
+                      "type": "letterSpacing",
+                      "value": 0
+                    },
+                    "lineHeight": {
+                      "label": "Line Height",
+                      "type": "lineHeight",
+                      "value": 3
+                    },
+                    "fontStyle": {
+                      "label": "Italic",
+                      "type": "fontStyle",
+                      "value": "normal"
+                    },
+                    "textDecoration": {
+                      "label": "Underline",
+                      "type": "textDecoration",
+                      "value": "none"
+                    },
+                    "justify": {
+                      "label": "Layout",
+                      "type": "justify",
+                      "value": "start"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 9
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 218
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 43
+                    },
+                    "bgColor": {
+                      "label": "Background",
+                      "type": "bgColor",
+                      "value": "rgb(150, 59, 43)"
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": "flex-shrink: 0;\n    width: 26px;\n    height: 26px;\n    border-radius: 50%;\n    background: #963b2b;\n    display: flex;\n    align-items: center;\n    justify-content: center;\ntext-align: center;\n\n"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "10b68f99-7200-4630-b48c-7616d4ababd9",
+              "label": "Text",
+              "type": "text",
+              "field": {
+                "structure": {
+                  "label": "Text Content",
+                  "child": {
+                    "text": {
+                      "label": "Text",
+                      "type": "text",
+                      "value": "Not at all! We teach beginners at every session. Just bring curiosity and good energy."
+                    },
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "page",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Text Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 339
+                    },
+                    "paddingInline": {
+                      "label": "Horizontal Padding",
+                      "type": "paddingInline",
+                      "value": 20
+                    },
+                    "paddingBlock": {
+                      "label": "Vertical Padding",
+                      "type": "paddingBlock",
+                      "value": 10
+                    },
+                    "fontSize": {
+                      "label": "Font Size",
+                      "type": "fontSize",
+                      "value": 12
+                    },
+                    "fontFamily": {
+                      "label": "Font Family",
+                      "type": "fontFamily",
+                      "value": "\"Noto Sans TC\", -apple-system, BlinkMacSystemFont, sans-serif"
+                    },
+                    "color": {
+                      "label": "Font Color",
+                      "type": "color",
+                      "value": "rgb(44, 32, 26)"
+                    },
+                    "fontWeight": {
+                      "label": "Font Weight",
+                      "type": "fontWeight",
+                      "value": "400"
+                    },
+                    "letterSpacing": {
+                      "label": "Letter Spacing",
+                      "type": "letterSpacing",
+                      "value": 0
+                    },
+                    "lineHeight": {
+                      "label": "Line Height",
+                      "type": "lineHeight",
+                      "value": 1.7
+                    },
+                    "fontStyle": {
+                      "label": "Italic",
+                      "type": "fontStyle",
+                      "value": "normal"
+                    },
+                    "textDecoration": {
+                      "label": "Underline",
+                      "type": "textDecoration",
+                      "value": "none"
+                    },
+                    "justify": {
+                      "label": "Layout",
+                      "type": "justify",
+                      "value": "start"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 10
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 258
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 24
+                    },
+                    "bgColor": {
+                      "label": "Background",
+                      "type": "bgColor",
+                      "value": "rgb(246, 232, 201)"
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": "height: 70px;\npadding: 10px 30px;"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "abfcb030-93d1-40af-a774-7d6809d54736",
+              "label": "Rectangle",
+              "type": "rectangle",
+              "field": {
+                "structure": {
+                  "label": "Rectangle Content",
+                  "child": {
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "page",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Rectangle Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 342
+                    },
+                    "height": {
+                      "label": "Height",
+                      "type": "height",
+                      "value": 126
+                    },
+                    "bgColor": {
+                      "label": "Background Color",
+                      "type": "bgColor",
+                      "value": "rgb(227, 197, 143)"
+                    },
+                    "borderColor": {
+                      "label": "Border Color",
+                      "type": "color",
+                      "value": "rgb(74, 43, 31)"
+                    },
+                    "borderWidth": {
+                      "label": "Border Width",
+                      "type": "borderWidth",
+                      "value": 2
+                    },
+                    "radius": {
+                      "label": "Border Radius",
+                      "type": "radius",
+                      "value": 0
+                    },
+                    "backdropFilter": {
+                      "label": "Background Blur",
+                      "type": "backdropFilter",
+                      "value": 0
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": "background-size: auto; background-position: 0% 0%; background-repeat: repeat; box-shadow: rgba(74, 43, 31, 0.12) 3px 3px 0px 0px; filter: none; opacity: 1; transform: none; mix-blend-mode: normal; border-style: solid;"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 11
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 613
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 22
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "d682072d-c4c3-40dc-89ef-2d41d6054ec6",
+              "label": "Text",
+              "type": "text",
+              "field": {
+                "structure": {
+                  "label": "Text Content",
+                  "child": {
+                    "text": {
+                      "label": "Text",
+                      "type": "text",
+                      "value": "21+ only. Sessions involve casual social drinking and adult conversation."
+                    },
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "page",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Text Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 339
+                    },
+                    "paddingInline": {
+                      "label": "Horizontal Padding",
+                      "type": "paddingInline",
+                      "value": 20
+                    },
+                    "paddingBlock": {
+                      "label": "Vertical Padding",
+                      "type": "paddingBlock",
+                      "value": 10
+                    },
+                    "fontSize": {
+                      "label": "Font Size",
+                      "type": "fontSize",
+                      "value": 12
+                    },
+                    "fontFamily": {
+                      "label": "Font Family",
+                      "type": "fontFamily",
+                      "value": "\"Noto Sans TC\", -apple-system, BlinkMacSystemFont, sans-serif"
+                    },
+                    "color": {
+                      "label": "Font Color",
+                      "type": "color",
+                      "value": "rgb(44, 32, 26)"
+                    },
+                    "fontWeight": {
+                      "label": "Font Weight",
+                      "type": "fontWeight",
+                      "value": "400"
+                    },
+                    "letterSpacing": {
+                      "label": "Letter Spacing",
+                      "type": "letterSpacing",
+                      "value": 0
+                    },
+                    "lineHeight": {
+                      "label": "Line Height",
+                      "type": "lineHeight",
+                      "value": 1.7
+                    },
+                    "fontStyle": {
+                      "label": "Italic",
+                      "type": "fontStyle",
+                      "value": "normal"
+                    },
+                    "textDecoration": {
+                      "label": "Underline",
+                      "type": "textDecoration",
+                      "value": "none"
+                    },
+                    "justify": {
+                      "label": "Layout",
+                      "type": "justify",
+                      "value": "start"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 13
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 393
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 24
+                    },
+                    "bgColor": {
+                      "label": "Background",
+                      "type": "bgColor",
+                      "value": "rgb(246, 232, 201)"
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": "height: 70px;\npadding: 10px 30px;"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "6a2682dd-c3b8-46bc-849d-7443e5be314c",
+              "label": "Rectangle",
+              "type": "rectangle",
+              "field": {
+                "structure": {
+                  "label": "Rectangle Content",
+                  "child": {
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "page",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Rectangle Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 342
+                    },
+                    "height": {
+                      "label": "Height",
+                      "type": "height",
+                      "value": 126
+                    },
+                    "bgColor": {
+                      "label": "Background Color",
+                      "type": "bgColor",
+                      "value": "rgb(227, 197, 143)"
+                    },
+                    "borderColor": {
+                      "label": "Border Color",
+                      "type": "color",
+                      "value": "rgb(74, 43, 31)"
+                    },
+                    "borderWidth": {
+                      "label": "Border Width",
+                      "type": "borderWidth",
+                      "value": 2
+                    },
+                    "radius": {
+                      "label": "Border Radius",
+                      "type": "radius",
+                      "value": 0
+                    },
+                    "backdropFilter": {
+                      "label": "Background Blur",
+                      "type": "backdropFilter",
+                      "value": 0
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": "background-size: auto; background-position: 0% 0%; background-repeat: repeat; box-shadow: rgba(74, 43, 31, 0.12) 3px 3px 0px 0px; filter: none; opacity: 1; transform: none; mix-blend-mode: normal; border-style: solid;"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 14
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 749
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 22
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "3c12c464-efa8-4bc4-b0c0-0c24ba882a82",
+              "label": "Text",
+              "type": "text",
+              "field": {
+                "structure": {
+                  "label": "Text Content",
+                  "child": {
+                    "text": {
+                      "label": "Text",
+                      "type": "text",
+                      "value": "Check individual event pages. Usually includes food, drinks, and table time."
+                    },
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "page",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Text Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 339
+                    },
+                    "paddingInline": {
+                      "label": "Horizontal Padding",
+                      "type": "paddingInline",
+                      "value": 20
+                    },
+                    "paddingBlock": {
+                      "label": "Vertical Padding",
+                      "type": "paddingBlock",
+                      "value": 10
+                    },
+                    "fontSize": {
+                      "label": "Font Size",
+                      "type": "fontSize",
+                      "value": 12
+                    },
+                    "fontFamily": {
+                      "label": "Font Family",
+                      "type": "fontFamily",
+                      "value": "\"Noto Sans TC\", -apple-system, BlinkMacSystemFont, sans-serif"
+                    },
+                    "color": {
+                      "label": "Font Color",
+                      "type": "color",
+                      "value": "rgb(44, 32, 26)"
+                    },
+                    "fontWeight": {
+                      "label": "Font Weight",
+                      "type": "fontWeight",
+                      "value": "400"
+                    },
+                    "letterSpacing": {
+                      "label": "Letter Spacing",
+                      "type": "letterSpacing",
+                      "value": 0
+                    },
+                    "lineHeight": {
+                      "label": "Line Height",
+                      "type": "lineHeight",
+                      "value": 1.7
+                    },
+                    "fontStyle": {
+                      "label": "Italic",
+                      "type": "fontStyle",
+                      "value": "normal"
+                    },
+                    "textDecoration": {
+                      "label": "Underline",
+                      "type": "textDecoration",
+                      "value": "none"
+                    },
+                    "justify": {
+                      "label": "Layout",
+                      "type": "justify",
+                      "value": "start"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 16
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 530
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 24
+                    },
+                    "bgColor": {
+                      "label": "Background",
+                      "type": "bgColor",
+                      "value": "rgb(246, 232, 201)"
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": "height: 70px;\npadding: 10px 30px;"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "ac232dae-0baf-4d83-910a-bfb1971e3247",
+              "label": "Text",
+              "type": "text",
+              "field": {
+                "structure": {
+                  "label": "Text Content",
+                  "child": {
+                    "text": {
+                      "label": "Text",
+                      "type": "text",
+                      "value": "Absolutely! We love groups. Just make sure everyone RSVPs individually."
+                    },
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "page",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Text Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 339
+                    },
+                    "paddingInline": {
+                      "label": "Horizontal Padding",
+                      "type": "paddingInline",
+                      "value": 20
+                    },
+                    "paddingBlock": {
+                      "label": "Vertical Padding",
+                      "type": "paddingBlock",
+                      "value": 10
+                    },
+                    "fontSize": {
+                      "label": "Font Size",
+                      "type": "fontSize",
+                      "value": 12
+                    },
+                    "fontFamily": {
+                      "label": "Font Family",
+                      "type": "fontFamily",
+                      "value": "\"Noto Sans TC\", -apple-system, BlinkMacSystemFont, sans-serif"
+                    },
+                    "color": {
+                      "label": "Font Color",
+                      "type": "color",
+                      "value": "rgb(44, 32, 26)"
+                    },
+                    "fontWeight": {
+                      "label": "Font Weight",
+                      "type": "fontWeight",
+                      "value": "400"
+                    },
+                    "letterSpacing": {
+                      "label": "Letter Spacing",
+                      "type": "letterSpacing",
+                      "value": 0
+                    },
+                    "lineHeight": {
+                      "label": "Line Height",
+                      "type": "lineHeight",
+                      "value": 1.7
+                    },
+                    "fontStyle": {
+                      "label": "Italic",
+                      "type": "fontStyle",
+                      "value": "normal"
+                    },
+                    "textDecoration": {
+                      "label": "Underline",
+                      "type": "textDecoration",
+                      "value": "none"
+                    },
+                    "justify": {
+                      "label": "Layout",
+                      "type": "justify",
+                      "value": "start"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 18
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 667
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 24
+                    },
+                    "bgColor": {
+                      "label": "Background",
+                      "type": "bgColor",
+                      "value": "rgb(246, 232, 201)"
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": "height: 70px;\npadding: 10px 30px;"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "49dd95a0-c92e-4bf1-8d7b-8fcc63237446",
+              "label": "Text",
+              "type": "text",
+              "field": {
+                "structure": {
+                  "label": "Text Content",
+                  "child": {
+                    "text": {
+                      "label": "Text",
+                      "type": "text",
+                      "value": "Let us know ASAP via Instagram DM. We usually have a waitlist."
+                    },
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "page",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Text Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 339
+                    },
+                    "paddingInline": {
+                      "label": "Horizontal Padding",
+                      "type": "paddingInline",
+                      "value": 20
+                    },
+                    "paddingBlock": {
+                      "label": "Vertical Padding",
+                      "type": "paddingBlock",
+                      "value": 10
+                    },
+                    "fontSize": {
+                      "label": "Font Size",
+                      "type": "fontSize",
+                      "value": 12
+                    },
+                    "fontFamily": {
+                      "label": "Font Family",
+                      "type": "fontFamily",
+                      "value": "\"Noto Sans TC\", -apple-system, BlinkMacSystemFont, sans-serif"
+                    },
+                    "color": {
+                      "label": "Font Color",
+                      "type": "color",
+                      "value": "rgb(44, 32, 26)"
+                    },
+                    "fontWeight": {
+                      "label": "Font Weight",
+                      "type": "fontWeight",
+                      "value": "400"
+                    },
+                    "letterSpacing": {
+                      "label": "Letter Spacing",
+                      "type": "letterSpacing",
+                      "value": 0
+                    },
+                    "lineHeight": {
+                      "label": "Line Height",
+                      "type": "lineHeight",
+                      "value": 1.7
+                    },
+                    "fontStyle": {
+                      "label": "Italic",
+                      "type": "fontStyle",
+                      "value": "normal"
+                    },
+                    "textDecoration": {
+                      "label": "Underline",
+                      "type": "textDecoration",
+                      "value": "none"
+                    },
+                    "justify": {
+                      "label": "Layout",
+                      "type": "justify",
+                      "value": "start"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 20
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 804
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 24
+                    },
+                    "bgColor": {
+                      "label": "Background",
+                      "type": "bgColor",
+                      "value": "rgb(246, 232, 201)"
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": "height: 70px;\npadding: 10px 30px;"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "1785955261038neb1j5uh0",
+              "label": "Text",
+              "type": "text",
+              "field": {
+                "structure": {
+                  "label": "Text Content",
+                  "child": {
+                    "text": {
+                      "label": "Text",
+                      "type": "text",
+                      "value": "02"
+                    },
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "page",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Text Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 49
+                    },
+                    "paddingInline": {
+                      "label": "Horizontal Padding",
+                      "type": "paddingInline",
+                      "value": 27
+                    },
+                    "paddingBlock": {
+                      "label": "Vertical Padding",
+                      "type": "paddingBlock",
+                      "value": 7
+                    },
+                    "fontSize": {
+                      "label": "Font Size",
+                      "type": "fontSize",
+                      "value": 14
+                    },
+                    "fontFamily": {
+                      "label": "Font Family",
+                      "type": "fontFamily",
+                      "value": "\"Courier Prime\", monospace"
+                    },
+                    "color": {
+                      "label": "Font Color",
+                      "type": "color",
+                      "value": "rgb(246, 232, 201)"
+                    },
+                    "fontWeight": {
+                      "label": "Font Weight",
+                      "type": "fontWeight",
+                      "value": 800
+                    },
+                    "letterSpacing": {
+                      "label": "Letter Spacing",
+                      "type": "letterSpacing",
+                      "value": 0
+                    },
+                    "lineHeight": {
+                      "label": "Line Height",
+                      "type": "lineHeight",
+                      "value": 3
+                    },
+                    "fontStyle": {
+                      "label": "Italic",
+                      "type": "fontStyle",
+                      "value": "normal"
+                    },
+                    "textDecoration": {
+                      "label": "Underline",
+                      "type": "textDecoration",
+                      "value": "none"
+                    },
+                    "justify": {
+                      "label": "Layout",
+                      "type": "justify",
+                      "value": "start"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 21
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 354
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 48
+                    },
+                    "bgColor": {
+                      "label": "Background",
+                      "type": "bgColor",
+                      "value": "rgb(150, 59, 43)"
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": "flex-shrink: 0;\n    width: 26px;\n    height: 26px;\n    border-radius: 50%;\n    background: #963b2b;\n    display: flex;\n    align-items: center;\n    justify-content: center;\ntext-align: center;\n\n"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "17859555808711ghobnuig",
+              "label": "Text",
+              "type": "text",
+              "field": {
+                "structure": {
+                  "label": "Text Content",
+                  "child": {
+                    "text": {
+                      "label": "Text",
+                      "type": "text",
+                      "value": "Do I need to know how to play?"
+                    },
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "page",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Text Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 316
+                    },
+                    "paddingInline": {
+                      "label": "Horizontal Padding",
+                      "type": "paddingInline",
+                      "value": 20
+                    },
+                    "paddingBlock": {
+                      "label": "Vertical Padding",
+                      "type": "paddingBlock",
+                      "value": 10
+                    },
+                    "fontSize": {
+                      "label": "Font Size",
+                      "type": "fontSize",
+                      "value": 14
+                    },
+                    "fontFamily": {
+                      "label": "Font Family",
+                      "type": "fontFamily",
+                      "value": "\"Noto Serif TC\", serif"
+                    },
+                    "color": {
+                      "label": "Font Color",
+                      "type": "color",
+                      "value": "#000000"
+                    },
+                    "fontWeight": {
+                      "label": "Font Weight",
+                      "type": "fontWeight",
+                      "value": "700"
+                    },
+                    "letterSpacing": {
+                      "label": "Letter Spacing",
+                      "type": "letterSpacing",
+                      "value": 0.5
+                    },
+                    "lineHeight": {
+                      "label": "Line Height",
+                      "type": "lineHeight",
+                      "value": 1.15
+                    },
+                    "fontStyle": {
+                      "label": "Italic",
+                      "type": "fontStyle",
+                      "value": "normal"
+                    },
+                    "textDecoration": {
+                      "label": "Underline",
+                      "type": "textDecoration",
+                      "value": "none"
+                    },
+                    "justify": {
+                      "label": "Layout",
+                      "type": "justify",
+                      "value": "left"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 23
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 218
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 77
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": ""
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "178595562721861dezuz0d",
+              "label": "Text",
+              "type": "text",
+              "field": {
+                "structure": {
+                  "label": "Text Content",
+                  "child": {
+                    "text": {
+                      "label": "Text",
+                      "type": "text",
+                      "value": "Is there an age limit?"
+                    },
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "page",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Text Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 316
+                    },
+                    "paddingInline": {
+                      "label": "Horizontal Padding",
+                      "type": "paddingInline",
+                      "value": 20
+                    },
+                    "paddingBlock": {
+                      "label": "Vertical Padding",
+                      "type": "paddingBlock",
+                      "value": 10
+                    },
+                    "fontSize": {
+                      "label": "Font Size",
+                      "type": "fontSize",
+                      "value": 14
+                    },
+                    "fontFamily": {
+                      "label": "Font Family",
+                      "type": "fontFamily",
+                      "value": "\"Noto Serif TC\", serif"
+                    },
+                    "color": {
+                      "label": "Font Color",
+                      "type": "color",
+                      "value": "#000000"
+                    },
+                    "fontWeight": {
+                      "label": "Font Weight",
+                      "type": "fontWeight",
+                      "value": "700"
+                    },
+                    "letterSpacing": {
+                      "label": "Letter Spacing",
+                      "type": "letterSpacing",
+                      "value": 0.5
+                    },
+                    "lineHeight": {
+                      "label": "Line Height",
+                      "type": "lineHeight",
+                      "value": 1.15
+                    },
+                    "fontStyle": {
+                      "label": "Italic",
+                      "type": "fontStyle",
+                      "value": "normal"
+                    },
+                    "textDecoration": {
+                      "label": "Underline",
+                      "type": "textDecoration",
+                      "value": "none"
+                    },
+                    "justify": {
+                      "label": "Layout",
+                      "type": "justify",
+                      "value": "left"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 24
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 356
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 78
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": ""
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "1785955634428zn2egfi77",
+              "label": "Text",
+              "type": "text",
+              "field": {
+                "structure": {
+                  "label": "Text Content",
+                  "child": {
+                    "text": {
+                      "label": "Text",
+                      "type": "text",
+                      "value": "03"
+                    },
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "page",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Text Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 49
+                    },
+                    "paddingInline": {
+                      "label": "Horizontal Padding",
+                      "type": "paddingInline",
+                      "value": 27
+                    },
+                    "paddingBlock": {
+                      "label": "Vertical Padding",
+                      "type": "paddingBlock",
+                      "value": 7
+                    },
+                    "fontSize": {
+                      "label": "Font Size",
+                      "type": "fontSize",
+                      "value": 14
+                    },
+                    "fontFamily": {
+                      "label": "Font Family",
+                      "type": "fontFamily",
+                      "value": "\"Courier Prime\", monospace"
+                    },
+                    "color": {
+                      "label": "Font Color",
+                      "type": "color",
+                      "value": "rgb(246, 232, 201)"
+                    },
+                    "fontWeight": {
+                      "label": "Font Weight",
+                      "type": "fontWeight",
+                      "value": 800
+                    },
+                    "letterSpacing": {
+                      "label": "Letter Spacing",
+                      "type": "letterSpacing",
+                      "value": 0
+                    },
+                    "lineHeight": {
+                      "label": "Line Height",
+                      "type": "lineHeight",
+                      "value": 3
+                    },
+                    "fontStyle": {
+                      "label": "Italic",
+                      "type": "fontStyle",
+                      "value": "normal"
+                    },
+                    "textDecoration": {
+                      "label": "Underline",
+                      "type": "textDecoration",
+                      "value": "none"
+                    },
+                    "justify": {
+                      "label": "Layout",
+                      "type": "justify",
+                      "value": "start"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 25
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 492
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 47
+                    },
+                    "bgColor": {
+                      "label": "Background",
+                      "type": "bgColor",
+                      "value": "rgb(150, 59, 43)"
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": "flex-shrink: 0;\n    width: 26px;\n    height: 26px;\n    border-radius: 50%;\n    background: #963b2b;\n    display: flex;\n    align-items: center;\n    justify-content: center;\ntext-align: center;\n\n"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "1785955656646lpvivhos0",
+              "label": "Text",
+              "type": "text",
+              "field": {
+                "structure": {
+                  "label": "Text Content",
+                  "child": {
+                    "text": {
+                      "label": "Text",
+                      "type": "text",
+                      "value": "05"
+                    },
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "page",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Text Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 49
+                    },
+                    "paddingInline": {
+                      "label": "Horizontal Padding",
+                      "type": "paddingInline",
+                      "value": 27
+                    },
+                    "paddingBlock": {
+                      "label": "Vertical Padding",
+                      "type": "paddingBlock",
+                      "value": 7
+                    },
+                    "fontSize": {
+                      "label": "Font Size",
+                      "type": "fontSize",
+                      "value": 14
+                    },
+                    "fontFamily": {
+                      "label": "Font Family",
+                      "type": "fontFamily",
+                      "value": "\"Courier Prime\", monospace"
+                    },
+                    "color": {
+                      "label": "Font Color",
+                      "type": "color",
+                      "value": "rgb(246, 232, 201)"
+                    },
+                    "fontWeight": {
+                      "label": "Font Weight",
+                      "type": "fontWeight",
+                      "value": 800
+                    },
+                    "letterSpacing": {
+                      "label": "Letter Spacing",
+                      "type": "letterSpacing",
+                      "value": 0
+                    },
+                    "lineHeight": {
+                      "label": "Line Height",
+                      "type": "lineHeight",
+                      "value": 3
+                    },
+                    "fontStyle": {
+                      "label": "Italic",
+                      "type": "fontStyle",
+                      "value": "normal"
+                    },
+                    "textDecoration": {
+                      "label": "Underline",
+                      "type": "textDecoration",
+                      "value": "none"
+                    },
+                    "justify": {
+                      "label": "Layout",
+                      "type": "justify",
+                      "value": "start"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 26
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 765
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 48
+                    },
+                    "bgColor": {
+                      "label": "Background",
+                      "type": "bgColor",
+                      "value": "rgb(150, 59, 43)"
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": "flex-shrink: 0;\n    width: 26px;\n    height: 26px;\n    border-radius: 50%;\n    background: #963b2b;\n    display: flex;\n    align-items: center;\n    justify-content: center;\ntext-align: center;\n\n"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "1785955659636f3tt0qxr3",
+              "label": "Text",
+              "type": "text",
+              "field": {
+                "structure": {
+                  "label": "Text Content",
+                  "child": {
+                    "text": {
+                      "label": "Text",
+                      "type": "text",
+                      "value": "04"
+                    },
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "page",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Text Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 49
+                    },
+                    "paddingInline": {
+                      "label": "Horizontal Padding",
+                      "type": "paddingInline",
+                      "value": 27
+                    },
+                    "paddingBlock": {
+                      "label": "Vertical Padding",
+                      "type": "paddingBlock",
+                      "value": 7
+                    },
+                    "fontSize": {
+                      "label": "Font Size",
+                      "type": "fontSize",
+                      "value": 14
+                    },
+                    "fontFamily": {
+                      "label": "Font Family",
+                      "type": "fontFamily",
+                      "value": "\"Courier Prime\", monospace"
+                    },
+                    "color": {
+                      "label": "Font Color",
+                      "type": "color",
+                      "value": "rgb(246, 232, 201)"
+                    },
+                    "fontWeight": {
+                      "label": "Font Weight",
+                      "type": "fontWeight",
+                      "value": 800
+                    },
+                    "letterSpacing": {
+                      "label": "Letter Spacing",
+                      "type": "letterSpacing",
+                      "value": 0
+                    },
+                    "lineHeight": {
+                      "label": "Line Height",
+                      "type": "lineHeight",
+                      "value": 3
+                    },
+                    "fontStyle": {
+                      "label": "Italic",
+                      "type": "fontStyle",
+                      "value": "normal"
+                    },
+                    "textDecoration": {
+                      "label": "Underline",
+                      "type": "textDecoration",
+                      "value": "none"
+                    },
+                    "justify": {
+                      "label": "Layout",
+                      "type": "justify",
+                      "value": "start"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 27
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 626
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 48
+                    },
+                    "bgColor": {
+                      "label": "Background",
+                      "type": "bgColor",
+                      "value": "rgb(150, 59, 43)"
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": "flex-shrink: 0;\n    width: 26px;\n    height: 26px;\n    border-radius: 50%;\n    background: #963b2b;\n    display: flex;\n    align-items: center;\n    justify-content: center;\ntext-align: center;\n\n"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "1785955673807swqfzno9d",
+              "label": "Text",
+              "type": "text",
+              "field": {
+                "structure": {
+                  "label": "Text Content",
+                  "child": {
+                    "text": {
+                      "label": "Text",
+                      "type": "text",
+                      "value": "How much does it cost?"
+                    },
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "page",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Text Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 316
+                    },
+                    "paddingInline": {
+                      "label": "Horizontal Padding",
+                      "type": "paddingInline",
+                      "value": 20
+                    },
+                    "paddingBlock": {
+                      "label": "Vertical Padding",
+                      "type": "paddingBlock",
+                      "value": 10
+                    },
+                    "fontSize": {
+                      "label": "Font Size",
+                      "type": "fontSize",
+                      "value": 14
+                    },
+                    "fontFamily": {
+                      "label": "Font Family",
+                      "type": "fontFamily",
+                      "value": "\"Noto Serif TC\", serif"
+                    },
+                    "color": {
+                      "label": "Font Color",
+                      "type": "color",
+                      "value": "#000000"
+                    },
+                    "fontWeight": {
+                      "label": "Font Weight",
+                      "type": "fontWeight",
+                      "value": "700"
+                    },
+                    "letterSpacing": {
+                      "label": "Letter Spacing",
+                      "type": "letterSpacing",
+                      "value": 0.5
+                    },
+                    "lineHeight": {
+                      "label": "Line Height",
+                      "type": "lineHeight",
+                      "value": 1.15
+                    },
+                    "fontStyle": {
+                      "label": "Italic",
+                      "type": "fontStyle",
+                      "value": "normal"
+                    },
+                    "textDecoration": {
+                      "label": "Underline",
+                      "type": "textDecoration",
+                      "value": "none"
+                    },
+                    "justify": {
+                      "label": "Layout",
+                      "type": "justify",
+                      "value": "left"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 28
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 492
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 81
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": ""
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "1785955679033t68apk11o",
+              "label": "Text",
+              "type": "text",
+              "field": {
+                "structure": {
+                  "label": "Text Content",
+                  "child": {
+                    "text": {
+                      "label": "Text",
+                      "type": "text",
+                      "value": "Can I bring friends?"
+                    },
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "page",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Text Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 316
+                    },
+                    "paddingInline": {
+                      "label": "Horizontal Padding",
+                      "type": "paddingInline",
+                      "value": 20
+                    },
+                    "paddingBlock": {
+                      "label": "Vertical Padding",
+                      "type": "paddingBlock",
+                      "value": 10
+                    },
+                    "fontSize": {
+                      "label": "Font Size",
+                      "type": "fontSize",
+                      "value": 14
+                    },
+                    "fontFamily": {
+                      "label": "Font Family",
+                      "type": "fontFamily",
+                      "value": "\"Noto Serif TC\", serif"
+                    },
+                    "color": {
+                      "label": "Font Color",
+                      "type": "color",
+                      "value": "#000000"
+                    },
+                    "fontWeight": {
+                      "label": "Font Weight",
+                      "type": "fontWeight",
+                      "value": "700"
+                    },
+                    "letterSpacing": {
+                      "label": "Letter Spacing",
+                      "type": "letterSpacing",
+                      "value": 0.5
+                    },
+                    "lineHeight": {
+                      "label": "Line Height",
+                      "type": "lineHeight",
+                      "value": 1.15
+                    },
+                    "fontStyle": {
+                      "label": "Italic",
+                      "type": "fontStyle",
+                      "value": "normal"
+                    },
+                    "textDecoration": {
+                      "label": "Underline",
+                      "type": "textDecoration",
+                      "value": "none"
+                    },
+                    "justify": {
+                      "label": "Layout",
+                      "type": "justify",
+                      "value": "left"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 29
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 628
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 80
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": ""
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "17859556877301h7w5h71w",
+              "label": "Text",
+              "type": "text",
+              "field": {
+                "structure": {
+                  "label": "Text Content",
+                  "child": {
+                    "text": {
+                      "label": "Text",
+                      "type": "text",
+                      "value": "How do I cancel?"
+                    },
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "page",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Text Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 316
+                    },
+                    "paddingInline": {
+                      "label": "Horizontal Padding",
+                      "type": "paddingInline",
+                      "value": 20
+                    },
+                    "paddingBlock": {
+                      "label": "Vertical Padding",
+                      "type": "paddingBlock",
+                      "value": 10
+                    },
+                    "fontSize": {
+                      "label": "Font Size",
+                      "type": "fontSize",
+                      "value": 14
+                    },
+                    "fontFamily": {
+                      "label": "Font Family",
+                      "type": "fontFamily",
+                      "value": "\"Noto Serif TC\", serif"
+                    },
+                    "color": {
+                      "label": "Font Color",
+                      "type": "color",
+                      "value": "#000000"
+                    },
+                    "fontWeight": {
+                      "label": "Font Weight",
+                      "type": "fontWeight",
+                      "value": "700"
+                    },
+                    "letterSpacing": {
+                      "label": "Letter Spacing",
+                      "type": "letterSpacing",
+                      "value": 0.5
+                    },
+                    "lineHeight": {
+                      "label": "Line Height",
+                      "type": "lineHeight",
+                      "value": 1.15
+                    },
+                    "fontStyle": {
+                      "label": "Italic",
+                      "type": "fontStyle",
+                      "value": "normal"
+                    },
+                    "textDecoration": {
+                      "label": "Underline",
+                      "type": "textDecoration",
+                      "value": "none"
+                    },
+                    "justify": {
+                      "label": "Layout",
+                      "type": "justify",
+                      "value": "left"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 30
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 766
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 80
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": ""
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "styles": {
+      "label": "Container Style",
+      "child": {
+        "width": {
+          "label": "Container Width",
+          "type": "width",
+          "value": 386,
+          "min": 386,
+          "max": 2000
+        },
+        "height": {
+          "label": "Container Height",
+          "type": "height",
+          "value": 936
+        },
+        "justify": {
+          "label": "Layout",
+          "type": "justify",
+          "value": "left"
+        },
+        "bgColor": {
+          "label": "Background Color",
+          "type": "bgColor",
+          "value": "linear-gradient(90deg, rgba(150, 59, 43, 0.035) 1px, rgba(0, 0, 0, 0) 1px)"
+        },
+        "left": {
+          "label": "Left Distance",
+          "type": "left",
+          "value": 0
+        },
+        "top": {
+          "label": "Top Distance",
+          "type": "top",
+          "value": 0
+        },
+        "zIndex": {
+          "label": "Levels",
+          "type": "zIndex",
+          "value": 1
+        },
+        "customCSS": {
+          "label": "Custom CSS",
+          "type": "customCSS",
+          "value": "background:\n  linear-gradient(\n    rgba(74, 43, 31, 0.05) 1px,\n    transparent 1px\n  ),\n  linear-gradient(\n    90deg,\n    rgba(74, 43, 31, 0.045) 1px,\n    transparent 1px\n  ),\n  #f6e8c9;\n\nbackground-size:\n  100% 4px,\n  24px 100%,\n  auto;"
+        }
+      }
+    },
+    "config": {
+      "label": "Alignment & Grid Settings",
+      "child": {
+        "editMode": {
+          "label": "Edit Mode",
+          "type": "editMode",
+          "value": "free-form"
+        },
+        "showGuides": {
+          "label": "Show Alignment Guides",
+          "type": "showGuides",
+          "value": true
+        },
+        "enableHorizontalScroll": {
+          "label": "Enable Horizontal Scroll",
+          "type": "enableHorizontalScroll",
+          "value": false
+        },
+        "gridSize": {
+          "label": "Grid Size (px)",
+          "type": "gridSize",
+          "value": 10
+        }
+      }
+    }
+  },
+  "component": {
+    "name": "free-box",
+    "props": {}
+  }
+}

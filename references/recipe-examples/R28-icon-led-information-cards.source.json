@@ -1,0 +1,1961 @@
+{
+  "label": "Freeform Container",
+  "type": "free-box",
+  "field": {
+    "structure": {
+      "label": "Freeform Container",
+      "child": {
+        "component_list": {
+          "label": "Widgets List",
+          "type": "component_list",
+          "value": [
+            {
+              "label": "Image",
+              "type": "img",
+              "field": {
+                "structure": {
+                  "label": "Image Content",
+                  "child": {
+                    "upload": {
+                      "label": "Image Upload",
+                      "type": "upload",
+                      "value": {
+                        "url": "https://unicoawsapp.s3.amazonaws.com/materials/6c8494febe7f42bf9722b4781e86ef3d.svg",
+                        "crop": {
+                          "mode": "manual",
+                          "fitMode": "contain",
+                          "cropArea": {
+                            "x": 0,
+                            "y": 0,
+                            "width": 100,
+                            "height": 100
+                          },
+                          "transform": {
+                            "scale": 1,
+                            "rotate": 0
+                          },
+                          "originalWidth": 40,
+                          "originalHeight": 40
+                        }
+                      }
+                    },
+                    "categoryLink": {
+                      "label": "Link Settings",
+                      "type": "categoryLink",
+                      "value": {
+                        "type": "page",
+                        "page": "",
+                        "appid": "",
+                        "name": "",
+                        "id": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Image Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 59,
+                      "max": 386
+                    },
+                    "height": {
+                      "label": "Height",
+                      "type": "height",
+                      "value": 45,
+                      "max": 500
+                    },
+                    "scale": {
+                      "label": "Scale",
+                      "type": "slider",
+                      "value": 100
+                    },
+                    "rotate": {
+                      "label": "Rotate",
+                      "type": "slider",
+                      "value": 0
+                    },
+                    "translateX": {
+                      "label": "Position X",
+                      "type": "slider",
+                      "value": 0
+                    },
+                    "translateY": {
+                      "label": "Position Y",
+                      "type": "slider",
+                      "value": 0
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 5
+                    },
+                    "radius": {
+                      "label": "Border Radius",
+                      "type": "radius",
+                      "value": 0,
+                      "max": 100
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": ""
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 177
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 48
+                    }
+                  }
+                }
+              },
+              "id": "1caf2e4b-c2ea-4dbb-abea-12261b7805a4"
+            },
+            {
+              "label": "Rectangle",
+              "type": "rectangle",
+              "field": {
+                "structure": {
+                  "label": "Rectangle Content",
+                  "child": {
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "page",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Rectangle Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 330,
+                      "max": 386
+                    },
+                    "height": {
+                      "label": "Height",
+                      "type": "height",
+                      "value": 229,
+                      "max": 500
+                    },
+                    "bgColor": {
+                      "label": "Background Color",
+                      "type": "bgColor",
+                      "value": "#FFF"
+                    },
+                    "borderColor": {
+                      "label": "Border Color",
+                      "type": "color",
+                      "value": "#E8E0D0"
+                    },
+                    "borderWidth": {
+                      "label": "Border Width",
+                      "type": "borderWidth",
+                      "value": 2,
+                      "max": 20
+                    },
+                    "radius": {
+                      "label": "Border Radius",
+                      "type": "radius",
+                      "value": 10,
+                      "max": 100
+                    },
+                    "backdropFilter": {
+                      "label": "Background Blur",
+                      "type": "backdropFilter",
+                      "value": 0,
+                      "max": 50
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": ""
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 2
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 157
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 27.199996948242188
+                    }
+                  }
+                }
+              },
+              "id": "8038ddf9-a485-4684-b8fc-2a5799286957"
+            },
+            {
+              "label": "Text",
+              "type": "text",
+              "field": {
+                "structure": {
+                  "label": "Text Content",
+                  "child": {
+                    "text": {
+                      "label": "Text",
+                      "type": "text",
+                      "value": "WHAT I OFFER"
+                    },
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "page",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Text Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 206,
+                      "max": 386
+                    },
+                    "paddingInline": {
+                      "label": "Horizontal Padding",
+                      "type": "paddingInline",
+                      "value": 100
+                    },
+                    "paddingBlock": {
+                      "label": "Vertical Padding",
+                      "type": "paddingBlock",
+                      "value": 10
+                    },
+                    "fontSize": {
+                      "label": "Font Size",
+                      "type": "fontSize",
+                      "value": 12
+                    },
+                    "fontFamily": {
+                      "label": "Font Family",
+                      "type": "fontFamily",
+                      "value": "'Roboto', sans-serif"
+                    },
+                    "color": {
+                      "label": "Font Color",
+                      "type": "color",
+                      "value": "#8B7355"
+                    },
+                    "fontWeight": {
+                      "label": "Font Weight",
+                      "type": "fontWeight",
+                      "value": 400
+                    },
+                    "letterSpacing": {
+                      "label": "Letter Spacing",
+                      "type": "letterSpacing",
+                      "value": 2.5
+                    },
+                    "lineHeight": {
+                      "label": "Line Height",
+                      "type": "lineHeight",
+                      "value": 1
+                    },
+                    "fontStyle": {
+                      "label": "Italic",
+                      "type": "fontStyle",
+                      "value": "normal"
+                    },
+                    "textDecoration": {
+                      "label": "Underline",
+                      "type": "textDecoration",
+                      "value": "none"
+                    },
+                    "justify": {
+                      "label": "Layout",
+                      "type": "justify",
+                      "value": "left"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 5
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 47
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 25
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": ""
+                    }
+                  }
+                }
+              },
+              "id": "17748545467998x4fqtozk"
+            },
+            {
+              "label": "Rich Text",
+              "type": "rich-text",
+              "field": {
+                "structure": {
+                  "label": "Rich Text Content",
+                  "child": {
+                    "content": {
+                      "label": "Content",
+                      "type": "richText",
+                      "value": "<p><span style=\"font-size: 28px;\">Services</span></p>"
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Rich Text Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 227,
+                      "max": 386
+                    },
+                    "height": {
+                      "label": "Height",
+                      "type": "height",
+                      "value": 68,
+                      "max": 500
+                    },
+                    "padding": {
+                      "label": "Padding",
+                      "type": "padding",
+                      "value": 10,
+                      "max": 50
+                    },
+                    "fontSize": {
+                      "label": "Font Size",
+                      "type": "fontSize",
+                      "value": 16,
+                      "max": 30
+                    },
+                    "color": {
+                      "label": "Text Color",
+                      "type": "color",
+                      "value": "#333333"
+                    },
+                    "bgColor": {
+                      "label": "Background Color",
+                      "type": "bgColor",
+                      "value": "#FAF7F2"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 5
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 71
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 21
+                    }
+                  }
+                }
+              },
+              "id": "1774854546799f1n5cc39o"
+            },
+            {
+              "label": "Rich Text",
+              "type": "rich-text",
+              "field": {
+                "structure": {
+                  "label": "Rich Text Content",
+                  "child": {
+                    "content": {
+                      "label": "Content",
+                      "type": "richText",
+                      "value": "<p>Personal Training</p>"
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Rich Text Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 227,
+                      "max": 386
+                    },
+                    "height": {
+                      "label": "Height",
+                      "type": "height",
+                      "value": 54,
+                      "max": 500
+                    },
+                    "padding": {
+                      "label": "Padding",
+                      "type": "padding",
+                      "value": 10,
+                      "max": 50
+                    },
+                    "fontSize": {
+                      "label": "Font Size",
+                      "type": "fontSize",
+                      "value": 16,
+                      "max": 30
+                    },
+                    "color": {
+                      "label": "Text Color",
+                      "type": "color",
+                      "value": "#3D2F1E"
+                    },
+                    "bgColor": {
+                      "label": "Background Color",
+                      "type": "bgColor",
+                      "value": "#FFF"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 5
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 227
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 46
+                    }
+                  }
+                }
+              },
+              "id": "1774854818471zc7b6sk1j"
+            },
+            {
+              "label": "Rich Text",
+              "type": "rich-text",
+              "field": {
+                "structure": {
+                  "label": "Rich Text Content",
+                  "child": {
+                    "content": {
+                      "label": "Content",
+                      "type": "richText",
+                      "value": "<p><span style=\"font-size: 12px; font-family: Inter, sans-serif;\">Strength development and general fitness. In-person sessions tailored to your goals, whether you're beginning or advancing your practice.</span></p>"
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Rich Text Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 299,
+                      "max": 386
+                    },
+                    "height": {
+                      "label": "Height",
+                      "type": "height",
+                      "value": 113,
+                      "max": 500
+                    },
+                    "padding": {
+                      "label": "Padding",
+                      "type": "padding",
+                      "value": 10,
+                      "max": 50
+                    },
+                    "fontSize": {
+                      "label": "Font Size",
+                      "type": "fontSize",
+                      "value": 16,
+                      "max": 30
+                    },
+                    "color": {
+                      "label": "Text Color",
+                      "type": "color",
+                      "value": "#7A6A58"
+                    },
+                    "bgColor": {
+                      "label": "Background Color",
+                      "type": "bgColor",
+                      "value": "#FFF"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 5
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 262
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 46
+                    }
+                  }
+                }
+              },
+              "id": "1774854838928cplz7hnfl"
+            },
+            {
+              "label": "Rectangle",
+              "type": "rectangle",
+              "field": {
+                "structure": {
+                  "label": "Rectangle Content",
+                  "child": {
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "page",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Rectangle Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 327,
+                      "max": 386
+                    },
+                    "height": {
+                      "label": "Height",
+                      "type": "height",
+                      "value": 240,
+                      "max": 500
+                    },
+                    "bgColor": {
+                      "label": "Background Color",
+                      "type": "bgColor",
+                      "value": "#FFF"
+                    },
+                    "borderColor": {
+                      "label": "Border Color",
+                      "type": "color",
+                      "value": "#E8E0D0"
+                    },
+                    "borderWidth": {
+                      "label": "Border Width",
+                      "type": "borderWidth",
+                      "value": 2,
+                      "max": 20
+                    },
+                    "radius": {
+                      "label": "Border Radius",
+                      "type": "radius",
+                      "value": 10,
+                      "max": 100
+                    },
+                    "backdropFilter": {
+                      "label": "Background Blur",
+                      "type": "backdropFilter",
+                      "value": 0,
+                      "max": 50
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": ""
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 2
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 398
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 31
+                    }
+                  }
+                }
+              },
+              "id": "17748550490316hqpcqi7j"
+            },
+            {
+              "label": "Image",
+              "type": "img",
+              "field": {
+                "structure": {
+                  "label": "Image Content",
+                  "child": {
+                    "upload": {
+                      "label": "Image Upload",
+                      "type": "upload",
+                      "value": {
+                        "url": "https://unicoawsapp.s3.amazonaws.com/materials/e1b7d4b910184b49a3254139a4970391.svg",
+                        "crop": {
+                          "mode": "manual",
+                          "fitMode": "contain",
+                          "cropArea": {
+                            "x": 0,
+                            "y": 0,
+                            "width": 100,
+                            "height": 100
+                          },
+                          "transform": {
+                            "scale": 1,
+                            "rotate": 0
+                          },
+                          "originalWidth": 40,
+                          "originalHeight": 40
+                        }
+                      }
+                    },
+                    "categoryLink": {
+                      "label": "Link Settings",
+                      "type": "categoryLink",
+                      "value": {
+                        "type": "page",
+                        "page": "",
+                        "appid": "",
+                        "name": "",
+                        "id": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Image Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 59,
+                      "max": 386
+                    },
+                    "height": {
+                      "label": "Height",
+                      "type": "height",
+                      "value": 45,
+                      "max": 500
+                    },
+                    "scale": {
+                      "label": "Scale",
+                      "type": "slider",
+                      "value": 100
+                    },
+                    "rotate": {
+                      "label": "Rotate",
+                      "type": "slider",
+                      "value": 0
+                    },
+                    "translateX": {
+                      "label": "Position X",
+                      "type": "slider",
+                      "value": 0
+                    },
+                    "translateY": {
+                      "label": "Position Y",
+                      "type": "slider",
+                      "value": 0
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 5
+                    },
+                    "radius": {
+                      "label": "Border Radius",
+                      "type": "radius",
+                      "value": 0,
+                      "max": 100
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": ""
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 417
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 47
+                    }
+                  }
+                }
+              },
+              "id": "1774855052836pam4wa2xp"
+            },
+            {
+              "label": "Rich Text",
+              "type": "rich-text",
+              "field": {
+                "structure": {
+                  "label": "Rich Text Content",
+                  "child": {
+                    "content": {
+                      "label": "Content",
+                      "type": "richText",
+                      "value": "<p>Nutrition Coaching</p>"
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Rich Text Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 227,
+                      "max": 386
+                    },
+                    "height": {
+                      "label": "Height",
+                      "type": "height",
+                      "value": 54,
+                      "max": 500
+                    },
+                    "padding": {
+                      "label": "Padding",
+                      "type": "padding",
+                      "value": 10,
+                      "max": 50
+                    },
+                    "fontSize": {
+                      "label": "Font Size",
+                      "type": "fontSize",
+                      "value": 16,
+                      "max": 30
+                    },
+                    "color": {
+                      "label": "Text Color",
+                      "type": "color",
+                      "value": "#3D2F1E"
+                    },
+                    "bgColor": {
+                      "label": "Background Color",
+                      "type": "bgColor",
+                      "value": "#FFF"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 5
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 470
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 45
+                    }
+                  }
+                }
+              },
+              "id": "1774855056245tih65t7fh"
+            },
+            {
+              "label": "Rich Text",
+              "type": "rich-text",
+              "field": {
+                "structure": {
+                  "label": "Rich Text Content",
+                  "child": {
+                    "content": {
+                      "label": "Content",
+                      "type": "richText",
+                      "value": "<p><span style=\"font-size: 14px;\">Evidence-based guidance for performance, recovery, and long-term health. Build a sustainable relationship with food that fuels your training.</span></p>"
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Rich Text Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 299,
+                      "max": 386
+                    },
+                    "height": {
+                      "label": "Height",
+                      "type": "height",
+                      "value": 123,
+                      "max": 500
+                    },
+                    "padding": {
+                      "label": "Padding",
+                      "type": "padding",
+                      "value": 10,
+                      "max": 50
+                    },
+                    "fontSize": {
+                      "label": "Font Size",
+                      "type": "fontSize",
+                      "value": 16,
+                      "max": 30
+                    },
+                    "color": {
+                      "label": "Text Color",
+                      "type": "color",
+                      "value": "#7A6A58"
+                    },
+                    "bgColor": {
+                      "label": "Background Color",
+                      "type": "bgColor",
+                      "value": "#FFF"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 5
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 503
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 47
+                    }
+                  }
+                }
+              },
+              "id": "1774855058678skro7sl9s"
+            },
+            {
+              "label": "Rectangle",
+              "type": "rectangle",
+              "field": {
+                "structure": {
+                  "label": "Rectangle Content",
+                  "child": {
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "page",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Rectangle Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 329,
+                      "max": 386
+                    },
+                    "height": {
+                      "label": "Height",
+                      "type": "height",
+                      "value": 208,
+                      "max": 500
+                    },
+                    "bgColor": {
+                      "label": "Background Color",
+                      "type": "bgColor",
+                      "value": "#FFF"
+                    },
+                    "borderColor": {
+                      "label": "Border Color",
+                      "type": "color",
+                      "value": "#E8E0D0"
+                    },
+                    "borderWidth": {
+                      "label": "Border Width",
+                      "type": "borderWidth",
+                      "value": 2,
+                      "max": 20
+                    },
+                    "radius": {
+                      "label": "Border Radius",
+                      "type": "radius",
+                      "value": 10,
+                      "max": 100
+                    },
+                    "backdropFilter": {
+                      "label": "Background Blur",
+                      "type": "backdropFilter",
+                      "value": 0,
+                      "max": 50
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": ""
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 2
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 652
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 31
+                    }
+                  }
+                }
+              },
+              "id": "17748551314986n6zdiplc"
+            },
+            {
+              "label": "Image",
+              "type": "img",
+              "field": {
+                "structure": {
+                  "label": "Image Content",
+                  "child": {
+                    "upload": {
+                      "label": "Image Upload",
+                      "type": "upload",
+                      "value": {
+                        "url": "https://unicoawsapp.s3.amazonaws.com/materials/d16098774f0a43199f05bba42209d3a9.svg",
+                        "crop": {
+                          "mode": "manual",
+                          "fitMode": "contain",
+                          "cropArea": {
+                            "x": 0,
+                            "y": 0,
+                            "width": 100,
+                            "height": 100
+                          },
+                          "transform": {
+                            "scale": 1,
+                            "rotate": 0
+                          },
+                          "originalWidth": 40,
+                          "originalHeight": 40
+                        }
+                      }
+                    },
+                    "categoryLink": {
+                      "label": "Link Settings",
+                      "type": "categoryLink",
+                      "value": {
+                        "type": "page",
+                        "page": "",
+                        "appid": "",
+                        "name": "",
+                        "id": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Image Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 59,
+                      "max": 386
+                    },
+                    "height": {
+                      "label": "Height",
+                      "type": "height",
+                      "value": 45,
+                      "max": 500
+                    },
+                    "scale": {
+                      "label": "Scale",
+                      "type": "slider",
+                      "value": 100
+                    },
+                    "rotate": {
+                      "label": "Rotate",
+                      "type": "slider",
+                      "value": 0
+                    },
+                    "translateX": {
+                      "label": "Position X",
+                      "type": "slider",
+                      "value": 0
+                    },
+                    "translateY": {
+                      "label": "Position Y",
+                      "type": "slider",
+                      "value": 0
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 5
+                    },
+                    "radius": {
+                      "label": "Border Radius",
+                      "type": "radius",
+                      "value": 0,
+                      "max": 100
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": ""
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 669
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 47
+                    }
+                  }
+                }
+              },
+              "id": "17748551425004amcrmi0j"
+            },
+            {
+              "label": "Rich Text",
+              "type": "rich-text",
+              "field": {
+                "structure": {
+                  "label": "Rich Text Content",
+                  "child": {
+                    "content": {
+                      "label": "Content",
+                      "type": "richText",
+                      "value": "<p>Powerlifting Fundamentals</p>"
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Rich Text Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 227,
+                      "max": 386
+                    },
+                    "height": {
+                      "label": "Height",
+                      "type": "height",
+                      "value": 54,
+                      "max": 500
+                    },
+                    "padding": {
+                      "label": "Padding",
+                      "type": "padding",
+                      "value": 10,
+                      "max": 50
+                    },
+                    "fontSize": {
+                      "label": "Font Size",
+                      "type": "fontSize",
+                      "value": 16,
+                      "max": 30
+                    },
+                    "color": {
+                      "label": "Text Color",
+                      "type": "color",
+                      "value": "#3D2F1E"
+                    },
+                    "bgColor": {
+                      "label": "Background Color",
+                      "type": "bgColor",
+                      "value": "#FFF"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 5
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 718
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 46
+                    }
+                  }
+                }
+              },
+              "id": "1774855146412x1vgoc09n"
+            },
+            {
+              "label": "Rich Text",
+              "type": "rich-text",
+              "field": {
+                "structure": {
+                  "label": "Rich Text Content",
+                  "child": {
+                    "content": {
+                      "label": "Content",
+                      "type": "richText",
+                      "value": "<p><span style=\"font-size: 14px;\">Technique-focused coaching for squat, bench, and deadlift. Learn to move safely, efficiently, and powerfully from day one.</span></p>"
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Rich Text Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 311,
+                      "max": 386
+                    },
+                    "height": {
+                      "label": "Height",
+                      "type": "height",
+                      "value": 100,
+                      "max": 500
+                    },
+                    "padding": {
+                      "label": "Padding",
+                      "type": "padding",
+                      "value": 10,
+                      "max": 50
+                    },
+                    "fontSize": {
+                      "label": "Font Size",
+                      "type": "fontSize",
+                      "value": 16,
+                      "max": 30
+                    },
+                    "color": {
+                      "label": "Text Color",
+                      "type": "color",
+                      "value": "#7A6A58"
+                    },
+                    "bgColor": {
+                      "label": "Background Color",
+                      "type": "bgColor",
+                      "value": "#FFF"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 5
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 752
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 46
+                    }
+                  }
+                }
+              },
+              "id": "1774855150705tf2oohqz1"
+            },
+            {
+              "label": "Rectangle",
+              "type": "rectangle",
+              "field": {
+                "structure": {
+                  "label": "Rectangle Content",
+                  "child": {
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "page",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Rectangle Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 331,
+                      "max": 386
+                    },
+                    "height": {
+                      "label": "Height",
+                      "type": "height",
+                      "value": 229,
+                      "max": 500
+                    },
+                    "bgColor": {
+                      "label": "Background Color",
+                      "type": "bgColor",
+                      "value": "#FFF"
+                    },
+                    "borderColor": {
+                      "label": "Border Color",
+                      "type": "color",
+                      "value": "#E8E0D0"
+                    },
+                    "borderWidth": {
+                      "label": "Border Width",
+                      "type": "borderWidth",
+                      "value": 2,
+                      "max": 20
+                    },
+                    "radius": {
+                      "label": "Border Radius",
+                      "type": "radius",
+                      "value": 10,
+                      "max": 100
+                    },
+                    "backdropFilter": {
+                      "label": "Background Blur",
+                      "type": "backdropFilter",
+                      "value": 0,
+                      "max": 50
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": ""
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 2
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 875
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 30
+                    }
+                  }
+                }
+              },
+              "id": "1774855211722aseik2fjy"
+            },
+            {
+              "label": "Image",
+              "type": "img",
+              "field": {
+                "structure": {
+                  "label": "Image Content",
+                  "child": {
+                    "upload": {
+                      "label": "Image Upload",
+                      "type": "upload",
+                      "value": {
+                        "url": "https://unicoawsapp.s3.amazonaws.com/materials/f146c42e1870489789ec7314a513d931.svg",
+                        "crop": {
+                          "mode": "manual",
+                          "fitMode": "contain",
+                          "cropArea": {
+                            "x": 0,
+                            "y": 0,
+                            "width": 100,
+                            "height": 100
+                          },
+                          "transform": {
+                            "scale": 1,
+                            "rotate": 0
+                          },
+                          "originalWidth": 40,
+                          "originalHeight": 40
+                        }
+                      }
+                    },
+                    "categoryLink": {
+                      "label": "Link Settings",
+                      "type": "categoryLink",
+                      "value": {
+                        "type": "page",
+                        "page": "",
+                        "appid": "",
+                        "name": "",
+                        "id": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Image Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 59,
+                      "max": 386
+                    },
+                    "height": {
+                      "label": "Height",
+                      "type": "height",
+                      "value": 45,
+                      "max": 500
+                    },
+                    "scale": {
+                      "label": "Scale",
+                      "type": "slider",
+                      "value": 100
+                    },
+                    "rotate": {
+                      "label": "Rotate",
+                      "type": "slider",
+                      "value": 0
+                    },
+                    "translateX": {
+                      "label": "Position X",
+                      "type": "slider",
+                      "value": 0
+                    },
+                    "translateY": {
+                      "label": "Position Y",
+                      "type": "slider",
+                      "value": 0
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 5
+                    },
+                    "radius": {
+                      "label": "Border Radius",
+                      "type": "radius",
+                      "value": 0,
+                      "max": 100
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": ""
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 893
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 46
+                    }
+                  }
+                }
+              },
+              "id": "1774855221239l90w88zlo"
+            },
+            {
+              "label": "Rich Text",
+              "type": "rich-text",
+              "field": {
+                "structure": {
+                  "label": "Rich Text Content",
+                  "child": {
+                    "content": {
+                      "label": "Content",
+                      "type": "richText",
+                      "value": "<p>Somatic Strength Coaching</p>"
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Rich Text Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 227,
+                      "max": 386
+                    },
+                    "height": {
+                      "label": "Height",
+                      "type": "height",
+                      "value": 54,
+                      "max": 500
+                    },
+                    "padding": {
+                      "label": "Padding",
+                      "type": "padding",
+                      "value": 10,
+                      "max": 50
+                    },
+                    "fontSize": {
+                      "label": "Font Size",
+                      "type": "fontSize",
+                      "value": 16,
+                      "max": 30
+                    },
+                    "color": {
+                      "label": "Text Color",
+                      "type": "color",
+                      "value": "#3D2F1E"
+                    },
+                    "bgColor": {
+                      "label": "Background Color",
+                      "type": "bgColor",
+                      "value": "#FFF"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 5
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 941
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 46
+                    }
+                  }
+                }
+              },
+              "id": "1774855224394mgcbj7jz2"
+            },
+            {
+              "label": "Rich Text",
+              "type": "rich-text",
+              "field": {
+                "structure": {
+                  "label": "Rich Text Content",
+                  "child": {
+                    "content": {
+                      "label": "Content",
+                      "type": "richText",
+                      "value": "<p><span style=\"font-size: 14px;\">A deeper mind-body connection through training. For those seeking to heal, integrate, and grow through intentional movement practice.</span></p>"
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Rich Text Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 298,
+                      "max": 386
+                    },
+                    "height": {
+                      "label": "Height",
+                      "type": "height",
+                      "value": 121,
+                      "max": 500
+                    },
+                    "padding": {
+                      "label": "Padding",
+                      "type": "padding",
+                      "value": 10,
+                      "max": 50
+                    },
+                    "fontSize": {
+                      "label": "Font Size",
+                      "type": "fontSize",
+                      "value": 16,
+                      "max": 30
+                    },
+                    "color": {
+                      "label": "Text Color",
+                      "type": "color",
+                      "value": "#7A6A58"
+                    },
+                    "bgColor": {
+                      "label": "Background Color",
+                      "type": "bgColor",
+                      "value": "#FFF"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 5
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 975
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 48
+                    }
+                  }
+                }
+              },
+              "id": "1774855228702das0trkmq"
+            },
+            {
+              "label": "Rectangle",
+              "type": "rectangle",
+              "field": {
+                "structure": {
+                  "label": "Rectangle Content",
+                  "child": {
+                    "link": {
+                      "label": "Link Settings",
+                      "type": "link",
+                      "value": {
+                        "page": "",
+                        "url": "",
+                        "type": "page",
+                        "serviceId": "",
+                        "productId": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Rectangle Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 335,
+                      "max": 386
+                    },
+                    "height": {
+                      "label": "Height",
+                      "type": "height",
+                      "value": 216,
+                      "max": 500
+                    },
+                    "bgColor": {
+                      "label": "Background Color",
+                      "type": "bgColor",
+                      "value": "#FFF"
+                    },
+                    "borderColor": {
+                      "label": "Border Color",
+                      "type": "color",
+                      "value": "#E8E0D0"
+                    },
+                    "borderWidth": {
+                      "label": "Border Width",
+                      "type": "borderWidth",
+                      "value": 2,
+                      "max": 20
+                    },
+                    "radius": {
+                      "label": "Border Radius",
+                      "type": "radius",
+                      "value": 10,
+                      "max": 100
+                    },
+                    "backdropFilter": {
+                      "label": "Background Blur",
+                      "type": "backdropFilter",
+                      "value": 0,
+                      "max": 50
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": ""
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 2
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 1118
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 30
+                    }
+                  }
+                }
+              },
+              "id": "1774855330182m6x36cjse"
+            },
+            {
+              "label": "Image",
+              "type": "img",
+              "field": {
+                "structure": {
+                  "label": "Image Content",
+                  "child": {
+                    "upload": {
+                      "label": "Image Upload",
+                      "type": "upload",
+                      "value": {
+                        "url": "https://unicoawsapp.s3.amazonaws.com/materials/055a34a8dce747fca526d987e922d33f.svg",
+                        "crop": {
+                          "mode": "manual",
+                          "fitMode": "contain",
+                          "cropArea": {
+                            "x": 0,
+                            "y": 0,
+                            "width": 100,
+                            "height": 100
+                          },
+                          "transform": {
+                            "scale": 1,
+                            "rotate": 0
+                          },
+                          "originalWidth": 40,
+                          "originalHeight": 40
+                        }
+                      }
+                    },
+                    "categoryLink": {
+                      "label": "Link Settings",
+                      "type": "categoryLink",
+                      "value": {
+                        "type": "page",
+                        "page": "",
+                        "appid": "",
+                        "name": "",
+                        "id": ""
+                      }
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Image Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 59,
+                      "max": 386
+                    },
+                    "height": {
+                      "label": "Height",
+                      "type": "height",
+                      "value": 45,
+                      "max": 500
+                    },
+                    "scale": {
+                      "label": "Scale",
+                      "type": "slider",
+                      "value": 100
+                    },
+                    "rotate": {
+                      "label": "Rotate",
+                      "type": "slider",
+                      "value": 0
+                    },
+                    "translateX": {
+                      "label": "Position X",
+                      "type": "slider",
+                      "value": 0
+                    },
+                    "translateY": {
+                      "label": "Position Y",
+                      "type": "slider",
+                      "value": 0
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 5
+                    },
+                    "radius": {
+                      "label": "Border Radius",
+                      "type": "radius",
+                      "value": 0,
+                      "max": 100
+                    },
+                    "customCSS": {
+                      "label": "Custom CSS",
+                      "type": "customCSS",
+                      "value": ""
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 1136
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 49
+                    }
+                  }
+                }
+              },
+              "id": "1774855335127haffd8r4h"
+            },
+            {
+              "label": "Rich Text",
+              "type": "rich-text",
+              "field": {
+                "structure": {
+                  "label": "Rich Text Content",
+                  "child": {
+                    "content": {
+                      "label": "Content",
+                      "type": "richText",
+                      "value": "<p>Life Transition Consulting</p>"
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Rich Text Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 227,
+                      "max": 386
+                    },
+                    "height": {
+                      "label": "Height",
+                      "type": "height",
+                      "value": 54,
+                      "max": 500
+                    },
+                    "padding": {
+                      "label": "Padding",
+                      "type": "padding",
+                      "value": 10,
+                      "max": 50
+                    },
+                    "fontSize": {
+                      "label": "Font Size",
+                      "type": "fontSize",
+                      "value": 16,
+                      "max": 30
+                    },
+                    "color": {
+                      "label": "Text Color",
+                      "type": "color",
+                      "value": "#3D2F1E"
+                    },
+                    "bgColor": {
+                      "label": "Background Color",
+                      "type": "bgColor",
+                      "value": "#FFF"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 5
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 1187
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 49
+                    }
+                  }
+                }
+              },
+              "id": "17748553386377f3g5vrmp"
+            },
+            {
+              "label": "Rich Text",
+              "type": "rich-text",
+              "field": {
+                "structure": {
+                  "label": "Rich Text Content",
+                  "child": {
+                    "content": {
+                      "label": "Content",
+                      "type": "richText",
+                      "value": "<p><span style=\"font-size: 14px;\">For individuals navigating change who want to use strength training as a foundation for resilience — physically and emotionally.</span></p>"
+                    }
+                  }
+                },
+                "styles": {
+                  "label": "Rich Text Style",
+                  "child": {
+                    "width": {
+                      "label": "Width",
+                      "type": "width",
+                      "value": 303,
+                      "max": 386
+                    },
+                    "height": {
+                      "label": "Height",
+                      "type": "height",
+                      "value": 116,
+                      "max": 500
+                    },
+                    "padding": {
+                      "label": "Padding",
+                      "type": "padding",
+                      "value": 10,
+                      "max": 50
+                    },
+                    "fontSize": {
+                      "label": "Font Size",
+                      "type": "fontSize",
+                      "value": 16,
+                      "max": 30
+                    },
+                    "color": {
+                      "label": "Text Color",
+                      "type": "color",
+                      "value": "#7A6A58"
+                    },
+                    "bgColor": {
+                      "label": "Background Color",
+                      "type": "bgColor",
+                      "value": "#FFF"
+                    },
+                    "zIndex": {
+                      "label": "Levels",
+                      "type": "zIndex",
+                      "value": 5
+                    },
+                    "top": {
+                      "label": "Top Distance",
+                      "type": "top",
+                      "value": 1219
+                    },
+                    "left": {
+                      "label": "Left Distance",
+                      "type": "left",
+                      "value": 48
+                    }
+                  }
+                }
+              },
+              "id": "17748553431733x14s20jf"
+            }
+          ]
+        }
+      }
+    },
+    "styles": {
+      "label": "Container Style",
+      "child": {
+        "height": {
+          "label": "Container Height",
+          "type": "height",
+          "value": 1357,
+          "max": 1000
+        },
+        "justify": {
+          "label": "Layout",
+          "type": "justify",
+          "value": "left"
+        },
+        "bgColor": {
+          "label": "Background Color",
+          "type": "bgColor",
+          "value": "#FAF7F2"
+        },
+        "customCSS": {
+          "label": "Custom CSS",
+          "type": "customCSS",
+          "value": ""
+        },
+        "width": {
+          "label": "Container Width",
+          "type": "width",
+          "value": 386,
+          "min": 386,
+          "max": 2000
+        }
+      }
+    },
+    "config": {
+      "label": "Alignment & Grid Settings",
+      "child": {
+        "editMode": {
+          "label": "Edit Mode",
+          "type": "editMode",
+          "value": "free-form"
+        },
+        "showGuides": {
+          "label": "Show Alignment Guides",
+          "type": "showGuides",
+          "value": true
+        },
+        "gridSize": {
+          "label": "Grid Size (px)",
+          "type": "gridSize",
+          "value": 10,
+          "min": 5,
+          "max": 50
+        },
+        "enableHorizontalScroll": {
+          "label": "Enable Horizontal Scroll",
+          "type": "enableHorizontalScroll",
+          "value": false
+        }
+      }
+    }
+  },
+  "component": {
+    "name": "free-box"
+  },
+  "id": "1774854546799vkbla92lx"
+}

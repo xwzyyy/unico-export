@@ -1,62 +1,40 @@
 # unico-export
 
-`unico-export` is the Open Design plugin for generating and updating pages for the Unico DND canvas.
+The primary Open Design skill for creating and editing mobile pages for Unico DND. It converts a natural-language brief into compact Unico Design IR, then uses the bundled compiler to produce the complete import-ready page JSON.
 
-All skill sources and generated IR content are English-only. Compiler validation rejects CJK strings.
+## Use this package for
 
-## Workflow
+- New mobile pages designed directly from a brief.
+- Focused edits to an existing canonical Unico page.
+- Full redesigns when the user explicitly requests them.
 
-1. Read `unico-page.json` from the active project when it exists.
-2. Treat its `designJson` array as the current canvas.
-3. Run UI/UX Pro Max design-system guidance and the controlled-variation stage in `references/design-optimization.md`.
-4. Apply the user's request while preserving unrelated sections and component properties. Existing components are not round-tripped through IR.
-5. Compile the updated design with `compiler/unico-ir-compiler.mjs`.
-6. Review the final type-specific component completeness audit.
-7. Write the complete result back to `unico-page.json`.
-8. Also write `unico-export-result.json` for older integrations.
+Use `html-to-design-json` for source-faithful HTML reproduction; that workflow treats rendered HTML as the visual source of truth.
 
-For normal edits, set `mode: "extend"` in `unico-design-ir.json` and include only new sections. The compiler reads the existing canonical page, keeps all current component objects unchanged, appends the new compiled sections, and writes the complete result back. Use `mode: "replace"` only for an explicitly requested full redesign.
+## Workflow at a glance
 
-The canonical file is a complete envelope, not a patch:
+1. Read the current canonical page when present.
+2. For a new page or redesign, use `references/design-playbook.md` to establish content completeness and map each style cue; select reusable component combinations from `references/component-recipes.md` and plan suitable images.
+3. Write IR using the supported fields in `references/component-contract.md`.
+4. Compile with `compiler/unico-ir-compiler.mjs`; fix errors in IR and review warnings.
+5. Deliver the complete `unico-page.json` envelope and `unico-export-result.json` compatibility artifact.
 
-```json
-{
-  "designJson": [
-    "...complete Unico component array..."
-  ],
-  "message": "summary of the update"
-}
-```
+The compiler checks schema and layout invariants, and rejects missing or local image sources. It cannot judge whether the design fulfills the brief; audit the compiled JSON for content scale, imagery, and visible evidence of every style cue, then review a rendered preview when available and report when visual rendering remains unverified.
 
-If `unico-page.json` does not exist, create it from the newly generated page. The compiler always writes `unico-export-result.json` so validation errors are inspectable, but writes or updates `unico-page.json` only after validation passes. A malformed existing canonical page is never silently replaced.
+## Package contents
 
-Validation covers JSON/envelope structure, stable unique IDs, 386px bounds, section height, text sizing and overlap, background layering, intentional image fitting and crop focus, non-empty media, fixed-component isolation, component-selection policy, and supported component types. A final independent audit checks every emitted component's required root, structure, style, config, link, fixed-property, and nested-tab fields. The result also reports composition metrics and non-blocking quality warnings.
+| Path | Purpose |
+| --- | --- |
+| `SKILL.md` | Task routing and generation workflow. |
+| `references/design-playbook.md` | Main design method for turning natural-language requests into implemented visual decisions. |
+| `references/component-recipes.md` | Ready-to-adapt combinations for image showcases, premium editorial modules, information cards, FAQs, events, and page endings. |
+| `references/visual-recipes.md` | Optional patterns extracted from repository examples. |
+| `references/component-contract.md` | IR component schema, compiler constraints, and field-level invariants. |
+| `references/verified-image-sources.md` | Network image licensing and verification requirements. |
+| `references/small-visual-assets.md` | Search, format verification, provenance, and license workflow for small graphics. |
+| `references/recipe-examples/` | Archived source JSON for reusable component combinations, including R21b–R29b. |
+| `compiler/unico-ir-compiler.mjs` | Deterministic IR-to-Unico JSON compiler. |
+| `unico-page.json` | Example canonical page envelope. |
 
-Text components follow the fixed Unico contract and omit the `height` style control. When rich-text height is omitted, the compiler estimates it conservatively from content, padding, font size, and available width. Network images must use verified CDN direct URLs; image-provider detail pages are rejected. See [`references/verified-image-sources.md`](references/verified-image-sources.md) for verified fallback assets and validation rules.
+Generated page strings and IR copy are English-only. Compiled pages require real remote provider image URLs and matching license evidence; local paths, placeholders, and guessed URLs fail validation. When response headers cannot be inspected, approved provider CDN URLs may still compile with an explicit availability warning.
 
-Button horizontal and vertical padding both default to `0`. Rectangle cards without explicit height automatically include their foreground content; insufficient explicit heights fail validation. Every new image must come from web search and use a verified HTTP(S) raster-image direct URL. SVG, local files, data/blob URLs, and generated image sources are forbidden.
-
-Event List, Service List, Product List, Blog, Coupon, Inquiry, Map, Store Information, and other business components each occupy one ordering carrier in IR. Compilation removes the carrier and emits the component directly beside other `free-box` entries.
-
-## Component policy
-
-- Use `text`, `img`, `button`, `rectangle`, and compiler-generated `free-box` containers frequently.
-- Use `rich-text` moderately and only for mixed formatting.
-- Use each of `banner`, `blog-list`, `service-list`, `event-list`, `event-calendar`, `store-information`, `inquiry-box`, `goods-list`, and `map` at most once and only when context warrants it.
-- Never use deprecated `img-text` or `circle`.
-- Use all other registered components only after an explicit user request, recorded in IR `explicitComponents`.
-
-## References
-
-- [`SKILL.md`](SKILL.md) — execution workflow and compiler contract
-- [`references/component-contract.md`](references/component-contract.md) — supported component fields
-- [`references/design-guidelines.md`](references/design-guidelines.md) — current visual design guidance
-- [`references/design-optimization.md`](references/design-optimization.md) — UI/UX Pro Max integration and controlled variation
-
-## Compatibility
-
-`unico-export-result.json` remains available for older DND clients, but `unico-page.json` is authoritative whenever both files exist.
-
-## Component coverage
-
-The compiler supports every component currently registered by the DND AI import validator, including navigation, banner, search, store information, product, promotion, coupon, service, event, calendar, and blog components. Business components keep runtime data collections empty so the component can fetch current store data through its built-in API behavior.
+`unico-export-no-uiux` is a separate package with its own compiler and copied references. Keep the design playbook and visual recipes aligned when changing shared generation guidance; do not assume the compilers are interchangeable.

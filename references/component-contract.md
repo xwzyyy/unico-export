@@ -5,6 +5,7 @@ Read this file before writing `unico-design-ir.json`. Generated components are d
 ## Contents
 
 - Core types
+- line
 - Component usage policy
 - Deprecated types
 - Extended visual types
@@ -37,6 +38,7 @@ The existing core types remain supported:
 
 - `text`: `text`, typography, padding, color, and link fields; compiled output always uses `label: "Text"`, `Text Content`, and `Text Style`, and omits the `height` style field
 - `img`: `src`, radius and link fields
+- `line`: `width`, `height`, `rotate`, line/border colors, border settings, opacity, position, and link fields
 - `button`: `text`, colors, radius, padding and link fields
 - `rectangle`: background, border and link fields
 - `rich-text`: `html`/`content`/`text`, `paddingInline`, `paddingBlock`, and typography fields; height is estimated automatically when `h` is omitted
@@ -45,7 +47,7 @@ The existing core types remain supported:
 
 | Tier | Components | Rule |
 | --- | --- | --- |
-| Frequent foundation | `text`, `img`, `button`, `rectangle`, compiler-generated `free-box` | Use these as the dominant page-building system |
+| Frequent foundation | `text`, `img`, `line`, `button`, `rectangle`, compiler-generated `free-box` | Use these as the dominant page-building system |
 | Moderate | `rich-text` | Use only for genuinely mixed formatting |
 | Conditional single-use | `banner`, `blog-list`, `service-list`, `event-list`, `event-calendar`, `store-information`, `inquiry-box`, `goods-list`, `map` | Use only when context warrants the behavior; each type may appear at most once |
 | Deprecated | `img-text`, `circle` | Never generate; compilation fails |
@@ -53,7 +55,16 @@ The existing core types remain supported:
 
 Do not add a component to `explicitComponents` merely to bypass validation. It is an audit record of a direct user request.
 
-All free-positioned visual types may optionally provide `customCSS` as a declaration-only string. Use it only for CSS effects that the runtime accepts and that cannot be represented by structured fields; never put selectors, HTML, scripts, or external rules in this field. `img` always receives compiler-generated `object-fit` and `object-position` declarations, which are prepended to the supplied value.
+All free-positioned visual types may optionally provide `customCSS` as a declaration-only string. The compiler passes the value through; it does not validate CSS syntax or runtime support. Use it for concise CSS effects that the runtime accepts and that cannot be represented by structured fields, such as a decorative rectangle's gradient/repeating pattern or shadow. A short `text` label may use `transform: rotate(...)` and `transform-origin` here when rotated typography is part of the design; this is runtime-dependent and must be checked in a rendered preview. If it is unsupported, replace it with a structured `line.rotate`/`img.rotate` cue or a stepped label. Never put selectors, pseudo-elements, HTML, scripts, imports, or external `url()` assets in this field. Image crop and transform data must be represented in the structured image fields below; do not emulate image scaling or rotation through `customCSS`.
+
+For a section-wide styled background, use a decorative `rectangle` matching the section frame, set `autoFitContent: false`, and place it below all readable and interactive content with the lowest `zIndex`. Keep its colors aligned to `designProfile.theme`. Prefer the section's `bgColor` for a flat fill and reserve `customCSS` for effects such as a gradient that the structured fields cannot express.
+
+### Art-direction effects
+
+- Use actual `rectangle` components for section fields, image plates, label plates, grids, corner marks, and geometric accents; use `line` for fine dividers and brackets. Keep decoration behind content or clearly separated from it.
+- Patterned backgrounds can use `repeating-linear-gradient(...)` or `radial-gradient(...)` as a declaration on a section-sized decorative rectangle. The compiler passes this value through without proving browser or Unico runtime support. Prefer a small real-geometry pattern when renderer support is uncertain, and inspect any CSS pattern in preview.
+- `line.rotate` and `img.rotate` are structured rotation fields. `text` has no structured rotation field; only rotate short nonessential labels through `customCSS`, and retain a preview-verified fallback. Do not rotate long-form copy or primary action text.
+- A style cue named explicitly in the brief must be mapped to a component ID and field/effect. If the requested effect cannot be represented, document the closest visible substitute instead of silently omitting it.
 
 ### Text component output invariants
 
@@ -66,6 +77,10 @@ justify, zIndex, top, left
 ```
 
 Defaults are `paddingInline: 20`, `paddingBlock: 10`, `letterSpacing: 0`, `fontStyle: "normal"`, and `textDecoration: "none"`. Do not emit `height`. The `fontWeight` label must be `Font Weight`, and the `justify` label must be `Layout`.
+
+### Text visual audit
+
+Before compiling, inventory every visible text run, including small captions, eyebrow labels, metadata, badges, helper/error text, navigation labels, button labels, footer/legal copy, and text inside overlays or cards. Keep independently styled or positioned runs as separate `text` components. For each one, compare the source and IR for `fontSize`, `color`, `fontWeight`, `lineHeight`, `letterSpacing`, `x`, `y`, and `w`; calculate its rendered bottom before placing the next same-column item. Review the smallest sizes and lowest-contrast colors again after compilation so no minor text is omitted, shifted, or silently replaced by a default.
 
 ### Button component output invariants
 
@@ -93,7 +108,7 @@ Explicit `h` is never silently overridden. If a foreground component starts insi
 ```
 
 - Omit `h` for normal `text`. The compiler uses a conservative wrapped-height estimate for validation, but the generated text style intentionally contains no `height` control so the runtime can size it naturally.
-- Omit `h` for `rich-text` by default. Estimated height is `ceil(lines * fontSize * effectiveLineHeight + 2 * paddingBlock + safetyAllowance) + 1px`. Line count uses `w - 2 * paddingInline` and weighted glyph widths. Effective line height is at least `1.5`. Narrow columns add punctuation-wrap and clipping safety; the final `1px` covers browser rasterization error.
+- Omit `h` for `rich-text` by default. Estimated height is `ceil(lines * fontSize * effectiveLineHeight + 2 * paddingBlock + safetyAllowance) + 1px + 20px`. The final `20px` is a mandatory clipping safety buffer. Line count uses `w - 2 * paddingInline` and weighted glyph widths. Effective line height is at least `1.5`. Narrow columns add punctuation-wrap and clipping safety; the final `1px` covers browser rasterization error.
 - Set `allowOverflow: true` only for an intentional image/rectangle bleed outside the section or 386px canvas.
 - Set `allowOverlap: true` only for intentional text-on-text art direction. Image/rectangle backgrounds may overlap text without this flag.
 - Set `allowTightSpacing: true` only when same-column text needs less than the default 8px gap without intersecting.
@@ -109,7 +124,11 @@ Explicit `h` is never silently overridden. If a foreground component starts insi
   "w": 346,
   "h": 240,
   "fit": "cover",
-  "objectPosition": "50% 35%",
+  "scale": 1.34,
+  "rotate": 30,
+  "cropArea": { "x": 30, "y": 0, "width": 100, "height": 100 },
+  "translateX": 0,
+  "translateY": 0,
   "sourceWidth": 1600,
   "sourceHeight": 1200,
   "radius": 12
@@ -117,12 +136,57 @@ Explicit `h` is never silently overridden. If a foreground component starts insi
 ```
 
 - `fit` is required and accepts `cover`, `contain`, or `fill`; prefer `cover` for photos and `contain` for logos/icons.
-- `objectPosition` uses CSS object-position syntax and defaults to `50% 50%`.
+- `scale` is an optional image zoom multiplier. For `cover`, when source dimensions are known, use at least `ceil(max(sourceRatio/frameRatio, frameRatio/sourceRatio) * 100) / 100`; for example, a 4:3 source in a 1:1 frame requires at least `1.34`. When dimensions are unknown, the compiler defaults to `1.20`. `contain` and `fill` default to `1.00` to avoid unexpectedly cropping or distorting complete assets.
+- The compiled `upload.value` must contain `url`, `crop.mode`, `crop.fitMode`, `crop.cropArea`, `crop.transform.scale`, `crop.transform.rotate`, `crop.originalWidth`, and `crop.originalHeight`. The compiled image style must contain `scale`, `rotate`, `translateX`, `translateY`, `radius`, `customCSS`, `top`, and `left` controls in addition to width, height, and z-index.
+- The image style `scale` control is a percentage slider and defaults to `100`; the crop transform `scale` carries the aspect-ratio zoom multiplier. `rotate` in `crop.transform` carries image rotation, while style `rotate` remains the independent editor slider.
+- `cropArea` uses the editor's crop-area coordinates. Provide it when a strongly mismatched `cover` frame needs a deliberate focal point.
 - `sourceWidth` and `sourceHeight` are optional validation hints. Provide both when the original dimensions are known.
-- When a `cover` frame differs from the supplied source ratio by more than 1.5×, explicitly set `objectPosition` to protect the focal point. `fill` is rejected when supplied dimensions prove that it would distort the source.
-- `src` must be a verified HTTP(S) raster-image direct URL. Local paths, empty sources, data/blob URLs, placeholders, generated sources, and known provider detail-page URLs are compilation errors.
+- When a `cover` frame differs from the supplied source ratio by more than 1.5×, explicitly set `cropArea` to protect the focal point. `fill` is rejected when supplied dimensions prove that it would distort the source.
+- Every compiled `img.src` must be a real HTTP(S) provider raster-image direct URL with a matching `assetManifest` entry containing commercial-use evidence. Empty and local paths, data/blob URLs, placeholders, SVGs, and provider detail pages are errors. If network tools cannot read CDN response headers, use the official provider CDN URL with `urlCheck: "unavailable"` or `"not_checked"`; do not invent HTTP status or MIME fields. The compiler accepts this state for approved image-CDN hosts and reports a warning.
 - Forbid every SVG source, including `.svg`/`.svgz` paths, query parameters that request SVG, `data:image/svg+xml`, and inline `<svg>`. Never generate SVG imagery.
-- Search online for every image, then verify `HTTP 200` and `Content-Type: image/*` before export. See `verified-image-sources.md` for verified fallback URLs and validation rules.
+- Search the approved commercial-use image libraries and verify the individual source page and applicable license for every sourced image. Try to verify `HTTP 200` and `Content-Type: image/*`; if those headers cannot be read, follow the non-blocking fallback in `verified-image-sources.md` and continue the final export. Add one matching entry to the IR `assetManifest` for every image.
+
+### Line fields
+
+Use `line` for a straight rule or separator. Its output contract is intentionally explicit so the editor receives the newly registered controls:
+
+```json
+{
+  "type": "line",
+  "field": {
+    "structure": {
+      "label": "Line Content",
+      "child": {
+        "link": {
+          "label": "Link Settings",
+          "type": "link",
+          "value": { "page": "", "url": "", "type": "page", "serviceId": "", "productId": "" }
+        }
+      }
+    },
+    "styles": {
+      "label": "Line Style",
+      "child": {
+        "width": { "label": "Length", "type": "width", "value": 240 },
+        "height": { "label": "Thickness", "type": "height", "value": 2 },
+        "rotate": { "label": "Angle", "type": "angle", "value": 0 },
+        "bgColor": { "label": "Line Color", "type": "bgColor", "value": "#1f2937" },
+        "borderColor": { "label": "Border Color", "type": "color", "value": "#1f2937" },
+        "borderWidth": { "label": "Border Width", "type": "borderWidth", "value": 0 },
+        "borderStyle": { "label": "Border Style", "type": "borderStyle", "value": "solid" },
+        "radius": { "label": "Border Radius", "type": "radius", "value": 0 },
+        "opacity": { "label": "Opacity", "type": "opacity", "value": 1 },
+        "zIndex": { "label": "Levels", "type": "zIndex", "value": 3 },
+        "customCSS": { "label": "Custom CSS", "type": "customCSS", "value": "" },
+        "top": { "label": "Top Distance", "type": "top", "value": 0 },
+        "left": { "label": "Left Distance", "type": "left", "value": 0 }
+      }
+    }
+  }
+}
+```
+
+The IR shorthand uses `x`/`y` for `left`/`top`, `w`/`h` for length/thickness, and `rotate` for the angle. Use `rectangle` for non-linear decorative geometry.
 
 ## Deprecated Types
 
@@ -272,6 +336,7 @@ Do not invent contact details. Omit or leave unknown values empty.
 ```
 
 `inquiry-box` must be the only child of its IR section and compiles as a top-level page block.
+`inquiry-box` must not emit a width style control. Its runtime component naturally occupies the available container width.
 
 ## Top-level Business Components
 
@@ -333,7 +398,7 @@ Accepted fields: `mode`, `placeholder`, `backgroundColor`, `color`, `bgColor`, `
 
 Accepted fields: `mode`, `height`, `color`, `bgColor`, `opacity`, `indicatorDots`, `autoplay`, and `items`. Each item accepts `pic`/`src`/`url` and `link`.
 
-Banner items are allowed only with searched and verified HTTP(S) raster-image direct URLs. Do not emit an empty decorative banner or any SVG/local/generated source.
+Banner items are allowed only with real provider-hosted HTTP(S) raster-image direct URLs and matching commercial-use license evidence. If response headers cannot be inspected, approved provider CDNs may use the explicit unavailable URL-check state described in `verified-image-sources.md`. Do not emit an empty decorative banner or any SVG/local/generated source.
 
 ### store-information
 
@@ -364,14 +429,14 @@ Accepted fields: `titleColor`, `titleFontSize`, `titleFontWeight`, `subtitleColo
 - Images and rectangles that overlap readable or interactive content must use a lower `zIndex`; do not overlay a separate text component on a button.
 - Button horizontal and vertical padding default to `0`.
 - Text-bearing rectangles must omit `h` for automatic card sizing or provide enough explicit height to contain all higher-layer content plus bottom padding.
-- Newly generated image-bearing components may use only searched, verified HTTP(S) raster-image direct URLs; SVG and local/generated image sources are forbidden.
+- Compiled image-bearing components may use only real provider-hosted HTTP(S) raster-image direct URLs with matching `assetManifest` license evidence. Empty sources, generated local raster files, and local paths are errors; resolve them to importable URLs before compilation. When request headers are unavailable, approved provider-CDN URLs remain eligible with an explicit unverified URL-check state. SVG sources are forbidden.
 - Business components load their own runtime data. Leave `list`, `events`, `services`, and `blogContents` empty and configure only presentation, source mode, counts, and filters documented by the IR.
 - `goods-list` and `discount-promotion` default to automatic/all-products data mode unless the user explicitly requests a selection mode.
 - Top-level/business components are never nested in `component_list`; the compiler removes their dedicated IR carrier and preserves their order beside `free-box` entries.
 - `brand-navbar` is a top-level component; the compiler removes it from section children and emits it before other page blocks.
 - Existing canonical components must never be recreated through compact IR during an edit. Use `mode: "extend"` and include only new sections. The final validator still audits preserved components for complete required fields.
 - Every top-level/business component occupies a dedicated one-child IR section and compiles directly to the top-level `designJson` array. Legacy canonical top-level components are preserved during `extend`.
-- Do not generate empty `video-player` or image components merely as placeholders. If no usable media URL exists, omit the media component and retain explanatory text only when the user needs it.
+- Do not generate empty `video-player` components or compile image placeholders. New-page and full-redesign workflows require at least one real photo/image module; keep searching approved libraries when a candidate URL fails. Never replace it with a local path, fake URL, or subject-matched hand-built illustration.
 - Do not invent URLs, ratings, contact details or dates presented as facts.
 - Unknown component types are compilation errors and must be removed or replaced deliberately.
 
